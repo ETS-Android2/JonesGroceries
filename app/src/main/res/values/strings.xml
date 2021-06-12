@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Jon\'s Groceries</string>
+    <string name="splash.author">© Jonathan Tremblay 2021</string>
+    <string name="splash.authorEmail">jonathan.r.tremblay@gmail.com</string>
+    <string name="menuBar.flyers">Flyers</string>
+    <string name="menuBar.groceries">Groceries</string>
+    <string name="menuBar.recipes">Recipes</string>
+    <string name="menuBar.settings">Settings</string>
+    <string name="popUp.OK">OK</string>
+    <string name="popUp.CANCEL">Cancel</string>
+    <string name="popUp.newListName.title">Please pick a name for your new list.</string>
+    <string name="popUp.newListName.placeholder">Grocery list name</string>
+    <string name="popUp.newRecipe.title">Please pick a name for your new recipe.</string>
+    <string name="popUp.newRecipe.placeholder">Recipe names</string>
+    <string name="popUp.newFlyer.title">Please enter the merchant\'s name.</string>
+    <string name="popUp.newFlyer.placeholder">Merchant\'s name</string>
+    <string name="groceries.pageTitle">My groceries\'s list</string>
+    <string name="groceries.lists.itemCount"> items</string>
+    <string name="groceries.recipe.itemCount"> ingredients</string>
+    <string name="searchBar.placeholder">add an item</string>
+    <string name="searchBar.NO_RESULT">No results were found for your search.</string>
+    <string name="searchBar.NO_RESULT_SUB">Create [itemSearched]</string>
+    <string name="x"></string>
+
+    <!-- Categories -->
+    <string name="categories.alcoholicDrinks">Alcoholic drinks</string>
+    <string name="categories.babyProducts">Baby products</string>
+    <string name="categories.bakery">Bakery</string>
+    <string name="categories.beverages">Beverages</string>
+    <string name="categories.cannedFoods">Caned foods</string>
+    <string name="categories.carCareProducts">Car care products</string>
+    <string name="categories.clothes">Clothes</string>
+    <string name="categories.hotBeverages">Coffee, tea &amp; hot chocolate</string>
+    <string name="categories.cosmetics">Cosmetics</string>
+    <string name="categories.dairyProducts">Dairy products</string>
+    <string name="categories.dietFoods">Diet foods</string>
+    <string name="categories.fishSeafood">Fish &amp; seafood</string>
+    <string name="categories.frozen">Frozen</string>
+    <string name="categories.grainsPasta">Grains &amp; pasta</string>
+    <string name="categories.homeKitchen">Home &amp; kitchen</string>
+    <string name="categories.homeBaking">Home baking</string>
+    <string name="categories.houseCleaningProducts">House-cleaning products</string>
+    <string name="categories.meatPoultrySausages">meat, poultry &amp; sausages</string>
+    <string name="categories.newspapers">Newspapers</string>
+    <string name="categories.officeSupplies">Office supplies</string>
+    <string name="categories.oils">Oils</string>
+    <string name="categories.other">Other</string>
+    <string name="categories.personalHygiene">Personal hygiene</string>
+    <string name="categories.petSupplies">Pet supplies</string>
+    <string name="categories.pharmacy">Pharmacy</string>
+    <string name="categories.preserves">Preserves</string>
+    <string name="categories.produce">Produce</string>
+    <string name="categories.readyMeals">Ready meals</string>
+    <string name="categories.snacks">Snacks</string>
+    <string name="categories.spicesSaucesCondiment">Spices, sauces &amp; condiments</string>
+    <!-- End of categories -->
+
+</resources>

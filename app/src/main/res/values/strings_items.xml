@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="alcoholicDrinks">
+        <item>Beer</item>
+        <item>Red wine</item>
+        <item>White wine</item>
+    </string-array>
+    <string-array name="babyProducts">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="bakery">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="beverages">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="cannedFoods">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="carCareProducts">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="clothes">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="hotBeverages">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="cosmetics">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="dairyProducts">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="dietFoods">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="fishSeafood">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="frozen">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="grainsPasta">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="homeKitchen">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="homeBaking">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="houseCleaningProducts">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="meatPoultrySausages">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="newspapers">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="officeSupplies">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="oils">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="other">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="personalHygiene">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="petSupplies">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="pharmacy">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="preserves">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="produce">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="readyMeals">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="snacks">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <string-array name="spicesSaucesCondiment">
+        <item>xxx</item>
+        <item>xxx</item>
+        <item>xxx</item>
+    </string-array>
+    <!-- End of categories -->
+</resources>
