@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_groceries"
+        android:icon="@drawable/ic_groceries"
+        android:title="@string/menuBar.groceries" />
+
+    <item
+        android:id="@+id/menu_recipes"
+        android:icon="@drawable/ic_recipes"
+        android:title="@string/menuBar.recipes" />
+
+    <item
+        android:id="@+id/menu_flyers"
+        android:icon="@drawable/ic_flyers"
+        android:title="@string/menuBar.flyers" />
+
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/menuBar.settings" />
+</menu>
