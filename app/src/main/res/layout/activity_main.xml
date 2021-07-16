@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,10 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/bottomNav"
-        app:itemIconTint="#fff"
-        app:itemTextColor="@color/white"
-        app:itemIconSize="30dp"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:itemIconSize="24dp"
         app:itemRippleColor="@color/orange"
         app:menu="@menu/nav_menu"
-        app:labelVisibilityMode="labeled" />
+        app:labelVisibilityMode="selected" />
 </RelativeLayout>

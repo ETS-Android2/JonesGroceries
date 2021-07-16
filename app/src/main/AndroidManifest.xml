@@ -17,7 +17,7 @@
 
         <!-- This name is resolved to com.example.myapp.MainActivity
              based upon the package attribute -->
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
