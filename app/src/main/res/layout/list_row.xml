@@ -24,7 +24,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="4dp"
-                android:srcCompat="@drawable/ic_avocado"
+                app:srcCompat="@drawable/ic_avocado"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />
 

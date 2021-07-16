@@ -38,29 +38,30 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                 Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.show_products_list, container, false);
         super.onCreate(savedInstanceState);
-        setWidgets();
-        setListeners();
-        return inflater.inflate(R.layout.show_products_list, container, false);
+        setWidgets(rootView);
+        setListeners(rootView);
+        return rootView;
     }
 
-    void setWidgets(){
+    void setWidgets(View rootView){
         Bundle bundle = this.getArguments();
         int id = -1;
         if (bundle != null) {
             id = bundle.getInt("list_id");
         }
         listID = id;
-        title = getActivity().getIntent().getStringExtra("category_name");
+        title = getActivity().getIntent().getStringExtra("grocery_name");
 
 //        getSupportActionBar().setTitle(category_name);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        addNewProductInput = getView().findViewById(R.id.addNewProductInput);
-        saveButton = getView().findViewById(R.id.saveButton);
+        addNewProductInput = rootView.findViewById(R.id.addNewProductInput);
+        saveButton = rootView.findViewById(R.id.saveButton);
     }
 
-    void setListeners(){
+    void setListeners(View rootView){
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,15 +77,15 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 }
             }
         });
-        initRecyclerView();
+        initRecyclerView(rootView);
         initViewModel();
         viewModel.getAllProductsList(listID);
     }
 
 
 
-    private void initRecyclerView(){
-        recyclerView = getView().findViewById(R.id.recyclerView);
+    private void initRecyclerView(View rootView){
+        recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
         productsListAdapter = new ProductsListAdapter(this.getContext(), this);

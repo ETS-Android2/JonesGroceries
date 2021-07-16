@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
         android:paddingBottom="10dp"
-        android:srcCompat="@drawable/ic_send"
+        app:srcCompat="@drawable/ic_send"
         />
 
     <TextView

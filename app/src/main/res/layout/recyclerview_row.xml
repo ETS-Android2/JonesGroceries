@@ -52,7 +52,7 @@
                 android:paddingBottom="05dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:srcCompat="@drawable/ic_delete"
+                app:srcCompat="@drawable/ic_delete"
                 />
 
             <ImageView
@@ -62,7 +62,7 @@
                 android:layout_margin="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/removeItem"
-                android:srcCompat="@drawable/ic_edit"
+                app:srcCompat="@drawable/ic_edit"
                 />
 
             <ImageView

@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -144,8 +145,10 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         Fragment showProducts = new ItemsListFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("list_id", grocery.listId);
+        bundle.putString("grocery_name", grocery.groceryName);
         showProducts.setArguments(bundle);
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        // FrameLayout fl = (FrameLayout)R.layout.groceriesFragment;
         transaction.replace(R.id.groceriesFragment, showProducts ); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
