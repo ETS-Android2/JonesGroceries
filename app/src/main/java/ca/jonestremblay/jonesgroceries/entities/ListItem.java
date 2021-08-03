@@ -10,19 +10,21 @@ import androidx.room.PrimaryKey;
 
 import static androidx.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "products_lists",
+@Entity(tableName = "items_list",
         foreignKeys=@ForeignKey(
                 entity=Product.class,
                 parentColumns="product_id",
-                childColumns="_id",
+                childColumns="product_id",
                 onDelete=CASCADE),
-        indices=@Index(value="_id"))
-public class RowItem {
+        indices= {@Index(value="list_id"), @Index(value = "product_id")})
+public class ListItem {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name= "_id")
+    @ColumnInfo(name= "list_id")
     public int listID;
+
 //    @ColumnInfo(name= "product_id")
 //    public int product_id;
+
     @Embedded
     public Product product;
 
@@ -32,13 +34,13 @@ public class RowItem {
     public String notes;
     public boolean completed;
 
-    public RowItem() {
+    public ListItem() {
         isNotCompleted();
         product = new Product();
     }
 
     @Ignore
-    public RowItem(Product product, int quantity, String measureUnit, String notes) {
+    public ListItem(Product product, int quantity, String measureUnit, String notes) {
         this.product = product;
         this.quantity = quantity;
         this.measureUnit = measureUnit;

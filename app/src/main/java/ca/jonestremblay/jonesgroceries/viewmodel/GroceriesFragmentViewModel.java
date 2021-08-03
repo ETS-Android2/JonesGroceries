@@ -1,19 +1,21 @@
 package ca.jonestremblay.jonesgroceries.viewmodel;
 
 import android.app.Application;
+import android.database.sqlite.SQLiteConstraintException;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
+import ca.jonestremblay.jonesgroceries.dao.GroceriesListDAO;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
-import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.Grocery;
 
 
-public class GroceriesFragmentViewModel extends AndroidViewModel {
+public class GroceriesFragmentViewModel extends AndroidViewModel  implements GroceriesListDAO {
     private static final String TAG = "GroceriesViewModel";
     private MutableLiveData<List<Grocery>> listOfGroceries;
     AppDatabase appDatabase;
@@ -33,7 +35,7 @@ public class GroceriesFragmentViewModel extends AndroidViewModel {
     }
 
     /** Met à jour la liste de categories (mutableLiveData) selon le resultat retourné par la BD. */
-    public void getAllGroceriesList(){
+    public void refreshGroceriesList(){
         Log.d(TAG, "getAllCategoryList: GETTING THE LIST OUT OF THE DATABASE");
         List<Grocery> groceryList = appDatabase.GroceriesListDAO().getAllGroceries();
         if (groceryList.size() > 0){
@@ -45,21 +47,47 @@ public class GroceriesFragmentViewModel extends AndroidViewModel {
         }
     }
 
-    public void insertGrocery(String name){
-        Grocery grocery = new Grocery();
-        grocery.groceryName = name;
-        /** TODO : set list id of the new grocery */
-        appDatabase.GroceriesListDAO().insertGrocery(grocery);
-        getAllGroceriesList();
+    @Override
+    public List<Grocery> getAllGroceries() {
+        return null;
     }
 
-    public void updateGrocery(Grocery grocery){
-        appDatabase.GroceriesListDAO().updateGrocery(grocery);
-        getAllGroceriesList();
+
+    @Override
+    public long insertGrocery(Grocery grocery){
+        // grocery.listId = 1;
+        int isInserted = 0;
+        /** TODO : set list id of the new grocery */
+        try {
+            appDatabase.GroceriesListDAO().insertGrocery(grocery);
+            isInserted = 1;
+        } catch (SQLiteConstraintException ex) {
+            Toast errMsg = Toast.makeText(getApplication().getApplicationContext(),
+                    "You already have a list with this name", Toast.LENGTH_LONG);
+            errMsg.show();
+        }
+        refreshGroceriesList();
+        return  isInserted;
+    }
+
+
+    public int updateGrocery(Grocery grocery){
+        int isUpdated = 0;
+        try {
+                appDatabase.GroceriesListDAO().updateGrocery(grocery);
+            isUpdated = 1;
+        } catch (SQLiteConstraintException ex) {
+            Toast errMsg = Toast.makeText(getApplication().getApplicationContext(),
+                    "You already have a list with this name", Toast.LENGTH_LONG);
+            errMsg.show();
+            isUpdated = 0;
+        }
+        refreshGroceriesList();
+        return isUpdated;
     }
 
     public void deleteGrocery(Grocery grocery){
         appDatabase.GroceriesListDAO().deleteGrocery(grocery);
-        getAllGroceriesList();
+        refreshGroceriesList();
     }
 }

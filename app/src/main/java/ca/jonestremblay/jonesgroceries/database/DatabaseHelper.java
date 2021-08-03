@@ -12,7 +12,7 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    static final int DATABASE_VERSION = 1;
+    static final int DATABASE_VERSION = 4;
     static final String DATABASE_NAME = "groceriesCatalog.db";
     static final String DROP_STATEMENT = "DROP TABLE IF EXISTS ";
 
@@ -28,8 +28,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     final String PRODUCTS_ID = "_id";
     final String COL_PRODUCT_NAME = "product_name";
     final String COL_PRODUCT_CATEGORY = "product_category";
+    final String UNIQUE_PRODUCT_NAME = "unique_product_name";
 
-    final String TABLE_PRODUCTS_LISTS = "products_lists";
+    final String TABLE_ITEMS_LIST = "items_list";
     final String COL_LIST_ID = "list_id";
     final String COL_PRODUCT_ID = "product_id";
     final String COL_QUANTITY = "quantity";
@@ -42,12 +43,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     final String COL_GROCERY_NAME = "grocery_name";
     final String COL_ICON_ID = "icon_id";
     final String COL_COMPLETED_GROCERY = "completed";
+    final String UNIQUE_GROCERY_NAME = "unique_grocery_name";
 
     final String TABLE_RECIPES = "recipes";
     final String COL_RECIPE_ID = "list_id";
     final String COL_RECIPE_NAME = "recipe_name";
     // final String COL_ICON_ID = "icon_id";
     final String COL_COMPLETED_RECIPE = "completed";
+    final String UNIQUE_RECIPE_NAME = "unique_recipe_name";
+
     /** end of table constants */
 
     /** SQL entries for creating tables */
@@ -57,19 +61,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + COL_CATEGORIES_ICON_ID + " INTEGER"
                     + ");";
 
-    final String SQL_CREATE_ARTICLES =
+    final String SQL_CREATE_PRODUCTS =
             "CREATE TABLE IF NOT EXISTS " + TABLE_PRODUCTS + "("
-                    + PRODUCTS_ID + "INTEGER PRIMARY KEY,"
-                    + COL_PRODUCT_NAME + " TEXT,"
+                    + PRODUCTS_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COL_PRODUCT_NAME + " TEXT NOT NULL,"
                     + COL_PRODUCT_CATEGORY + " TEXT,"
                     + "CONSTRAINT fk_" + COL_PRODUCT_CATEGORY
                     + " FOREIGN KEY (" + COL_PRODUCT_CATEGORY + ")"
-                    + " REFERENCES " + TABLE_CATEGORIES + "("+ COL_PRODUCT_CATEGORY + ")"
+                    + " REFERENCES " + TABLE_CATEGORIES + "("+ COL_PRODUCT_CATEGORY + "),"
+                    + "CONSTRAINT " + UNIQUE_PRODUCT_NAME + "UNIQUE (" + COL_PRODUCT_NAME + ")"
                     + ");";
 
     final String SQL_CREATE_PRODUCTS_LIST =
-            "CREATE TABLE IF NOT EXISTS " + TABLE_PRODUCTS_LISTS + "("
-                    + COL_LIST_ID + "INTEGER PRIMARY KEY,"
+            "CREATE TABLE IF NOT EXISTS " + TABLE_ITEMS_LIST + "("
+                    + COL_LIST_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COL_PRODUCT_ID + " INTEGER NOT NULL,"
                     + COL_QUANTITY + " INTEGER,"
                     + COL_MEASURE_UNIT + " TEXT,"
@@ -82,24 +87,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     final String SQL_CREATE_GROCERIES =
             "CREATE TABLE IF NOT EXISTS " + TABLE_GROCERIES + "("
-                    + COL_GROCERY_ID  + " INTEGER PRIMARY KEY,"
-                    + COL_GROCERY_NAME + " TEXT UNIQUE NOT NULL,"
+                    + COL_GROCERY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COL_GROCERY_NAME + " TEXT NOT NULL,"
                     + COL_ICON_ID + " INT,"
                     + COL_COMPLETED_GROCERY + " BOOLEAN,"
                     + "CONSTRAINT fk_" + COL_GROCERY_ID
                     + " FOREIGN KEY (" + COL_GROCERY_ID + ")"
-                    + " REFERENCES " + TABLE_PRODUCTS_LISTS + "("+ COL_LIST_ID + ")"
+                    + " REFERENCES " + TABLE_ITEMS_LIST + "("+ COL_LIST_ID + "),"
+                    + "CONSTRAINT " + UNIQUE_GROCERY_NAME + "UNIQUE (" + COL_GROCERY_NAME + ")"
                     + ");";
 
     final String SQL_CREATE_RECIPES =
             "CREATE TABLE IF NOT EXISTS " + TABLE_RECIPES + "("
-                    + COL_RECIPE_ID  + " INTEGER PRIMARY KEY,"
-                    + COL_RECIPE_NAME + " TEXT UNIQUE NOT NULL,"
+                    + COL_RECIPE_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COL_RECIPE_NAME + " TEXT NOT NULL,"
                     + COL_ICON_ID + " INT,"
                     + COL_COMPLETED_RECIPE + " BOOLEAN,"
                     + "CONSTRAINT fk_" + COL_RECIPE_ID
                     + " FOREIGN KEY (" + COL_RECIPE_ID + ")"
-                    + " REFERENCES " + TABLE_PRODUCTS_LISTS + "("+ COL_LIST_ID + ")"
+                    + " REFERENCES " + TABLE_ITEMS_LIST + "("+ COL_LIST_ID + "),"
+                    + "CONSTRAINT " + UNIQUE_RECIPE_NAME + "UNIQUE (" + COL_RECIPE_NAME + ")"
                     + ");";
     /** end of SQL entries */
 
@@ -134,13 +141,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQL_CREATE_TABLE_ENTRIES.add(SQL_CREATE_CATEGORIES);
         SQL_DELETE_TABLE_ENTRIES.add(DROP_STATEMENT + TABLE_CATEGORIES);
 
-        /** articles Table */
-        SQL_CREATE_TABLE_ENTRIES.add(SQL_CREATE_ARTICLES);
+        /** products Table */
+        SQL_CREATE_TABLE_ENTRIES.add(SQL_CREATE_PRODUCTS);
         SQL_DELETE_TABLE_ENTRIES.add(DROP_STATEMENT + TABLE_PRODUCTS);
 
         /** products_lists Table */
         SQL_CREATE_TABLE_ENTRIES.add(SQL_CREATE_PRODUCTS_LIST);
-        SQL_DELETE_TABLE_ENTRIES.add(DROP_STATEMENT + TABLE_PRODUCTS_LISTS);
+        SQL_DELETE_TABLE_ENTRIES.add(DROP_STATEMENT + TABLE_ITEMS_LIST);
 
         /** groceries Table */
         SQL_CREATE_TABLE_ENTRIES.add(SQL_CREATE_GROCERIES);
@@ -178,5 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    //public boolean initializeProductsTable
 
 }

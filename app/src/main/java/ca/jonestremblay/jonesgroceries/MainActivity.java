@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,14 +27,15 @@ import ca.jonestremblay.jonesgroceries.fragments.SettingsFragment;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-
-
+// TODO : good read https://stuff.mit.edu/afs/sipb/project/android/docs/training/basics/fragments/fragment-ui.html
+// for dialogs : dialogsFragment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setWidgets();
         setListeners();
+        // Toast.makeText(this, obtainStyledAttributes(), Toast.LENGTH_SHORT).show();
     }
 
     private void setWidgets() {
@@ -78,4 +80,16 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
     };
+
+    @Override
+    public void onBackPressed() {
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+
+    }
 }

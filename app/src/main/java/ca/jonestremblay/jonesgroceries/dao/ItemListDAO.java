@@ -8,22 +8,21 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.entities.RowItem;
+import ca.jonestremblay.jonesgroceries.entities.ListItem;
 
 @Dao
 public interface ItemListDAO {
 
-    @Query("SELECT * FROM products_lists WHERE _id = :list_id")
-    List<RowItem> getAllItems(int list_id);
+    @Query("SELECT * FROM items_list WHERE list_id = :list_id")
+    List<ListItem> getAllItems(int list_id);
 
     @Insert
-    void insertItem(RowItem... rowItems);
+    void insertItem(ListItem listItem);
 
     @Update
-    void updateItem(RowItem rowItemLists);
+    void updateItem(ListItem listItemLists);
 
     @Delete
-    void deleteItem(RowItem rowItemLists);
+    void deleteItem(ListItem listItemLists);
 
 }

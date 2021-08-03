@@ -18,10 +18,10 @@ public interface GroceriesListDAO {
     List<Grocery> getAllGroceries();
 
     @Insert
-    void insertGrocery(Grocery...grocery);
+    long insertGrocery(Grocery grocery);
 
     @Update
-    void updateGrocery(Grocery grocery);
+    int updateGrocery(Grocery grocery);
 
     @Delete
     void deleteGrocery(Grocery grocery);

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -16,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
+import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.Grocery;
 import ca.jonestremblay.jonesgroceries.entities.Product;
@@ -27,7 +29,9 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
  * The process of associating views to their data is called binding.
  */
 public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdapter.ViewHolder> {
-    private static final String TAG = "GroceriesListAdapter";
+    private static final String TAG = "ProductsViewModel";
+    private MutableLiveData<List<Grocery>> listOfGroceries;
+    AppDatabase appDatabase;
     private Context context;
     private List<Grocery> groceriesList;
     private HandleGroceryClick clickListener;
@@ -55,7 +59,7 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
     @NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder: JE SUIS EN TRAIN DE CRÉER LE VIEW HOLDER, SANS DATA");
+        Log.v(TAG, "onCreateViewHolder: JE SUIS EN TRAIN DE CRÉER LE VIEW HOLDER, SANS DATA");
         View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_row, parent, false);
         return new ViewHolder(view);
     }
@@ -107,12 +111,9 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
      */
     @Override
     public int getItemCount() {
-        Log.d(TAG, "getItemCount: JE DIS COMBIEN D'ELEMENT IL Y A DANS LA LISTE");
         if (groceriesList == null ||groceriesList.size() == 0){
-            Log.d(TAG, "getItemCount: IL Y EN A : null" );
             return 0;
         } else {
-            Log.d(TAG, "getItemCount: IL Y EN A : " + groceriesList.size());
             return groceriesList.size();
         }
     }

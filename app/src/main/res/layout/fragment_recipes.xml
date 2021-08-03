@@ -18,13 +18,16 @@
             android:layout_marginTop="10dp"/>
 
         <ImageView
-                android:id="@+id/imageProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="15dp"
-                app:srcCompat="@drawable/ic_avocado" />
+            android:id="@+id/imageProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="204dp"
+            android:layout_marginRight="204dp"
+            android:layout_marginBottom="400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_avocado" />
 
         <TextView
             android:id="@+id/noProductLabel"

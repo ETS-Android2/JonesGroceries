@@ -1,23 +1,30 @@
 package ca.jonestremblay.jonesgroceries.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity(tableName = "groceries")
+@Entity(tableName = "groceries", indices = {@Index(value = "grocery_name", unique = true)})
 public class Grocery {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "list_id")
     public int listId;
+
+    @NonNull
     @ColumnInfo(name = "grocery_name")
     public String groceryName;
+
     @ColumnInfo(name = "icon_id")
     public int iconId;
     @Ignore
-    public ArrayList<RowItem> items;
+    public ArrayList<ListItem> items;
+
+    @ColumnInfo(defaultValue = "0")
     public boolean completed;
 
     @Ignore
@@ -63,11 +70,11 @@ public class Grocery {
         this.iconId = iconId;
     }
 
-    public ArrayList<RowItem> getItems() {
+    public ArrayList<ListItem> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<RowItem> items) {
+    public void setItems(ArrayList<ListItem> items) {
         this.items = items;
     }
 }

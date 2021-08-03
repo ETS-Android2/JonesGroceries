@@ -1,30 +1,38 @@
 package ca.jonestremblay.jonesgroceries.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity(tableName = "recipes")
+@Entity(tableName = "recipes", indices = {@Index(value = "recipe_name", unique = true)})
 public class Recipe {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "list_id")
     public int listId;
+
+    @NonNull
     @ColumnInfo(name = "recipe_name")
     public String recipeName;
+
     @ColumnInfo(name = "icon_id")
     public int iconId;
+
     @Ignore
-    public ArrayList<RowItem> items;
+    public ArrayList<ListItem> items;
+
+    @ColumnInfo(defaultValue = "0")
     public boolean completed;
 
     public Recipe(){
         isNotCompleted();
     }
 
-    public Recipe(int listId, String recipeName, int iconId, ArrayList<RowItem> items) {
+    public Recipe(int listId, String recipeName, int iconId, ArrayList<ListItem> items) {
         this.listId = listId;
         this.recipeName = recipeName;
         this.iconId = iconId;
@@ -63,11 +71,11 @@ public class Recipe {
         this.iconId = iconId;
     }
 
-    public ArrayList<RowItem> getItems() {
+    public ArrayList<ListItem> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<RowItem> items) {
+    public void setItems(ArrayList<ListItem> items) {
         this.items = items;
     }
 }

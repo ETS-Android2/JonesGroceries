@@ -1,1331 +1,1273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="alcoholicDrinks">
-        <item>Beer</item>
-        <item>Red wine</item>
-        <item>White wine</item>
-        <item>ale beer</item>
-        <item>beer</item>
-        <item>brandy</item>
-        <item>champagne</item>
-        <item>cider</item>
-        <item>cognac</item>
-        <item>dry wine</item>
-        <item>filters</item>
-        <item>flavored beer</item>
-        <item>flavored vodka</item>
-        <item>gin</item>
-        <item>honey beer</item>
-        <item>large beer</item>
-        <item>liqueur</item>
-        <item>martini</item>
-        <item>porter beer</item>
-        <item>red wine</item>
-        <item>rolling papers</item>
-        <item>root beer</item>
-        <item>rose wine</item>
-        <item>rum</item>
-        <item>semi-dry wine</item>
-        <item>semi-sweet wine</item>
-        <item>sparkling wine</item>
-        <item>stout beer</item>
-        <item>sweet wine</item>
-        <item>tequila</item>
-        <item>vodka</item>
-        <item>wheat beer</item>
-        <item>whiskey</item>
-        <item>white wine</item>
-    </string-array>
-    <string-array name="babyProducts">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>baby dinner</item>
-        <item>baby food</item>
-        <item>baby formula</item>
-        <item>baby healing ointment</item>
-        <item>baby milk</item>
-        <item>baby oil</item>
-        <item>baby powder</item>
-        <item>baby shampoo</item>
-        <item>baby wipes</item>
-        <item>bed mats</item>
-        <item>diaper rash cream</item>
-        <item>diapers</item>
-        <item>feeding bootle</item>
-        <item>infant formula</item>
-        <item>nurser</item>
-        <item>pacifier</item>
-    </string-array>
-    <string-array name="bakery">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>apple pie</item>
-        <item>bagels</item>
-        <item>baguette</item>
-        <item>birthday cake</item>
-        <item>bread</item>
-        <item>breadcrumbs</item>
-        <item>brown bread</item>
-        <item>brownie</item>
-        <item>bruschetta</item>
-        <item>buns</item>
-        <item>cheesecake</item>
-        <item>chocolate cake</item>
-        <item>ciabatta</item>
-        <item>coffee cake</item>
-        <item>corn tortillas</item>
-        <item>croissants</item>
-        <item>croutons</item>
-        <item>cupcakes</item>
-        <item>donut</item>
-        <item>dough</item>
-        <item>english muffins</item>
-        <item>flour tortillas</item>
-        <item>french bread</item>
-        <item>garlic bread</item>
-        <item>gingerbread</item>
-        <item>graham bread</item>
-        <item>grain bread</item>
-        <item>hamburger buns</item>
-        <item>hotdog buns</item>
-        <item>matzo</item>
-        <item>muffins</item>
-        <item>pie</item>
-        <item>pita bread</item>
-        <item>puff pastry</item>
-        <item>rolls</item>
-        <item>rye bread</item>
-        <item>sandwich bread</item>
-        <item>seed bread</item>
-        <item>sweet rolls</item>
-        <item>taco shells</item>
-        <item>tiramisu cake</item>
-        <item>toast bread</item>
-        <item>tortilla wraps</item>
-        <item>wheat bread</item>
-        <item>white bread</item>
-    </string-array>
-    <string-array name="beverages">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>apple juice</item>
-        <item>bottled water</item>
-        <item>coconut water</item>
-        <item>cola</item>
-        <item>cranberry juice</item>
-        <item>drinks</item>
-        <item>eggnog</item>
-        <item>energy drink</item>
-        <item>fruit juice</item>
-        <item>ginger ale</item>
-        <item>grape juice</item>
-        <item>half &amp; half</item>
-        <item>iced coffee</item>
-        <item>iced tea</item>
-        <item>isotonic drink</item>
-        <item>juice</item>
-        <item>lemonade</item>
-        <item>lemon juice</item>
-        <item>lime juice</item>
-        <item>mineral water</item>
-        <item>orange juice</item>
-        <item>pineapple juice</item>
-        <item>prune juice</item>
-        <item>raspberry syrup</item>
-        <item>seltzer</item>
-        <item>soda</item>
-        <item>soda water</item>
-        <item>soft drink</item>
-        <item>sparkling water</item>
-        <item>sports drink</item>
-        <item>still mineral water</item>
-        <item>tomato juice</item>
-        <item>tonic water</item>
-        <item>vitamin water</item>
-    </string-array>
-    <string-array name="cannedFoods">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>apple cider vinegar</item>
-        <item>balsamic vinegar</item>
-        <item>beef broth</item>
-        <item>beef stew</item>
-        <item>canned beans</item>
-        <item>canned chicken</item>
-        <item>canned peas</item>
-        <item>caramel sauce</item>
-        <item>chicken broth</item>
-        <item>chicken chunks</item>
-        <item>chocolate sauce</item>
-        <item>chocolate syrup</item>
-        <item>cream of chicken soup</item>
-        <item>cream of mushroom soup</item>
-        <item>dijon mustard</item>
-        <item>dried mushrooms</item>
-        <item>honey</item>
-        <item>honey mustard</item>
-        <item>ice cream topping</item>
-        <item>ketchup</item>
-        <item>lentil soup</item>
-        <item>maple syrup</item>
-        <item>mayonnaise</item>
-        <item>mushroom soup</item>
-        <item>mustard</item>
-        <item>nutella</item>
-        <item>peanut butter</item>
-        <item>pea soup</item>
-        <item>syrup</item>
-        <item>tomato soup</item>
-        <item>vegetable broth</item>
-        <item>vegetable soup</item>
-        <item>vinaigrette</item>
-        <item>vinegar</item>
+    <string-array name="categories">
+        <item>@string/alcoholic_drinks</item>
+        <item>@string/baby_products</item>
+        <item>@string/bakery</item>
+        <item>@string/beverages</item>
+        <item>@string/canned_foods</item>
+        <item>@string/car_care_products</item>
+        <item>@string/clothes</item>
+        <item>@string/hot_beverages</item>
+        <item>@string/cosmetics</item>
+        <item>@string/dairy_products</item>
+        <item>@string/diet_foods</item>
+        <item>@string/fish_seafood</item>
+        <item>@string/frozen</item>
+        <item>@string/grains_pasta</item>
+        <item>@string/home_kitchen</item>
+        <item>@string/home_baking</item>
+        <item>@string/house_cleaning_products</item>
+        <item>@string/meat_poultry_sausages</item>
+        <item>@string/newspapers</item>
+        <item>@string/office_supplies</item>
+        <item>@string/oils</item>
+        <item>@string/other</item>
+        <item>@string/personal_hygiene</item>
+        <item>@string/pet_supplies</item>
+        <item>@string/pharmacy</item>
+        <item>@string/preserves</item>
+        <item>@string/produce</item>
+        <item>@string/ready_meals</item>
+        <item>@string/snacks</item>
+        <item>@string/spices_sauces_condiment</item>
     </string-array>
 
-    <string-array name="carCareProducts">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>car shampoo</item>
-        <item>car wax</item>
-        <item>distilled water</item>
-        <item>engine oil</item>
-        <item>motor oil</item>
-        <item>screen wash</item>
+    <string-array name="alcoholic_drinks">
+        <item>@string/ale_beer</item>
+        <item>@string/beer</item>
+        <item>@string/brandy</item>
+        <item>@string/champagne</item>
+        <item>@string/cider</item>
+        <item>@string/cognac</item>
+        <item>string/dry_wine</item>
+        <item>@string/filters</item>
+        <item>@string/flavored_beer</item>
+        <item>@string/flavored_vodka</item>
+        <item>@string/gin</item>
+        <item>@string/honey_beer</item>
+        <item>@string/large_beer</item>
+        <item>@string/liqueur</item>
+        <item>@string/martini</item>
+        <item>@string/porter_beer</item>
+        <item>@string/red_wine</item>
+        <item>@string/rolling_papers</item>
+        <item>@string/root_beer</item>
+        <item>@string/rose_wine</item>
+        <item>@string/rum</item>
+        <item>@string/semi_dry_wine</item>
+        <item>@string/semi_sweet_wine</item>
+        <item>@string/sparkling_wine</item>
+        <item>@string/stout_beer</item>
+        <item>@string/sweet_wine</item>
+        <item>@string/tequila</item>
+        <item>@string/vodka</item>
+        <item>@string/wheat_beer</item>
+        <item>@string/whiskey</item>
+        <item>@string/white_wine</item>
+    </string-array>
+    <string-array name="baby_products">
+        <item>@string/baby_dinner</item>
+        <item>@string/baby_food</item>
+        <item>@string/baby_formula</item>
+        <item>@string/baby_healing_ointment</item>
+        <item>@string/baby_milk</item>
+        <item>@string/baby_oil</item>
+        <item>@string/baby_powder</item>
+        <item>@string/baby_shampoo</item>
+        <item>@string/baby_wipes</item>
+        <item>@string/bed_mats</item>
+        <item>@string/diaper_rash_cream</item>
+        <item>@string/diapers</item>
+        <item>@string/feeding_bootle</item>
+        <item>@string/infant_formula</item>
+        <item>@string/nurser</item>
+        <item>@string/pacifier</item>
+    </string-array>
+    <string-array name="bakery">
+        <item>@string/apple_pie</item>
+        <item>@string/bagels</item>
+        <item>@string/baguette</item>
+        <item>@string/birthday_cake</item>
+        <item>@string/bread</item>
+        <item>@string/breadcrumbs</item>
+        <item>@string/brown_bread</item>
+        <item>@string/brownie</item>
+        <item>@string/bruschetta</item>
+        <item>@string/buns</item>
+        <item>@string/cheesecake</item>
+        <item>@string/chocolate_cake</item>
+        <item>@string/ciabatta</item>
+        <item>@string/coffee_cake</item>
+        <item>@string/corn_tortillas</item>
+        <item>@string/croissants</item>
+        <item>@string/croutons</item>
+        <item>@string/cupcakes</item>
+        <item>@string/donut</item>
+        <item>@string/dough</item>
+        <item>@string/english_muffins</item>
+        <item>@string/flour_tortillas</item>
+        <item>@string/french_bread</item>
+        <item>@string/garlic_bread</item>
+        <item>@string/gingerbread</item>
+        <item>@string/graham_bread</item>
+        <item>@string/grain_bread</item>
+        <item>@string/hamburger_buns</item>
+        <item>@string/hotdog_buns</item>
+        <item>@string/matzo</item>
+        <item>@string/muffins</item>
+        <item>@string/pie</item>
+        <item>@string/pita_bread</item>
+        <item>@string/puff_pastry</item>
+        <item>@string/rolls</item>
+        <item>@string/rye_bread</item>
+        <item>@string/sandwich_bread</item>
+        <item>@string/seed_bread</item>
+        <item>@string/sweet_rolls</item>
+        <item>@string/taco_shells</item>
+        <item>@string/tiramisu_cake</item>
+        <item>@string/toast_bread</item>
+        <item>@string/tortilla_wraps</item>
+        <item>@string/wheat_bread</item>
+        <item>@string/white_bread</item>
+    </string-array>
+    <string-array name="beverages">
+        <item>@string/apple_juice</item>
+        <item>@string/bottled_water</item>
+        <item>@string/coconut_water</item>
+        <item>@string/cola</item>
+        <item>@string/cranberry_juice</item>
+        <item>@string/drinks</item>
+        <item>@string/eggnog</item>
+        <item>@string/energy_drink</item>
+        <item>@string/fruit_juice</item>
+        <item>@string/ginger_ale</item>
+        <item>@string/grape_juice</item>
+        <item>@string/half_and_half</item>
+        <item>@string/iced_coffee</item>
+        <item>@string/iced_tea</item>
+        <item>@string/isotonic_drink</item>
+        <item>@string/juice</item>
+        <item>@string/lemonade</item>
+        <item>@string/lemon_juice</item>
+        <item>@string/lime_juice</item>
+        <item>@string/mineral_water</item>
+        <item>@string/orange_juice</item>
+        <item>@string/pineapple_juice</item>
+        <item>@string/prune_juice</item>
+        <item>@string/raspberry_syrup</item>
+        <item>@string/seltzer</item>
+        <item>@string/soda</item>
+        <item>@string/soda_water</item>
+        <item>@string/soft_drink</item>
+        <item>@string/sparkling_water</item>
+        <item>@string/sports_drink</item>
+        <item>@string/still_mineral_water</item>
+        <item>@string/tomato_juice</item>
+        <item>@string/tonic_water</item>
+        <item>@string/vitamin_water</item>
+    </string-array>
+    <string-array name="canned_foods">
+        <item>@string/apple_cider_vinegar</item>
+        <item>@string/balsamic_vinegar</item>
+        <item>@string/beef_broth</item>
+        <item>@string/beef_stew</item>
+        <item>@string/canned_beans</item>
+        <item>@string/canned_chicken</item>
+        <item>@string/canned_peas</item>
+        <item>@string/caramel_sauce</item>
+        <item>@string/chicken_broth</item>
+        <item>@string/chicken_chunks</item>
+        <item>@string/chocolate_sauce</item>
+        <item>@string/chocolate_syrup</item>
+        <item>@string/cream_of_chicken_soup</item>
+        <item>@string/cream_of_mushroom_soup</item>
+        <item>@string/dijon_mustard</item>
+        <item>@string/dried_mushrooms</item>
+        <item>@string/honey</item>
+        <item>@string/honey_mustard</item>
+        <item>@string/ice_cream_topping</item>
+        <item>@string/ketchup</item>
+        <item>@string/lentil_soup</item>
+        <item>@string/maple_syrup</item>
+        <item>@string/mayonnaise</item>
+        <item>@string/mushroom_soup</item>
+        <item>@string/mustard</item>
+        <item>@string/nutella</item>
+        <item>@string/peanut_butter</item>
+        <item>@string/pea_soup</item>
+        <item>@string/syrup</item>
+        <item>@string/tomato_soup</item>
+        <item>@string/vegetable_broth</item>
+        <item>@string/vegetable_soup</item>
+        <item>@string/vinaigrette</item>
+        <item>@string/vinegar</item>
+    </string-array>
+
+    <string-array name="car_care_products">
+        <item>@string/car_shampoo</item>
+        <item>@string/car_wax</item>
+        <item>@string/distilled_water</item>
+        <item>@string/engine_oil</item>
+        <item>@string/motor_oil</item>
+        <item>@string/screen_wash</item>
     </string-array>
     <string-array name="clothes">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>belt</item>
-        <item>blouse</item>
-        <item>bodysuit</item>
-        <item>bra</item>
-        <item>cap</item>
-        <item>cloths</item>
-        <item>coat</item>
-        <item>flip//flops</item>
-        <item>gloves</item>
-        <item>jacket</item>
-        <item>jeans</item>
-        <item>leggings</item>
-        <item>panties</item>
-        <item>pantyhose</item>
-        <item>rainboots</item>
-        <item>scarf</item>
-        <item>shirt</item>
-        <item>shoes</item>
-        <item>slipper</item>
-        <item>socks</item>
-        <item>sunglasses</item>
-        <item>sweater</item>
-        <item>swimsuit</item>
-        <item>t-shirt</item>
-        <item>underpants</item>
+        <item>@string/belt</item>
+        <item>@string/blouse</item>
+        <item>@string/bodysuit</item>
+        <item>@string/bra</item>
+        <item>@string/cap</item>
+        <item>@string/cloths</item>
+        <item>@string/coat</item>
+        <item>@string/flip_flops</item>
+        <item>@string/gloves</item>
+        <item>@string/jacket</item>
+        <item>@string/jeans</item>
+        <item>@string/leggings</item>
+        <item>@string/panties</item>
+        <item>@string/pantyhose</item>
+        <item>@string/rainboots</item>
+        <item>@string/scarf</item>
+        <item>@string/shirt</item>
+        <item>@string/shoes</item>
+        <item>@string/slipper</item>
+        <item>@string/socks</item>
+        <item>@string/sunglasses</item>
+        <item>@string/sweater</item>
+        <item>@string/swimsuit</item>
+        <item>@string/t_shirt</item>
+        <item>@string/underpants</item>
     </string-array>
-    <string-array name="hotBeverages">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>black tea</item>
-        <item>cappucino</item>
-        <item>chamomile tea</item>
-        <item>cocoa</item>
-        <item>coffee</item>
-        <item>earl grey</item>
-        <item>fruit tea</item>
-        <item>green tea</item>
-        <item>ground coffee</item>
-        <item>herbal tea</item>
-        <item>hot chocolate</item>
-        <item>instant coffee</item>
-        <item>melissa tea</item>
-        <item>mint tea</item>
-        <item>red tea </item>
-        <item>tea</item>
-        <item>tea bags</item>
+    <string-array name="hot_beverages">
+        <item>@string/black_tea</item>
+        <item>@string/cappucino</item>
+        <item>@string/chamomile_tea</item>
+        <item>@string/cocoa</item>
+        <item>@string/coffee</item>
+        <item>@string/earl_grey</item>
+        <item>@string/fruit_tea</item>
+        <item>@string/green_tea</item>
+        <item>@string/ground_coffee</item>
+        <item>@string/herbal_tea</item>
+        <item>@string/hot_chocolate</item>
+        <item>@string/instant_coffee</item>
+        <item>@string/melissa_tea</item>
+        <item>@string/mint_tea</item>
+        <item>@string/red_tea</item>
+        <item>@string/tea</item>
+        <item>@string/tea_bags</item>
     </string-array>
     <string-array name="cosmetics">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>after sun lotion</item>
-        <item>anti insect spray</item>
-        <item>antiperspirant</item>
-        <item>anti//wrinkle cream</item>
-        <item>bar soap</item>
-        <item>bath gel</item>
-        <item>bath salt</item>
-        <item>body lotion</item>
-        <item>body spray</item>
-        <item>body wash</item>
-        <item>cleanser</item>
-        <item>concealer</item>
-        <item>conditioner</item>
-        <item>deodorant</item>
-        <item>dry shampoo</item>
-        <item>eyeliner</item>
-        <item>face cream</item>
-        <item>face wash</item>
-        <item>face wipes</item>
-        <item>facial cleanser</item>
-        <item>feminine wash</item>
-        <item>floss</item>
-        <item>foot cream</item>
-        <item>foundation</item>
-        <item>hair brush</item>
-        <item>hair dye</item>
-        <item>hair gel</item>
-        <item>hair spray</item>
-        <item>hand cream</item>
-        <item>hand soap</item>
-        <item>handwash</item>
-        <item>lip balm</item>
-        <item>lipstick</item>
-        <item>liquid soap</item>
-        <item>makeup</item>
-        <item>make//up remover</item>
-        <item>mascara</item>
-        <item>micellar water</item>
-        <item>mouth wash</item>
-        <item>nail polish</item>
-        <item>nail polish remover</item>
-        <item>peeling</item>
-        <item>perfume</item>
-        <item>scrub</item>
-        <item>shampoo</item>
-        <item>shave cream</item>
-        <item>shaving cream</item>
-        <item>shaving foam</item>
-        <item>shaving gel</item>
-        <item>soap</item>
-        <item>sunscren</item>
-        <item>suntan spray</item>
+        <item>@string/after_sun_lotion</item>
+        <item>@string/anti_insect_spray</item>
+        <item>@string/antiperspirant</item>
+        <item>@string/anti_wrinkle_cream</item>
+        <item>@string/bar_soap</item>
+        <item>@string/bath_gel</item>
+        <item>@string/bath_salt</item>
+        <item>@string/body_lotion</item>
+        <item>@string/body_spray</item>
+        <item>@string/body_wash</item>
+        <item>@string/cleanser</item>
+        <item>@string/concealer</item>
+        <item>@string/conditioner</item>
+        <item>@string/deodorant</item>
+        <item>@string/dry_shampoo</item>
+        <item>@string/eyeliner</item>
+        <item>@string/facevcream</item>
+        <item>@string/face_wash</item>
+        <item>@string/face_wipes</item>
+        <item>@string/facial_cleanser</item>
+        <item>@string/feminine_wash</item>
+        <item>@string/floss</item>
+        <item>@string/foot_cream</item>
+        <item>@string/foundation</item>
+        <item>@string/hair_brush</item>
+        <item>@string/hair_dye</item>
+        <item>@string/hair_gel</item>
+        <item>@string/hair_spray</item>
+        <item>@string/hand_cream</item>
+        <item>@string/hand_soap</item>
+        <item>@string/handwash</item>
+        <item>@string/lip_balm</item>
+        <item>@string/lipstick</item>
+        <item>@string/liquid_soap</item>
+        <item>@string/makeup</item>
+        <item>@string/make_up_remover</item>
+        <item>@string/mascara</item>
+        <item>@string/micellar_water</item>
+        <item>@string/mouth_wash</item>
+        <item>@string/nail_polish</item>
+        <item>@string/nail_polish_remover</item>
+        <item>@string/peeling</item>
+        <item>@string/perfume</item>
+        <item>@string/scrub</item>
+        <item>@string/shampoo</item>
+        <item>@string/shave_cream</item>
+        <item>@string/shaving_cream</item>
+        <item>@string/shaving_foam</item>
+        <item>@string/shaving_gel</item>
+        <item>@string/soap</item>
+        <item>@string/sunscren</item>
+        <item>@string/suntan_spray</item>
     </string-array>
-    <string-array name="dairyProducts">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>american cheese</item>
-        <item>blue cheese</item>
-        <item>brie cheese</item>
-        <item>butter</item>
-        <item>buttermilk</item>
-        <item>camembert cheese</item>
-        <item>cheddar</item>
-        <item>cheddar cheese</item>
-        <item>cheese</item>
-        <item>cheese spread</item>
-        <item>cheese sticks</item>
-        <item>chocolate milk</item>
-        <item>chocolate pudding</item>
-        <item>coffee creamer</item>
-        <item>condensed milk</item>
-        <item>cottage cheese</item>
-        <item>cream</item>
-        <item>cream cheese</item>
-        <item>cream cheese spread</item>
-        <item>creme fraiche</item>
-        <item>dessert</item>
-        <item>edam cheese</item>
-        <item>eggs</item>
-        <item>evaporated milk</item>
-        <item>feta cheese</item>
-        <item>fruit yogurt</item>
-        <item>garlic butter</item>
-        <item>ghee</item>
-        <item>goat cheese</item>
-        <item>goat milk</item>
-        <item>gorgonzola cheese</item>
-        <item>gouda cheese</item>
-        <item>grated cheese</item>
-        <item>greek yogurt</item>
-        <item>heavy cream</item>
-        <item>kefir</item>
-        <item>mascarpone</item>
-        <item>mexican cheese</item>
-        <item>milk</item>
-        <item>mozzarella</item>
-        <item>natural yogurt</item>
-        <item>parmesan cheese</item>
-        <item>pepper jack cheese</item>
-        <item>processed cheese</item>
-        <item>provolone cheese</item>
-        <item>pudding</item>
-        <item>rice pudding</item>
-        <item>ricotta cheese</item>
-        <item>shredded cheese</item>
-        <item>skim milk</item>
-        <item>smoothie</item>
-        <item>sour cream</item>
-        <item>swiss cheese</item>
-        <item>unsalted butter</item>
-        <item>whole milk</item>
+    <string-array name="dairy_products">
+        <item>@string/american_cheese</item>
+        <item>@string/blue_cheese</item>
+        <item>@string/brie_cheese</item>
+        <item>@string/butter</item>
+        <item>@string/buttermilk</item>
+        <item>@string/camembert_cheese</item>
+        <item>@string/cheddar</item>
+        <item>@string/cheddar_cheese</item>
+        <item>@string/cheese</item>
+        <item>@string/cheese_spread</item>
+        <item>@string/cheese_sticks</item>
+        <item>@string/chocolate_milk</item>
+        <item>@string/chocolate_pudding</item>
+        <item>@string/coffee_creamer</item>
+        <item>@string/condensed_milk</item>
+        <item>@string/cottage_cheese</item>
+        <item>@string/cream</item>
+        <item>@string/cream_cheese</item>
+        <item>@string/cream_cheese_spread</item>
+        <item>@string/creme_fraiche</item>
+        <item>@string/dessert</item>
+        <item>@string/edam_cheese</item>
+        <item>@string/eggs</item>
+        <item>@string/evaporated_milk</item>
+        <item>@string/feta_cheese</item>
+        <item>@string/fruit_yogurt</item>
+        <item>@string/garlic_butter</item>
+        <item>@string/ghee</item>
+        <item>@string/goat_cheese</item>
+        <item>@string/goat_milk</item>
+        <item>@string/gorgonzola_cheese</item>
+        <item>@string/gouda_cheese</item>
+        <item>@string/grated_cheese</item>
+        <item>@string/greek_yogurt</item>
+        <item>@string/heavy_cream</item>
+        <item>@string/kefir</item>
+        <item>@string/mascarpone</item>
+        <item>@string/mexican_cheese</item>
+        <item>@string/milk</item>
+        <item>@string/mozzarella</item>
+        <item>@string/natural_yogurt</item>
+        <item>@string/parmesan_cheese</item>
+        <item>@string/pepper_jack_cheese</item>
+        <item>@string/processed_cheese</item>
+        <item>@string/provolone_cheese</item>
+        <item>@string/pudding</item>
+        <item>@string/rice_pudding</item>
+        <item>@string/ricotta_cheese</item>
+        <item>@string/shredded_cheese</item>
+        <item>@string/skim_milk</item>
+        <item>@string/smoothie</item>
+        <item>@string/sour_cream</item>
+        <item>@string/swiss_cheese</item>
+        <item>@string/unsalted_butter</item>
+        <item>@string/whole_milk</item>
     </string-array>
-    <string-array name="dietFoods">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>almond butter</item>
-        <item>almond milk</item>
-        <item>coconut milk</item>
-        <item>lactose free milk</item>
-        <item>protein powder</item>
-        <item>soy cutlets</item>
-        <item>soy milk</item>
-        <item>stevia</item>
-        <item>tofu</item>
-        <item>vanilla milk</item>
-        <item>vegan sausage</item>
-        <item>veggie burgers</item>
+    <string-array name="diet_foods">
+        <item>@string/almond_butter</item>
+        <item>@string/almond_milk</item>
+        <item>@string/coconut_milk</item>
+        <item>@string/lactose_free_milk</item>
+        <item>@string/protein_powder</item>
+        <item>@string/soy_cutlets</item>
+        <item>@string/soy_milk</item>
+        <item>@string/stevia</item>
+        <item>@string/tofu</item>
+        <item>@string/vanilla_milk</item>
+        <item>@string/vegan_sausage</item>
+        <item>@string/veggie_burgers</item>
     </string-array>
-    <string-array name="fishSeafood">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>anchovies</item>
-        <item>anchovy paste</item>
-        <item>canned brisling</item>
-        <item>canned fish</item>
-        <item>canned herring</item>
-        <item>canned mackerel</item>
-        <item>canned sardines</item>
-        <item>canned tuna</item>
-        <item>carp</item>
-        <item>clams</item>
-        <item>cod</item>
-        <item>crab fingers</item>
-        <item>crabs</item>
-        <item>fish</item>
-        <item>fish filet</item>
-        <item>fish fingers</item>
-        <item>fish sticks</item>
-        <item>halibut</item>
-        <item>herring</item>
-        <item>herring fillets</item>
-        <item>lobster</item>
-        <item>mackerel</item>
-        <item>mussels</item>
-        <item>oysters</item>
-        <item>perch</item>
-        <item>prawns</item>
-        <item>salmon</item>
-        <item>salmon fillets</item>
-        <item>salmon steak</item>
-        <item>sardines</item>
-        <item>scallops</item>
-        <item>seafood</item>
-        <item>shrimps</item>
-        <item>smoked fish</item>
-        <item>smoked mackerel</item>
-        <item>smoked salmon</item>
-        <item>swordfish fillets</item>
-        <item>tilapia fillets</item>
-        <item>trout</item>
-        <item>tuna</item>
-        <item>tuna chunks</item>
-        <item>tuna in oil</item>
-        <item>tuna in water</item>
+    <string-array name="fish_seafood">
+        <item>@string/anchovies</item>
+        <item>@string/anchovy_paste</item>
+        <item>@string/canned_brisling</item>
+        <item>@string/canned_fish</item>
+        <item>@string/canned_herring</item>
+        <item>@string/canned_mackerel</item>
+        <item>@string/canned_sardines</item>
+        <item>@string/canned_tuna</item>
+        <item>@string/carp</item>
+        <item>@string/clams</item>
+        <item>@string/cod</item>
+        <item>@string/crab_fingers</item>
+        <item>@string/crabs</item>
+        <item>@string/fish</item>
+        <item>@string/fish_filet</item>
+        <item>@string/fish_fingers</item>
+        <item>@string/fish_sticks</item>
+        <item>@string/halibut</item>
+        <item>@string/herring</item>
+        <item>@string/herring_fillets</item>
+        <item>@string/lobster</item>
+        <item>@string/mackerel</item>
+        <item>@string/mussels</item>
+        <item>@string/oysters</item>
+        <item>@string/perch</item>
+        <item>@string/prawns</item>
+        <item>@string/salmon</item>
+        <item>@string/salmon_fillets</item>
+        <item>@string/salmon_steak</item>
+        <item>@string/sardines</item>
+        <item>@string/scallops</item>
+        <item>@string/seafood</item>
+        <item>@string/shrimps</item>
+        <item>@string/smoked_fish</item>
+        <item>@string/smoked_mackerel</item>
+        <item>@string/smoked_salmon</item>
+        <item>@string/swordfish_fillets</item>
+        <item>@string/tilapia_fillets</item>
+        <item>@string/trout</item>
+        <item>@string/tuna</item>
+        <item>@string/tuna_chunks</item>
+        <item>@string/tuna_in_oil</item>
+        <item>@string/tuna_in_water</item>
     </string-array>
     <string-array name="frozen">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>french fries</item>
-        <item>french pastry</item>
-        <item>frozen berries</item>
-        <item>frozen blueberries</item>
-        <item>frozen broccoli</item>
-        <item>frozen cauliflower</item>
-        <item>frozen chicken nuggets</item>
-        <item>frozen corn</item>
-        <item>frozen dumplings</item>
-        <item>frozen fruit</item>
-        <item>frozen mussels</item>
-        <item>frozen peas</item>
-        <item>frozen pizza</item>
-        <item>frozen seafood</item>
-        <item>frozen spinach</item>
-        <item>frozen strawberries</item>
-        <item>frozen vegetables</item>
-        <item>frozen vegetables mix</item>
-        <item>ice</item>
-        <item>ice cream</item>
-        <item>lasagne frozen</item>
-        <item>popsicles</item>
-        <item>vanilla ice cream</item>
-        <item>chocolate ice cream</item>
-        <item>napolitaine ice cream</item>
+        <item>@string/french_fries</item>
+        <item>@string/french_pastry</item>
+        <item>@string/frozen_berries</item>
+        <item>@string/frozen_blueberries</item>
+        <item>@string/frozen_broccoli</item>
+        <item>@string/frozen_cauliflower</item>
+        <item>@string/frozen_chicken_nuggets</item>
+        <item>@string/frozen_corn</item>
+        <item>@string/frozen_dumplings</item>
+        <item>@string/frozen_fruit</item>
+        <item>@string/frozen_mussels</item>
+        <item>@string/frozen_peas</item>
+        <item>@string/frozen_pizza</item>
+        <item>@string/frozen_seafood</item>
+        <item>@string/frozen_spinach</item>
+        <item>@string/frozen_strawberries</item>
+        <item>@string/frozen_vegetables</item>
+        <item>@string/frozen_vegetables_mix</item>
+        <item>@string/ice</item>
+        <item>@string/ice_cream</item>
+        <item>@string/lasagne_frozen</item>
+        <item>@string/popsicles</item>
+        <item>@string/vanilla_ice_cream</item>
+        <item>@string/chocolate_ice_cream</item>
+        <item>@string/napolitaine_ice_cream</item>
     </string-array>
-    <string-array name="grainsPasta">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>arborio rice</item>
-        <item>barley</item>
-        <item>barley flakes</item>
-        <item>basmati rice</item>
-        <item>black beans</item>
-        <item>bow tie pasta</item>
-        <item>bran</item>
-        <item>bran flakes</item>
-        <item>brown rice</item>
-        <item>brown sugar</item>
-        <item>buckwheat</item>
-        <item>cake flour</item>
-        <item>caster sugar</item>
-        <item>cereal</item>
-        <item>color pasta</item>
-        <item>corn flakes</item>
-        <item>cornflakes</item>
-        <item>corn flour</item>
-        <item>corn starch</item>
-        <item>couscous</item>
-        <item>egg noodles</item>
-        <item>elbow pasta</item>
-        <item>flaxseed</item>
-        <item>flour</item>
-        <item>granola</item>
-        <item>grits</item>
-        <item>jasmine rice</item>
-        <item>lasagne pasta</item>
-        <item>linseed</item>
-        <item>long grain rice</item>
-        <item>macaroni</item>
-        <item>millet</item>
-        <item>millet groats</item>
-        <item>muesli</item>
-        <item>oatmeal</item>
-        <item>oatmeal squares</item>
-        <item>oats</item>
-        <item>parboiled rice</item>
-        <item>pasta</item>
-        <item>penne</item>
-        <item>potato flour</item>
-        <item>potato starch</item>
-        <item>powdered sugar</item>
-        <item>quinoa</item>
-        <item>ramen noodles</item>
-        <item>rice</item>
-        <item>rice noodles</item>
-        <item>rolled oats</item>
-        <item>rotini </item>
-        <item>pasta</item>
-        <item>semolina</item>
-        <item>shell pasta</item>
-        <item>spaghetti</item>
-        <item>spiral pasta</item>
-        <item>sugar</item>
-        <item>thai rice</item>
-        <item>tortellini</item>
-        <item>wheat flour</item>
-        <item>white rice</item>
-        <item>whole grain pasta</item>
+    <string-array name="grains_pasta">
+        <item>@string/arborio_rice</item>
+        <item>@string/barley</item>
+        <item>@string/barley_flakes</item>
+        <item>@string/basmati_rice</item>
+        <item>@string/black_beans</item>
+        <item>@string/bow_tie_pasta</item>
+        <item>@string/bran</item>
+        <item>@string/bran_flakes</item>
+        <item>@string/brown_rice</item>
+        <item>@string/brown_sugar</item>
+        <item>@string/buckwheat</item>
+        <item>@string/cake_flour</item>
+        <item>@string/caster_sugar</item>
+        <item>@string/cereal</item>
+        <item>@string/color_pasta</item>
+        <item>@string/corn_flakes</item>
+        <item>@string/cornflakes</item>
+        <item>@string/corn_flour</item>
+        <item>@string/corn_starch</item>
+        <item>@string/couscous</item>
+        <item>@string/egg_noodles</item>
+        <item>@string/elbow_pasta</item>
+        <item>@string/flaxseed</item>
+        <item>@string/flour</item>
+        <item>@string/granola</item>
+        <item>@string/grits</item>
+        <item>@string/jasmine_rice</item>
+        <item>@string/lasagne_pasta</item>
+        <item>@string/linseed</item>
+        <item>@string/long_grain_rice</item>
+        <item>@string/macaroni</item>
+        <item>@string/millet</item>
+        <item>@string/millet_groats</item>
+        <item>@string/muesli</item>
+        <item>@string/oatmeal</item>
+        <item>@string/oatmeal_squares</item>
+        <item>@string/oats</item>
+        <item>@string/parboiled_rice</item>
+        <item>@string/penne</item>
+        <item>@string/potato_flour</item>
+        <item>@string/potato_starch</item>
+        <item>@string/powdered_sugar</item>
+        <item>@string/quinoa</item>
+        <item>@string/ramen_noodles</item>
+        <item>@string/rice</item>
+        <item>@string/rice_noodles</item>
+        <item>@string/rolled_oats</item>
+        <item>@string/rotini</item>
+        <item>@string/pasta</item>
+        <item>@string/semolina</item>
+        <item>@string/shell_pasta</item>
+        <item>@string/spaghetti</item>
+        <item>@string/spiral_pasta</item>
+        <item>@string/sugar</item>
+        <item>@string/thai_rice</item>
+        <item>@string/tortellini</item>
+        <item>@string/wheat_flour</item>
+        <item>@string/white_rice</item>
+        <item>@string/whole_grain_pasta</item>
     </string-array>
-    <string-array name="homeKitchen">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>air freshener</item>
-        <item>aluminium trays</item>
-        <item>aluminium foil</item>
-        <item>bags</item>
-        <item>baking paper</item>
-        <item>baking trays</item>
-        <item>bath mats</item>
-        <item>bed sheet</item>
-        <item>blanket</item>
-        <item>bottle opener</item>
-        <item>bowl</item>
-        <item>bulbs</item>
-        <item>cake pan</item>
-        <item>candles</item>
-        <item>charcoal</item>
-        <item>cheese slicer</item>
-        <item>clothes hangers</item>
-        <item>coffee filters</item>
-        <item>colander</item>
-        <item>cookie cutter</item>
-        <item>cookie bags</item>
-        <item>cutting board</item>
-        <item>disposable cutlery</item>
-        <item>firelog</item>
-        <item>foil</item>
-        <item>food containers</item>
-        <item>food wraps</item>
-        <item>freezer bags</item>
-        <item>frying pan</item>
-        <item>garbage bags</item>
-        <item>grater</item>
-        <item>grease proof paper</item>
-        <item>hangers</item>
-        <item>ice cube molds</item>
-        <item>ice cube trays</item>
-        <item>kettle</item>
-        <item>knife</item>
-        <item>light bulbs</item>
-        <item>lighter</item>
-        <item>mason jars</item>
-        <item>matches</item>
-        <item>measuring cups</item>
-        <item>muffin pan</item>
-        <item>pan</item>
-        <item>paper bags</item>
-        <item>paper bowls</item>
-        <item>paper napkins</item>
-        <item>paper plates</item>
-        <item>party cutlery</item>
-        <item>peeler</item>
-        <item>pie pan</item>
-        <item>plant pot</item>
-        <item>plastic cups</item>
-        <item>plastic cutlery</item>
-        <item>plastic foil</item>
-        <item>plastic plates</item>
-        <item>plastic spoons</item>
-        <item>plastic wrap</item>
-        <item>pot</item>
-        <item>sandwich bags</item>
-        <item>scissors</item>
-        <item>shower curtain</item>
-        <item>skewers</item>
-        <item>spray bottle</item>
-        <item>storage bags</item>
-        <item>strainer</item>
-        <item>straws</item>
-        <item>table cover</item>
-        <item>tea pot</item>
-        <item>toothpicks</item>
-        <item>trash bags</item>
-        <item>travel cup</item>
-        <item>turner</item>
-        <item>waste bags</item>
-        <item>wooden spoon</item>
+    <string-array name="home_kitchen">
+        <item>@string/air_freshener</item>
+        <item>@string/aluminium_trays</item>
+        <item>@string/aluminium_foil</item>
+        <item>@string/bags</item>
+        <item>@string/baking_paper</item>
+        <item>@string/baking_trays</item>
+        <item>@string/bath_mats</item>
+        <item>@string/bed_sheet</item>
+        <item>@string/blanket</item>
+        <item>@string/bottle_opener</item>
+        <item>@string/bowl</item>
+        <item>@string/bulbs</item>
+        <item>@string/cake_pan</item>
+        <item>@string/candles</item>
+        <item>@string/charcoal</item>
+        <item>@string/cheese_slicer</item>
+        <item>@string/clothes_hangers</item>
+        <item>@string/coffee_filters</item>
+        <item>@string/colander</item>
+        <item>@string/cookie_cutter</item>
+        <item>@string/cookie_bags</item>
+        <item>@string/cutting_board</item>
+        <item>@string/disposable_cutlery</item>
+        <item>@string/firelog</item>
+        <item>@string/foil</item>
+        <item>@string/food_containers</item>
+        <item>@string/food_wraps</item>
+        <item>@string/freezer_bags</item>
+        <item>@string/frying_pan</item>
+        <item>@string/garbage_bags</item>
+        <item>@string/grater</item>
+        <item>@string/grease_proof_paper</item>
+        <item>@string/hangers</item>
+        <item>@string/ice_cube_molds</item>
+        <item>@string/ice_cube_trays</item>
+        <item>@string/kettle</item>
+        <item>@string/knife</item>
+        <item>@string/light_bulbs</item>
+        <item>@string/lighter</item>
+        <item>@string/mason_jars</item>
+        <item>@string/matches</item>
+        <item>@string/measuring_cups</item>
+        <item>@string/muffin_pan</item>
+        <item>@string/pan</item>
+        <item>@string/paper_bags</item>
+        <item>@string/paper_bowls</item>
+        <item>@string/paper_napkins</item>
+        <item>@string/paper_plates</item>
+        <item>@string/party_cutlery</item>
+        <item>@string/peeler</item>
+        <item>@string/pie_pan</item>
+        <item>@string/plant_pot</item>
+        <item>@string/plastic_cups</item>
+        <item>@string/plastic_cutlery</item>
+        <item>@string/plastic_foil</item>
+        <item>@string/plastic_plates</item>
+        <item>@string/plastic_spoons</item>
+        <item>@string/plastic_wrap</item>
+        <item>@string/pot</item>
+        <item>@string/sandwich_bags</item>
+        <item>@string/scissors</item>
+        <item>@string/shower_curtain</item>
+        <item>@string/skewers</item>
+        <item>@string/spray_bottle</item>
+        <item>@string/storage_bags</item>
+        <item>@string/strainer</item>
+        <item>@string/straws</item>
+        <item>@string/table_cover</item>
+        <item>@string/tea_pot</item>
+        <item>@string/toothpicks</item>
+        <item>@string/trash_bags</item>
+        <item>@string/travel_cup</item>
+        <item>@string/turner</item>
+        <item>@string/waste_bags</item>
+        <item>@string/wooden_spoon</item>
     </string-array>
-    <string-array name="homeBaking">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>almonds</item>
-        <item>bake mix</item>
-        <item>baking decorations</item>
-        <item>baking powder</item>
-        <item>baking soda</item>
-        <item>cake mix</item>
-        <item>caramel</item>
-        <item>desiccated coconut</item>
-        <item>dried apricots</item>
-        <item>dried bananas</item>
-        <item>dried cranberries</item>
-        <item>dried date fruit</item>
-        <item>dried fruits</item>
-        <item>dried milk</item>
-        <item>dried plums</item>
-        <item>frosting</item>
-        <item>gelatine</item>
-        <item>icing</item>
-        <item>icing sugar</item>
-        <item>milkshake</item>
-        <item>orange peel</item>
-        <item>pancake mix</item>
-        <item>parchment paper</item>
-        <item>pie crust</item>
-        <item>pie shell</item>
-        <item>poppy seeds</item>
-        <item>prunes</item>
-        <item>pumpkins seeds</item>
-        <item>raisins</item>
-        <item>sesame seeds</item>
-        <item>sunflower seeds</item>
-        <item>vanilla beans</item>
-        <item>vanilla extract</item>
-        <item>vanilla pod</item>
-        <item>vanilla sugar</item>
-        <item>whipped cream</item>
-        <item>whipped cream powder</item>
+    <string-array name="home_baking">
+        <item>@string/almonds</item>
+        <item>@string/bake_mix</item>
+        <item>@string/baking_decorations</item>
+        <item>@string/baking_powder</item>
+        <item>@string/baking_soda</item>
+        <item>@string/cake_mix</item>
+        <item>@string/caramel</item>
+        <item>@string/desiccated_coconut</item>
+        <item>@string/dried_apricots</item>
+        <item>@string/dried_bananas</item>
+        <item>@string/dried_cranberries</item>
+        <item>@string/dried_date_fruit</item>
+        <item>@string/dried_fruits</item>
+        <item>@string/dried_milk</item>
+        <item>@string/dried_plums</item>
+        <item>@string/frosting</item>
+        <item>@string/gelatine</item>
+        <item>@string/icing</item>
+        <item>@string/icing_sugar</item>
+        <item>@string/milkshake</item>
+        <item>@string/orange_peel</item>
+        <item>@string/pancake_mix</item>
+        <item>@string/parchment_paper</item>
+        <item>@string/pie_crust</item>
+        <item>@string/pie_shell</item>
+        <item>@string/poppy_seeds</item>
+        <item>@string/prunes</item>
+        <item>@string/pumpkins_seeds</item>
+        <item>@string/raisins</item>
+        <item>@string/sesame_seeds</item>
+        <item>@string/sunflower_seeds</item>
+        <item>@string/vanilla_beans</item>
+        <item>@string/vanilla_extract</item>
+        <item>@string/vanilla_pod</item>
+        <item>@string/vanilla_sugar</item>
+        <item>@string/whipped_cream</item>
+        <item>@string/whipped_cream_powder</item>
     </string-array>
-    <string-array name="houseCleaningProducts">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>bathroom cleaner</item>
-        <item>bin liners</item>
-        <item>bleach</item>
-        <item>bottle brush</item>
-        <item>bowl brush</item>
-        <item>broom</item>
-        <item>brush</item>
-        <item>carpet cleaner</item>
-        <item>cream cleaner</item>
-        <item>descaler</item>
-        <item>dish liquid</item>
-        <item>dish soap</item>
-        <item>dishwasher cleaner</item>
-        <item>dishwasher detergent</item>
-        <item>dishwasher salt</item>
-        <item>dishwasher tablets</item>
-        <item>dishwashing liquid</item>
-        <item>disinfecting wipes</item>
-        <item>drain cleaner</item>
-        <item>dryer sheets</item>
-        <item>dusters</item>
-        <item>fabric freshener</item>
-        <item>fabric softener</item>
-        <item>floor cleaner</item>
-        <item>floor polish</item>
-        <item>glass cleaner</item>
-        <item>laundry bags</item>
-        <item>laundry detergent</item>
-        <item>mop</item>
-        <item>oven cleaner</item>
-        <item>plunger</item>
-        <item>rubber gloves</item>
-        <item>scrub sponge</item>
-        <item>softener</item>
-        <item>sponge</item>
-        <item>sponge clothes</item>
-        <item>stain remover</item>
-        <item>sweeper</item>
-        <item>toilet brush</item>
-        <item>toilet cleaner</item>
-        <item>toilet cleaning gel</item>
-        <item>toilet rim block</item>
-        <item>washing liquid</item>
-        <item>washing powder</item>
+    <string-array name="house_cleaning_products">
+        <item>@string/bathroom_cleaner</item>
+        <item>@string/bin_liners</item>
+        <item>@string/bleach</item>
+        <item>@string/bottle_brush</item>
+        <item>@string/bowl_brush</item>
+        <item>@string/broom</item>
+        <item>@string/brush</item>
+        <item>@string/carpet_cleaner</item>
+        <item>@string/cream_cleaner</item>
+        <item>@string/descaler</item>
+        <item>@string/dish_liquid</item>
+        <item>@string/dish_soap</item>
+        <item>@string/dishwasher_cleaner</item>
+        <item>@string/dishwasher_detergent</item>
+        <item>@string/dishwasher_salt</item>
+        <item>@string/dishwasher_tablets</item>
+        <item>@string/dishwashing_liquid</item>
+        <item>@string/disinfecting_wipes</item>
+        <item>@string/drain_cleaner</item>
+        <item>@string/dryer_sheets</item>
+        <item>@string/dusters</item>
+        <item>@string/fabric_freshener</item>
+        <item>@string/fabric_softener</item>
+        <item>@string/floor_cleaner</item>
+        <item>@string/floor_polish</item>
+        <item>@string/glass_cleaner</item>
+        <item>@string/laundry_bags</item>
+        <item>@string/laundry_detergent</item>
+        <item>@string/mop</item>
+        <item>@string/oven_cleaner</item>
+        <item>@string/plunger</item>
+        <item>@string/rubber_gloves</item>
+        <item>@string/scrub_sponge</item>
+        <item>@string/softener</item>
+        <item>@string/sponge</item>
+        <item>@string/sponge_clothes</item>
+        <item>@string/stain_remover</item>
+        <item>@string/sweeper</item>
+        <item>@string/toilet_brush</item>
+        <item>@string/toilet_cleaner</item>
+        <item>@string/toilet_cleaning_gel</item>
+        <item>@string/toilet_rim_block</item>
+        <item>@string/washing_liquid</item>
+        <item>@string/washing_powder</item>
     </string-array>
-    <string-array name="meatPoultrySausages">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>artichoke hearts</item>
-        <item>bacon</item>
-        <item>bacon bits</item>
-        <item>BBQ sausage</item>
-        <item>beef</item>
-        <item>beef chuck</item>
-        <item>beef for stew</item>
-        <item>beef liver</item>
-        <item>beef patty</item>
-        <item>beef ribeye steak</item>
-        <item>beef ribs</item>
-        <item>beef steak</item>
-        <item>beef stock</item>
-        <item>boiled ham</item>
-        <item>brisket</item>
-        <item>chicken</item>
-        <item>chicken breast</item>
-        <item>chicken drumsticks</item>
-        <item>chicken livers</item>
-        <item>chicken patty</item>
-        <item>chicken stock</item>
-        <item>chicken tenders</item>
-        <item>chicken wings</item>
-        <item>chorizo</item>
-        <item>cooked meats</item>
-        <item>corned beef</item>
-        <item>duck</item>
-        <item>fillets</item>
-        <item>goose</item>
-        <item>ground meats</item>
-        <item>ground pork</item>
-        <item>ground turkey</item>
-        <item>guinea fowl</item>
-        <item>ham</item>
-        <item>lamb</item>
-        <item>lamb shanks</item>
-        <item>lamb shoulder</item>
-        <item>liver</item>
-        <item>loin</item>
-        <item>luncheon meat</item>
-        <item>lunch meat</item>
-        <item>meat</item>
-        <item>meatballs</item>
-        <item>minced beef</item>
-        <item>mutton</item>
-        <item>pharma ham</item>
-        <item>pate</item>
-        <item>pepperoni</item>
-        <item>pork</item>
-        <item>pork chops</item>
-        <item>pork for stew</item>
-        <item>pork loin</item>
-        <item>pork pate</item>
-        <item>pork ribs</item>
-        <item>pork shanks</item>
-        <item>pork shoulder</item>
-        <item>rabbit</item>
-        <item>ribs</item>
-        <item>roasted ham</item>
-        <item>rotisserie chicken</item>
-        <item>salmon pate</item>
-        <item>sausage</item>
-        <item>silverside</item>
-        <item>sirloin</item>
-        <item>smoked pork</item>
-        <item>smoked sausage</item>
-        <item>steak</item>
-        <item>steak tartare</item>
-        <item>tripe</item>
-        <item>turkey</item>
-        <item>turkey bacon</item>
-        <item>turkey breast</item>
-        <item>turkey drumsticks</item>
-        <item>turkey meat</item>
-        <item>turkey sausage</item>
-        <item>turkey wings</item>
-        <item>veal</item>
-        <item>wieners</item>
+    <string-array name="meat_poultry_sausages">
+        <item>@string/artichoke_hearts</item>
+        <item>@string/bacon</item>
+        <item>@string/bacon_bits</item>
+        <item>@string/bbq_sausage</item>
+        <item>@string/beef</item>
+        <item>@string/beef_chuck</item>
+        <item>@string/beef_for_stew</item>
+        <item>@string/beef_liver</item>
+        <item>@string/beef_patty</item>
+        <item>@string/beef_ribeye_steak</item>
+        <item>@string/beef_ribs</item>
+        <item>@string/beef_steak</item>
+        <item>@string/beef_stock</item>
+        <item>@string/boiled_ham</item>
+        <item>@string/brisket</item>
+        <item>@string/chicken</item>
+        <item>@string/chicken_breast</item>
+        <item>@string/chicken_drumsticks</item>
+        <item>@string/chicken_livers</item>
+        <item>@string/chicken_patty</item>
+        <item>@string/chicken_stock</item>
+        <item>@string/chicken_tenders</item>
+        <item>@string/chicken_wings</item>
+        <item>@string/chorizo</item>
+        <item>@string/cooked_meats</item>
+        <item>@string/corned_beef</item>
+        <item>@string/duck</item>
+        <item>@string/fillets</item>
+        <item>@string/goose</item>
+        <item>@string/ground_meats</item>
+        <item>@string/ground_pork</item>
+        <item>@string/ground_turkey</item>
+        <item>@string/guinea_fowl</item>
+        <item>@string/ham</item>
+        <item>@string/lamb</item>
+        <item>@string/lamb_shanks</item>
+        <item>@string/lamb_shoulder</item>
+        <item>@string/liver</item>
+        <item>@string/loin</item>
+        <item>@string/luncheon_meat</item>
+        <item>@string/lunch_meat</item>
+        <item>@string/meat</item>
+        <item>@string/meatballs</item>
+        <item>@string/minced_beef</item>
+        <item>@string/mutton</item>
+        <item>@string/pharma_ham</item>
+        <item>@string/pate</item>
+        <item>@string/pepperoni</item>
+        <item>@string/pork</item>
+        <item>@string/pork_chops</item>
+        <item>@string/pork_for_stew</item>
+        <item>@string/pork_loin</item>
+        <item>@string/pork_pate</item>
+        <item>@string/pork_ribs</item>
+        <item>@string/pork_shanks</item>
+        <item>@string/pork_shoulder</item>
+        <item>@string/rabbit</item>
+        <item>@string/ribs</item>
+        <item>@string/roasted_ham</item>
+        <item>@string/rotisserie_chicken</item>
+        <item>@string/salmon_pate</item>
+        <item>@string/sausage</item>
+        <item>@string/silverside</item>
+        <item>@string/sirloin</item>
+        <item>@string/smoked_pork</item>
+        <item>@string/smoked_sausage</item>
+        <item>@string/steak</item>
+        <item>@string/steak_tartare</item>
+        <item>@string/tripe</item>
+        <item>@string/turkey</item>
+        <item>@string/turkey_bacon</item>
+        <item>@string/turkey_breast</item>
+        <item>@string/turkey_drumsticks</item>
+        <item>@string/turkey_meat</item>
+        <item>@string/turkey_sausage</item>
+        <item>@string/turkey_wings</item>
+        <item>@string/veal</item>
+        <item>@string/wieners</item>
     </string-array>
     <string-array name="newspapers">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>newspapers</item>
-        <item>tv guide</item>
+        <item>@string/tv_guide</item>
+        <item>@string/newspapers</item>
     </string-array>
-    <string-array name="officeSupplies">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>crayons</item>
-        <item>glue</item>
-        <item>glue stick</item>
-        <item>notebook</item>
-        <item>paper clips</item>
-        <item>pen</item>
-        <item>pencil</item>
-        <item>printer paper</item>
-        <item>scotch tape</item>
-        <item>stamps</item>
-        <item>stapes</item>
-        <item>sticky notes</item>
-        <item>super glue</item>
+    <string-array name="office_supplies">
+        <item>@string/crayons</item>
+        <item>@string/glue</item>
+        <item>@string/glue_stick</item>
+        <item>@string/notebook</item>
+        <item>@string/paper_clips</item>
+        <item>@string/pen</item>
+        <item>@string/pencil</item>
+        <item>@string/printer_paper</item>
+        <item>@string/scotch_tape</item>
+        <item>@string/stamps</item>
+        <item>@string/stapes</item>
+        <item>@string/sticky_notes</item>
+        <item>@string/super_glue</item>
     </string-array>
     <string-array name="oils">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>canola oil</item>
-        <item>coconut oil</item>
-        <item>cooking oil</item>
-        <item>cooking spray</item>
-        <item>extra virgin olive oil</item>
-        <item>fish oil</item>
-        <item>flaxweed oil</item>
-        <item>grapeseed oil</item>
-        <item>linseed oil</item>
-        <item>margarine</item>
-        <item>mustard oil</item>
-        <item>olive oil</item>
-        <item>peanut oil</item>
-        <item>rapeseed oil</item>
-        <item>rice oil</item>
-        <item>rice vinegar</item>
-        <item>sesame oil</item>
-        <item>sunflower oil</item>
+        <item>@string/canola_oil</item>
+        <item>@string/coconut_oil</item>
+        <item>@string/cooking_oil</item>
+        <item>@string/cooking_spray</item>
+        <item>@string/extra_virgin_olive_oil</item>
+        <item>@string/fish_oil</item>
+        <item>@string/flaxweed_oil</item>
+        <item>@string/grapeseed_oil</item>
+        <item>@string/linseed_oil</item>
+        <item>@string/margarine</item>
+        <item>@string/mustard_oil</item>
+        <item>@string/olive_oil</item>
+        <item>@string/peanut_oil</item>
+        <item>@string/rapeseed_oil</item>
+        <item>@string/rice_oil</item>
+        <item>@string/rice_vinegar</item>
+        <item>@string/sesame_oil</item>
+        <item>@string/sunflower_oil</item>
     </string-array>
     <string-array name="other">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>batteries</item>
-        <item>balloons</item>
-        <item>birthday card</item>
-        <item>briquette</item>
-        <item>chalk</item>
-        <item>cigarettes</item>
-        <item>duct tape</item>
-        <item>flowers</item>
-        <item>high heel insoles</item>
-        <item>shoe polish</item>
-        <item>weed</item>
+        <item>@string/batteries</item>
+        <item>@string/balloons</item>
+        <item>@string/birthday_card</item>
+        <item>@string/briquette</item>
+        <item>@string/chalk</item>
+        <item>@string/cigarettes</item>
+        <item>@string/duct_tape</item>
+        <item>@string/flowers</item>
+        <item>@string/high_heel_insoles</item>
+        <item>@string/shoe_polish</item>
+        <item>@string/weed</item>
     </string-array>
-    <string-array name="personalHygiene">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>bathroom tissue</item>
-        <item>bubble bath</item>
-        <item>cleansing cloths</item>
-        <item>contact lens liquid</item>
-        <item>contact solution</item>
-        <item>cotton balls</item>
-        <item>cotton pads</item>
-        <item>facial tissue</item>
-        <item>foot spray</item>
-        <item>moist wipes</item>
-        <item>pads</item>
-        <item>pantiliners</item>
-        <item>panty liners</item>
-        <item>paper towels</item>
-        <item>q-tips</item>
-        <item>razor blades</item>
-        <item>razors</item>
-        <item>sanitary napkins</item>
-        <item>shavers</item>
-        <item>spaghetti squash</item>
-        <item>tampons</item>
-        <item>tissues</item>
-        <item>toilet paper</item>
-        <item>tooth brush</item>
-        <item>wet wipes</item>
+    <string-array name="personal_hygiene">
+        <item>@string/bathroom_tissue</item>
+        <item>@string/bubble_bath</item>
+        <item>@string/cleansing_cloths</item>
+        <item>@string/contact_lens_liquid</item>
+        <item>@string/contact_solution</item>
+        <item>@string/cotton_balls</item>
+        <item>@string/cotton_pads</item>
+        <item>@string/facial_tissue</item>
+        <item>@string/foot_spray</item>
+        <item>@string/moist_wipes</item>
+        <item>@string/pads</item>
+        <item>@string/pantiliners</item>
+        <item>@string/panty_liners</item>
+        <item>@string/paper_towels</item>
+        <item>@string/q_tips</item>
+        <item>@string/razor_blades</item>
+        <item>@string/razors</item>
+        <item>@string/sanitary_napkins</item>
+        <item>@string/shavers</item>
+        <item>@string/spaghetti_squash</item>
+        <item>@string/tampons</item>
+        <item>@string/tissues</item>
+        <item>@string/toilet_paper</item>
+        <item>@string/tooth_brush</item>
+        <item>@string/wet_wipes</item>
     </string-array>
-    <string-array name="petSupplies">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>bird food</item>
-        <item>bones</item>
-        <item>cat food</item>
-        <item>cat litter</item>
-        <item>cat shampoo</item>
-        <item>cat toy</item>
-        <item>cat trays</item>
-        <item>cat treats</item>
-        <item>dog biscuits</item>
-        <item>dog bones</item>
-        <item>dog collar</item>
-        <item>dog food</item>
-        <item>dog shampoo</item>
-        <item>dog toy</item>
-        <item>dog treats</item>
-        <item>flea collar</item>
-        <item>litter tray</item>
-        <item>pet food</item>
-        <item>wet dog food</item>
-        <item>wet cat food</item>
+    <string-array name="pet_supplies">
+        <item>@string/bird_food</item>
+        <item>@string/bones</item>
+        <item>@string/cat_food</item>
+        <item>@string/cat_litter</item>
+        <item>@string/cat_shampoo</item>
+        <item>@string/cat_toy</item>
+        <item>@string/cat_trays</item>
+        <item>@string/cat_treats</item>
+        <item>@string/dog_biscuits</item>
+        <item>@string/dog_bones</item>
+        <item>@string/dog_collar</item>
+        <item>@string/dog_food</item>
+        <item>@string/dog_shampoo</item>
+        <item>@string/dog_toy</item>
+        <item>@string/dog_treats</item>
+        <item>@string/flea_collar</item>
+        <item>@string/litter_tray</item>
+        <item>@string/pet_food</item>
+        <item>@string/wet_dog_food</item>
+        <item>@string/wet_cat_food</item>
     </string-array>
     <string-array name="pharmacy">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>antidiarrheal</item>
-        <item>aspirin</item>
-        <item>bandage</item>
-        <item>band aids</item>
-        <item>blister treatment</item>
-        <item>bug spray</item>
-        <item>calcium</item>
-        <item>cod liver oil</item>
-        <item>cold &amp; flu relief</item>
-        <item>condoms</item>
-        <item>contact lens</item>
-        <item>cough drops</item>
-        <item>elastic band</item>
-        <item>elastic bandage wrap</item>
-        <item>eye drops</item>
-        <item>fever medecine</item>
-        <item>first aid kit</item>
-        <item>first aid tape</item>
-        <item>ibuprofen</item>
-        <item>iodine</item>
-        <item>iron pills</item>
-        <item>magnesium</item>
-        <item>melatonin</item>
-        <item>pain medicine</item>
-        <item>paracetamol</item>
-        <item>probiotics</item>
-        <item>rubbings alcohol</item>
-        <item>sore throat syrup</item>
-        <item>syringes</item>
-        <item>throat drops</item>
-        <item>vaseline</item>
-        <item>vitamin C</item>
-        <item>vitamin D</item>
-        <item>vitamines</item>
+        <item>@string/antidiarrheal</item>
+        <item>@string/aspirin</item>
+        <item>@string/bandage</item>
+        <item>@string/band_aids</item>
+        <item>@string/blister_treatment</item>
+        <item>@string/bug_spray</item>
+        <item>@string/calcium</item>
+        <item>@string/cod_liver_oil</item>
+        <item>@string/cold_and_flu_relief</item>
+        <item>@string/condoms</item>
+        <item>@string/contact_lens</item>
+        <item>@string/cough_drops</item>
+        <item>@string/elastic_band</item>
+        <item>@string/elastic_bandage_wrap</item>
+        <item>@string/eye_drops</item>
+        <item>@string/fever_medecine</item>
+        <item>@string/first_aid_kit</item>
+        <item>@string/first_aid_tape</item>
+        <item>@string/ibuprofen</item>
+        <item>@string/iodine</item>
+        <item>@string/iron_pills</item>
+        <item>@string/magnesium</item>
+        <item>@string/melatonin</item>
+        <item>@string/pain_medicine</item>
+        <item>@string/paracetamol</item>
+        <item>@string/probiotics</item>
+        <item>@string/rubbings_alcohol</item>
+        <item>@string/sore_throat_syrup</item>
+        <item>@string/syringes</item>
+        <item>@string/throat_drops</item>
+        <item>@string/vaseline</item>
+        <item>@string/vitamin_C</item>
+        <item>@string/vitamin_D</item>
+        <item>@string/vitamines</item>
     </string-array>
     <string-array name="preserves">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>applesauce</item>
-        <item>apricot preserves</item>
-        <item>baked beans</item>
-        <item>beef stroganoff</item>
-        <item>blackberry jam</item>
-        <item>black olives</item>
-        <item>canned black beans</item>
-        <item>canned corns</item>
-        <item>canned green beans</item>
-        <item>canned mushrooms</item>
-        <item>canned peaches</item>
-        <item>canned pineapple</item>
-        <item>canned pumpkin</item>
-        <item>canned tomatoes</item>
-        <item>canned vegetables</item>
-        <item>canned white beans</item>
-        <item>capers</item>
-        <item>chili beans</item>
-        <item>cocktail onions</item>
-        <item>confiture</item>
-        <item>cornichons</item>
-        <item>crushed tomatoes</item>
-        <item>diced tomatoes</item>
-        <item>fruit mix in syrup</item>
-        <item>gherkins</item>
-        <item>green olives</item>
-        <item>jam</item>
-        <item>marmalade</item>
-        <item>olives</item>
-        <item>orange marmalade</item>
-        <item>pickles</item>
-        <item>pineapple chunks in juice</item>
-        <item>pineapple slices in juice</item>
-        <item>raspberry preserves</item>
-        <item>red kidney beans</item>
-        <item>refried beans</item>
-        <item>relish</item>
-        <item>sauerkraut</item>
-        <item>strawberry jam</item>
-        <item>tomato paste</item>
-        <item>tomato puree</item>
-        <item>tomato sauce</item>
-        <item>whole peeled tomatoes </item>
+        <item>@string/applesauce</item>
+        <item>@string/apricot_preserves</item>
+        <item>@string/baked_beans</item>
+        <item>@string/beef_stroganoff</item>
+        <item>@string/blackberry_jam</item>
+        <item>@string/black_olives</item>
+        <item>@string/canned_black_beans</item>
+        <item>@string/canned_corns</item>
+        <item>@string/canned_green_beans</item>
+        <item>@string/canned_mushrooms</item>
+        <item>@string/canned_peaches</item>
+        <item>@string/canned_pineapple</item>
+        <item>@string/canned_pumpkin</item>
+        <item>@string/canned_tomatoes</item>
+        <item>@string/canned_vegetables</item>
+        <item>@string/canned_white_beans</item>
+        <item>@string/capers</item>
+        <item>@string/chili_beans</item>
+        <item>@string/cocktail_onions</item>
+        <item>@string/confiture</item>
+        <item>@string/cornichons</item>
+        <item>@string/crushed_tomatoes</item>
+        <item>@string/diced_tomatoes</item>
+        <item>@string/fruit_mix_in_syrup</item>
+        <item>@string/gherkins</item>
+        <item>@string/green_olives</item>
+        <item>@string/jam</item>
+        <item>@string/marmalade</item>
+        <item>@string/olives</item>
+        <item>@string/orange_marmalade</item>
+        <item>@string/pickles</item>
+        <item>@string/pineapple_chunks_in_juice</item>
+        <item>@string/pineapple_slices_in_juice</item>
+        <item>@string/raspberry_preserves</item>
+        <item>@string/red_kidney_beans</item>
+        <item>@string/refried_beans</item>
+        <item>@string/relish</item>
+        <item>@string/sauerkraut</item>
+        <item>@string/strawberry_jam</item>
+        <item>@string/tomato_paste</item>
+        <item>@string/tomato_puree</item>
+        <item>@string/tomato_sauce</item>
+        <item>@string/whole_peeled_tomatoes</item>
     </string-array>
     <string-array name="produce">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>american blueberry</item>
-        <item>apples</item>
-        <item>apricots</item>
-        <item>artichokes</item>
-        <item>arugula</item>
-        <item>aspargus</item>
-        <item>auberine</item>
-        <item>avocados</item>
-        <item>baby carrots</item>
-        <item>baby potatoes</item>
-        <item>baby spinach</item>
-        <item>bananas</item>
-        <item>basil</item>
-        <item>beans</item>
-        <item>bean sprouts</item>
-        <item>beetroots</item>
-        <item>berries</item>
-        <item>blackberries</item>
-        <item>blackcurrants</item>
-        <item>blueberries</item>
-        <item>bok choy</item>
-        <item>broccoli</item>
-        <item>brussels sprouts</item>
-        <item>butter letuce</item>
-        <item>butternut squash</item>
-        <item>cabbage</item>
-        <item>cantaloupe</item>
-        <item>carrots</item>
-        <item>cashews</item>
-        <item>cauliflower</item>
-        <item>celeriac</item>
-        <item>celery</item>
-        <item>champignons</item>
-        <item>cherries</item>
-        <item>cherry tomatoes</item>
-        <item>chickpeas</item>
-        <item>chicory</item>
-        <item>chili pepper</item>
-        <item>chives</item>
-        <item>cilantro</item>
-        <item>cilantro bunch</item>
-        <item>citrus fruits</item>
-        <item>clementines</item>
-        <item>clover sprouts</item>
-        <item>coconut</item>
-        <item>corn</item>
-        <item>corn on the cob</item>
-        <item>courgette</item>
-        <item>cranberries</item>
-        <item>cucumber</item>
-        <item>dark grapes</item>
-        <item>dates</item>
-        <item>dill</item>
-        <item>eggplant</item>
-        <item>fennel</item>
-        <item>figs</item>
-        <item>fresh marjoram</item>
-        <item>fresh mint</item>
-        <item>fresh oregano</item>
-        <item>fresh sage</item>
-        <item>fresh tarragon</item>
-        <item>fresh thyme</item>
-        <item>garbanzo</item>
-        <item>garlic</item>
-        <item>ginger root</item>
-        <item>grapefruit</item>
-        <item>grapes</item>
-        <item>grape tomatoes</item>
-        <item>green beans</item>
-        <item>green bell pepper</item>
-        <item>green onion</item>
-        <item>green pepper</item>
-        <item>hazelnuts</item>
-        <item>honeydew</item>
-        <item>horseadish</item>
-        <item>iceberg lettuce</item>
-        <item>jalapeno</item>
-        <item>kale</item>
-        <item>kiwi</item>
-        <item>kohlrabi</item>
-        <item>kumquat</item>
-        <item>leek</item>
-        <item>lemon</item>
-        <item>lemon balm</item>
-        <item>lemongrass</item>
-        <item>lentils</item>
-        <item>lettuce</item>
-        <item>lime</item>
-        <item>mandarins</item>
-        <item>mango</item>
-        <item>melon</item>
-        <item>mint</item>
-        <item>mung bean sprouts</item>
-        <item>mushrooms</item>
-        <item>nectarines</item>
-        <item>nuts</item>
-        <item>onion</item>
-        <item>oranges</item>
-        <item>papaya</item>
-        <item>parsley</item>
-        <item>parsnips</item>
-        <item>passion fruit</item>
-        <item>peaches</item>
-        <item>pears</item>
-        <item>peas</item>
-        <item>pecans</item>
-        <item>pineapple</item>
-        <item>pine nuts</item>
-        <item>pinto beans</item>
-        <item>pistachios</item>
-        <item>plums</item>
-        <item>pomegranate</item>
-        <item>pomelo</item>
-        <item>potatoes</item>
-        <item>pumpkin</item>
-        <item>radish</item>
-        <item>raspberries</item>
-        <item>red bell pepper</item>
-        <item>red cabbage</item>
-        <item>red chard</item>
-        <item>redcurrants</item>
-        <item>red leaf lettuce</item>
-        <item>red onion </item>
-        <item>red pepper</item>
-        <item>red potatoes</item>
-        <item>rhubarb</item>
-        <item>romaine lettuce</item>
-        <item>salad mix</item>
-        <item>scallions</item>
-        <item>shallot</item>
-        <item>soybeans</item>
-        <item>spinach</item>
-        <item>spring onion</item>
-        <item>sprouts</item>
-        <item>squash</item>
-        <item>strawberries</item>
-        <item>sunflower</item>
-        <item>sweet corn</item>
-        <item>sweet potatoes</item>
-        <item>tangerines</item>
-        <item>tomatillo</item>
-        <item>tomatoes</item>
-        <item>turnip</item>
-        <item>vegetables</item>
-        <item>walnuts</item>
-        <item>watermelon</item>
-        <item>wax bean</item>
-        <item>white grapes</item>
-        <item>white onion</item>
-        <item>yam</item>
-        <item>yellow pepper</item>
+        <item>@string/american_blueberry</item>
+        <item>@string/apples</item>
+        <item>@string/apricots</item>
+        <item>@string/artichokes</item>
+        <item>@string/arugula</item>
+        <item>@string/aspargus</item>
+        <item>@string/auberine</item>
+        <item>@string/avocados</item>
+        <item>@string/baby_carrots</item>
+        <item>@string/baby_potatoes</item>
+        <item>@string/baby_spinach</item>
+        <item>@string/bananas</item>
+        <item>@string/basil</item>
+        <item>@string/beans</item>
+        <item>@string/bean_sprouts</item>
+        <item>@string/beetroots</item>
+        <item>@string/berries</item>
+        <item>@string/blackberries</item>
+        <item>@string/blackcurrants</item>
+        <item>@string/blueberries</item>
+        <item>@string/bok_choy</item>
+        <item>@string/broccoli</item>
+        <item>@string/brussels_sprouts</item>
+        <item>@string/butter_letuce</item>
+        <item>@string/butternut_squash</item>
+        <item>@string/cabbage</item>
+        <item>@string/cantaloupe</item>
+        <item>@string/carrots</item>
+        <item>@string/cashews</item>
+        <item>@string/cauliflower</item>
+        <item>@string/celeriac</item>
+        <item>@string/celery</item>
+        <item>@string/champignons</item>
+        <item>@string/cherries</item>
+        <item>@string/cherry_tomatoes</item>
+        <item>@string/chickpeas</item>
+        <item>@string/chicory</item>
+        <item>@string/chili_pepper</item>
+        <item>@string/chives</item>
+        <item>@string/cilantro</item>
+        <item>@string/cilantro_bunch</item>
+        <item>@string/citrus_fruits</item>
+        <item>@string/clementines</item>
+        <item>@string/clover_sprouts</item>
+        <item>@string/coconut</item>
+        <item>@string/corn</item>
+        <item>@string/corn_on_the_cob</item>
+        <item>@string/courgette</item>
+        <item>@string/cranberries</item>
+        <item>@string/cucumber</item>
+        <item>@string/dark_grapes</item>
+        <item>@string/dates</item>
+        <item>@string/dill</item>
+        <item>@string/eggplant</item>
+        <item>@string/fennel</item>
+        <item>@string/figs</item>
+        <item>@string/fresh_marjoram</item>
+        <item>@string/fresh_mint</item>
+        <item>@string/fresh_oregano</item>
+        <item>@string/fresh_sage</item>
+        <item>@string/fresh_tarragon</item>
+        <item>@string/fresh_thyme</item>
+        <item>@string/garbanzo</item>
+        <item>@string/garlic</item>
+        <item>@string/ginger_root</item>
+        <item>@string/grapefruit</item>
+        <item>@string/grapes</item>
+        <item>@string/grape_tomatoes</item>
+        <item>@string/green_beans</item>
+        <item>@string/green_bell_pepper</item>
+        <item>@string/green_onion</item>
+        <item>@string/green_pepper</item>
+        <item>@string/hazelnuts</item>
+        <item>@string/honeydew</item>
+        <item>@string/horseadish</item>
+        <item>@string/iceberg_lettuce</item>
+        <item>@string/jalapeno</item>
+        <item>@string/kale</item>
+        <item>@string/kiwi</item>
+        <item>@string/kohlrabi</item>
+        <item>@string/kumquat</item>
+        <item>@string/leek</item>
+        <item>@string/lemon</item>
+        <item>@string/lemon_balm</item>
+        <item>@string/lemongrass</item>
+        <item>@string/lentils</item>
+        <item>@string/lettuce</item>
+        <item>@string/lime</item>
+        <item>@string/mandarins</item>
+        <item>@string/mango</item>
+        <item>@string/melon</item>
+        <item>@string/mint</item>
+        <item>@string/mung_bean_sprouts</item>
+        <item>@string/mushrooms</item>
+        <item>@string/nectarines</item>
+        <item>@string/nuts</item>
+        <item>@string/onion</item>
+        <item>@string/oranges</item>
+        <item>@string/papaya</item>
+        <item>@string/parsley</item>
+        <item>@string/parsnips</item>
+        <item>@string/passion_fruit</item>
+        <item>@string/peaches</item>
+        <item>@string/pears</item>
+        <item>@string/peas</item>
+        <item>@string/pecans</item>
+        <item>@string/pineapple</item>
+        <item>@string/pine_nuts</item>
+        <item>@string/pinto_beans</item>
+        <item>@string/pistachios</item>
+        <item>@string/plums</item>
+        <item>@string/pomegranate</item>
+        <item>@string/pomelo</item>
+        <item>@string/potatoes</item>
+        <item>@string/pumpkin</item>
+        <item>@string/radish</item>
+        <item>@string/raspberries</item>
+        <item>@string/red_bell_pepper</item>
+        <item>@string/red_cabbage</item>
+        <item>@string/red_chard</item>
+        <item>@string/redcurrants</item>
+        <item>@string/red_leaf_lettuce</item>
+        <item>@string/red_onion</item>
+        <item>@string/red_pepper</item>
+        <item>@string/red_potatoes</item>
+        <item>@string/rhubarb</item>
+        <item>@string/romaine_lettuce</item>
+        <item>@string/salad_mix</item>
+        <item>@string/scallions</item>
+        <item>@string/shallot</item>
+        <item>@string/soybeans</item>
+        <item>@string/spinach</item>
+        <item>@string/spring_onion</item>
+        <item>@string/sprouts</item>
+        <item>@string/squash</item>
+        <item>@string/strawberries</item>
+        <item>@string/sunflower</item>
+        <item>@string/sweet_corn</item>
+        <item>@string/sweet_potatoes</item>
+        <item>@string/tangerines</item>
+        <item>@string/tomatillo</item>
+        <item>@string/tomatoes</item>
+        <item>@string/turnip</item>
+        <item>@string/vegetables</item>
+        <item>@string/walnuts</item>
+        <item>@string/watermelon</item>
+        <item>@string/wax_bean</item>
+        <item>@string/white_grapes</item>
+        <item>@string/white_onion</item>
+        <item>@string/yam</item>
+        <item>@string/yellow_pepper</item>
     </string-array>
-    <string-array name="readyMeals">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>buffalo wings</item>
-        <item>burgers</item>
-        <item>burritos</item>
-        <item>caesar salad</item>
-        <item>chicken noodle soup</item>
-        <item>chicken nuggets</item>
-        <item>chicken salad</item>
-        <item>coleslaw</item>
-        <item>dumplings</item>
-        <item>hamburgers</item>
-        <item>hash browns</item>
-        <item>hot dog</item>
-        <item>instant meal</item>
-        <item>lasagne</item>
-        <item>mac and cheese</item>
-        <item>mashed potatoes</item>
-        <item>noodles</item>
-        <item>pancakes</item>
-        <item>pasta salad</item>
-        <item>pizza</item>
-        <item>pizza crust</item>
-        <item>potato salad</item>
-        <item>puree</item>
-        <item>ravioli</item>
-        <item>risotto</item>
-        <item>salad</item>
-        <item>shrimp salad</item>
-        <item>soup</item>
-        <item>sushi</item>
+    <string-array name="ready_meals">
+        <item>@string/buffalo_wings</item>
+        <item>@string/burgers</item>
+        <item>@string/burritos</item>
+        <item>@string/caesar_salad</item>
+        <item>@string/chicken_noodle_soup</item>
+        <item>@string/chicken_nuggets</item>
+        <item>@string/chicken_salad</item>
+        <item>@string/coleslaw</item>
+        <item>@string/dumplings</item>
+        <item>@string/hamburgers</item>
+        <item>@string/hash_browns</item>
+        <item>@string/hot_dog</item>
+        <item>@string/instant_meal</item>
+        <item>@string/lasagne</item>
+        <item>@string/mac_and_cheese</item>
+        <item>@string/mashed_potatoes</item>
+        <item>@string/noodles</item>
+        <item>@string/pancakes</item>
+        <item>@string/pasta_salad</item>
+        <item>@string/pizza</item>
+        <item>@string/pizza_crust</item>
+        <item>@string/potato_salad</item>
+        <item>@string/puree</item>
+        <item>@string/ravioli</item>
+        <item>@string/risotto</item>
+        <item>@string/salad</item>
+        <item>@string/shrimp_salad</item>
+        <item>@string/soup</item>
+        <item>@string/sushi</item>
     </string-array>
     <string-array name="snacks">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>biscuits</item>
-        <item>breakfast bars</item>
-        <item>bubble gum</item>
-        <item>cake candy</item>
-        <item>cereal bars</item>
-        <item>chewing gum</item>
-        <item>chips</item>
-        <item>chocolate</item>
-        <item>chocolate bars</item>
-        <item>chocolate chips</item>
-        <item>chocolate cookies</item>
-        <item>cinnamon rolls</item>
-        <item>cookies</item>
-        <item>corn chips</item>
-        <item>corn dogs</item>
-        <item>crackers</item>
-        <item>crescent rolls</item>
-        <item>crisps</item>
-        <item>dark chocolate</item>
-        <item>fruit cups</item>
-        <item>fruit snacks</item>
-        <item>graham crackers</item>
-        <item>granola bars</item>
-        <item>grape jelly</item>
-        <item>gum</item>
-        <item>gummy bears</item>
-        <item>gummy candies</item>
-        <item>halva</item>
-        <item>hard candies</item>
-        <item>jelly</item>
-        <item>macaroons</item>
-        <item>marshmallows</item>
-        <item>milk chocolate</item>
-        <item>mint gum</item>
-        <item>mints</item>
-        <item>oatmeal cookies</item>
-        <item>onion rings</item>
-        <item>oreos</item>
-        <item>peanuts</item>
-        <item>popcorn</item>
-        <item>potato chips</item>
-        <item>pralines</item>
-        <item>pretzels</item>
-        <item>protein bars</item>
-        <item>rice cakes</item>
-        <item>rice puff</item>
-        <item>salted peanuts</item>
-        <item>saltine crackers</item>
-        <item>tater tots</item>
-        <item>tortilla chips</item>
-        <item>trail mix</item>
-        <item>wafers</item>
-        <item>waffles</item>
+        <item>@string/biscuits</item>
+        <item>@string/breakfast_bars</item>
+        <item>@string/bubble_gum</item>
+        <item>@string/cake_candy</item>
+        <item>@string/cereal_bars</item>
+        <item>@string/chewing_gum</item>
+        <item>@string/chips</item>
+        <item>@string/chocolate</item>
+        <item>@string/chocolate_bars</item>
+        <item>@string/chocolate_chips</item>
+        <item>@string/chocolate_cookies</item>
+        <item>@string/cinnamon_rolls</item>
+        <item>@string/cookies</item>
+        <item>@string/corn_chips</item>
+        <item>@string/corn_dogs</item>
+        <item>@string/crackers</item>
+        <item>@string/crescent_rolls</item>
+        <item>@string/crisps</item>
+        <item>@string/dark_chocolate</item>
+        <item>@string/fruit_cups</item>
+        <item>@string/fruit_snacks</item>
+        <item>@string/graham_crackers</item>
+        <item>@string/granola_bars</item>
+        <item>@string/grape_jelly</item>
+        <item>@string/gum</item>
+        <item>@string/gummy_bears</item>
+        <item>@string/gummy_candies</item>
+        <item>@string/halva</item>
+        <item>@string/hard_candies</item>
+        <item>@string/jelly</item>
+        <item>@string/macaroons</item>
+        <item>@string/marshmallows</item>
+        <item>@string/milk_chocolate</item>
+        <item>@string/mint_gum</item>
+        <item>@string/mints</item>
+        <item>@string/oatmeal_cookies</item>
+        <item>@string/onion_rings</item>
+        <item>@string/oreos</item>
+        <item>@string/peanuts</item>
+        <item>@string/popcorn</item>
+        <item>@string/potato_chips</item>
+        <item>@string/pralines</item>
+        <item>@string/pretzels</item>
+        <item>@string/protein_bars</item>
+        <item>@string/rice_cakes</item>
+        <item>@string/rice_puff</item>
+        <item>@string/salted_peanuts</item>
+        <item>@string/saltine_crackers</item>
+        <item>@string/tater_tots</item>
+        <item>@string/tortilla_chips</item>
+        <item>@string/trail_mix</item>
+        <item>@string/wafers</item>
+        <item>@string/waffles</item>
     </string-array>
-    <string-array name="spicesSaucesCondiment">
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>xxx</item>
-        <item>alfredo sauce</item>
-        <item>allspice</item>
-        <item>barbecue sauce</item>
-        <item>bay leaf</item>
-        <item>bell pepper</item>
-        <item>black pepper</item>
-        <item>bolognese sauce</item>
-        <item>bouillon cubes</item>
-        <item>caesar dressing</item>
-        <item>caraway seed</item>
-        <item>cardamom</item>
-        <item>cayenne pepper</item>
-        <item>chia seeds</item>
-        <item>chili powder</item>
-        <item>chili sauce</item>
-        <item>cinnamon</item>
-        <item>citric acid</item>
-        <item>cloves</item>
-        <item>coriander</item>
-        <item>cilantro</item>
-        <item>cranberry sauce</item>
-        <item>crispy onions</item>
-        <item>cumin</item>
-        <item>curcuma</item>
-        <item>curry</item>
-        <item>curry powder</item>
-        <item>dip</item>
-        <item>dressing</item>
-        <item>enchilada sauce</item>
-        <item>fish sauce</item>
-        <item>french dressing</item>
-        <item>garam masala</item>
-        <item>garlic powder</item>
-        <item>garlic salt</item>
-        <item>garlic sauce</item>
-        <item>ginger</item>
-        <item>golden syrup</item>
-        <item>gravy</item>
-        <item>ground basil</item>
-        <item>ground chili</item>
-        <item>ground garlic</item>
-        <item>ground ginger</item>
-        <item>guacamole</item>
-        <item>herbs</item>
-        <item>hot sauce</item>
-        <item>hummus</item>
-        <item>italian dressing</item>
-        <item>italian seasoning</item>
-        <item>lovage</item>
-        <item>marinara sauce</item>
-        <item>marjoram</item>
-        <item>minced garclic</item>
-        <item>mixed herbs</item>
-        <item>nutmeg</item>
-        <item>onion powder</item>
-        <item>oregano</item>
-        <item>oyster sauce</item>
-        <item>paprika</item>
-        <item>passata</item>
-        <item>pasta sauce</item>
-        <item>pepper</item>
-        <item>pesto</item>
-        <item>piri piri</item>
-        <item>pizza sauce</item>
-        <item>red wine vinegar</item>
-        <item>rosemary</item>
-        <item>saffron</item>
-        <item>sage</item>
-        <item>salad dressing</item>
-        <item>salsa</item>
-        <item>salt</item>
-        <item>sauce</item>
-        <item>sea salt</item>
-        <item>seasoning mix</item>
-        <item>soy sauce</item>
-        <item>spaghetti sauce</item>
-        <item>spices</item>
-        <item>sweet pepper</item>
-        <item>taco sauce</item>
-        <item>taco seasoning</item>
-        <item>tahini</item>
-        <item>tarragon</item>
-        <item>teriyaki sauce</item>
-        <item>thyme</item>
-        <item>turmeric</item>
-        <item>tzatziki dip</item>
-        <item>vegetable stock</item>
-        <item>white pepper</item>
+    <string-array name="spices_sauces_condiment">
+        <item>@string/alfredo_sauce</item>
+        <item>@string/allspice</item>
+        <item>@string/barbecue_sauce</item>
+        <item>@string/bay_leaf</item>
+        <item>@string/bell_pepper</item>
+        <item>@string/black_pepper</item>
+        <item>@string/bolognese_sauce</item>
+        <item>@string/bouillon_cubes</item>
+        <item>@string/caesar_dressing</item>
+        <item>@string/caraway_seed</item>
+        <item>@string/cardamom</item>
+        <item>@string/cayenne_pepper</item>
+        <item>@string/chia_seeds</item>
+        <item>@string/chili_powder</item>
+        <item>@string/chili_sauce</item>
+        <item>@string/cinnamon</item>
+        <item>@string/citric_acid</item>
+        <item>@string/cloves</item>
+        <item>@string/coriander</item>
+        <item>@string/cranberry_sauce</item>
+        <item>@string/crispy_onions</item>
+        <item>@string/cumin</item>
+        <item>@string/curcuma</item>
+        <item>@string/curry</item>
+        <item>@string/curry_powder</item>
+        <item>@string/dip</item>
+        <item>@string/dressing</item>
+        <item>@string/enchilada_sauce</item>
+        <item>@string/fish_sauce</item>
+        <item>@string/french_dressing</item>
+        <item>@string/garam_masala</item>
+        <item>@string/garlic_powder</item>
+        <item>@string/garlic_salt</item>
+        <item>@string/garlic_sauce</item>
+        <item>@string/ginger</item>
+        <item>@string/golden_syrup</item>
+        <item>@string/gravy</item>
+        <item>@string/ground_basil</item>
+        <item>@string/ground_chili</item>
+        <item>@string/ground_garlic</item>
+        <item>@string/ground_ginger</item>
+        <item>@string/guacamole</item>
+        <item>@string/herbs</item>
+        <item>@string/hot_sauce</item>
+        <item>@string/hummus</item>
+        <item>@string/italian_dressing</item>
+        <item>@string/italian_seasoning</item>
+        <item>@string/lovage</item>
+        <item>@string/marinara_sauce</item>
+        <item>@string/marjoram</item>
+        <item>@string/minced_garclic</item>
+        <item>@string/mixed_herbs</item>
+        <item>@string/nutmeg</item>
+        <item>@string/onion_powder</item>
+        <item>@string/oregano</item>
+        <item>@string/oyster_sauce</item>
+        <item>@string/paprika</item>
+        <item>@string/passata</item>
+        <item>@string/pasta_sauce</item>
+        <item>@string/pepper</item>
+        <item>@string/pesto</item>
+        <item>@string/piri_piri</item>
+        <item>@string/pizza_sauce</item>
+        <item>@string/red_wine_vinegar</item>
+        <item>@string/rosemary</item>
+        <item>@string/saffron</item>
+        <item>@string/sage</item>
+        <item>@string/salad_dressing</item>
+        <item>@string/salsa</item>
+        <item>@string/salt</item>
+        <item>@string/sauce</item>
+        <item>@string/sea_salt</item>
+        <item>@string/seasoning_mix</item>
+        <item>@string/soy_sauce</item>
+        <item>@string/spaghetti_sauce</item>
+        <item>@string/spices</item>
+        <item>@string/sweet_pepper</item>
+        <item>@string/taco_sauce</item>
+        <item>@string/taco_seasoning</item>
+        <item>@string/tahini</item>
+        <item>@string/tarragon</item>
+        <item>@string/teriyaki_sauce</item>
+        <item>@string/thyme</item>
+        <item>@string/turmeric</item>
+        <item>@string/tzatziki_dip</item>
+        <item>@string/vegetable_stock</item>
+        <item>@string/white_pepper</item>
     </string-array>
-    <!-- End of categories -->
+
+    <!-- _end of categories -->
 </resources>

@@ -17,8 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
-import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.entities.RowItem;
+import ca.jonestremblay.jonesgroceries.entities.ListItem;
 
 
 /**
@@ -29,7 +28,7 @@ import ca.jonestremblay.jonesgroceries.entities.RowItem;
 public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.ViewHolder> {
     private static final String TAG = "ProductsListAdapter";
     private Context context;
-    private List<RowItem> productsList;
+    private List<ListItem> productsList;
     private HandleProductsClick clickListener;
 
     public ProductsListAdapter(Context context, HandleProductsClick clickListener){
@@ -37,7 +36,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         this.clickListener = clickListener;
     }
 
-    public void setItemsList(List<RowItem> productsList){
+    public void setItemsList(List<ListItem> productsList){
         this.productsList = productsList;
         notifyDataSetChanged();
     }
@@ -142,8 +141,8 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
     }
 
     public interface HandleProductsClick {
-        void productClick(RowItem product);
-        void removeProduct(RowItem product);
-        void editProduct(RowItem product);
+        void productClick(ListItem product);
+        void removeProduct(ListItem product);
+        void editProduct(ListItem product);
     }
 }

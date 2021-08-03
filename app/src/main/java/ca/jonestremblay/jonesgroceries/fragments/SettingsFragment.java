@@ -2,6 +2,7 @@ package ca.jonestremblay.jonesgroceries.fragments;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
@@ -21,6 +22,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
     Preference changeNavBarColor;
     SwitchPreferenceCompat nightMode;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        handleOnBackPressed();
+
+    }
 
     public static Fragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
@@ -46,6 +53,15 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
         nightMode.setOnPreferenceClickListener(this);
     }
 
+    public void handleOnBackPressed(){
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+    }
 
     @Override
     public boolean onPreferenceClick(Preference pref) {

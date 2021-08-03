@@ -1,6 +1,7 @@
 package ca.jonestremblay.jonesgroceries.viewmodel;
 
 import android.app.Application;
+import android.database.sqlite.SQLiteConstraintException;
 import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
@@ -9,13 +10,12 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
-import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.entities.RowItem;
+import ca.jonestremblay.jonesgroceries.entities.ListItem;
 
 
 public class ItemsListFragmentViewModel extends AndroidViewModel {
     private static final String TAG = "ShowProductsViewModel";
-    private MutableLiveData<List<RowItem>> listOfItems;
+    private MutableLiveData<List<ListItem>> listOfItems;
     AppDatabase appDatabase;
     private int ID;
 
@@ -34,14 +34,14 @@ public class ItemsListFragmentViewModel extends AndroidViewModel {
         listOfItems.postValue(appDatabase.ItemListDAO().getAllItems(ID));
     }
 
-    public MutableLiveData<List<RowItem>> getListOfRowItemsObserver(){
+    public MutableLiveData<List<ListItem>> getListOfRowItemsObserver(){
         return listOfItems;
     }
 
     /** Met à jour la liste de categories (mutableLiveData) selon le resultat retourné par la BD. */
     public void getAllProductsList(int listID){
         Log.d(TAG, "getAllCategoryList: GETTING THE LIST OUT OF THE DATABASE");
-        List<RowItem> itemsList = appDatabase.ItemListDAO().getAllItems(ID);
+        List<ListItem> itemsList = appDatabase.ItemListDAO().getAllItems(ID);
         if (itemsList.size() > 0){
             Log.d(TAG, "getAllCategoryList: LISTE COUNT OBTENUE : " + itemsList.size());
             listOfItems.postValue(itemsList);
@@ -52,17 +52,25 @@ public class ItemsListFragmentViewModel extends AndroidViewModel {
     }
 
 
-    public void insertItem(RowItem item){
-        appDatabase.ItemListDAO().insertItem(item);
+    public void insertItem(ListItem item){
+        /* Avant d'essayer de l'ajouter on cherche tu le product_id avant ? Voir si ça existe*/
+        try {
+            appDatabase.ItemListDAO().insertItem(item);
+        } catch(SQLiteConstraintException ex){
+            if (ex.getMessage().contains("FOREIGN KEY")){
+                /** Need to add the product in the product table before, then we can in items_list*/
+
+            }
+        }
         getAllProductsList(item.listID);
     }
 
-    public void updateItem(RowItem item){
+    public void updateItem(ListItem item){
         appDatabase.ItemListDAO().updateItem(item);
         getAllProductsList(item.listID);
     }
 
-    public void deleteItem(RowItem item){
+    public void deleteItem(ListItem item){
         appDatabase.ItemListDAO().deleteItem(item);
         getAllProductsList(item.listID);
     }
