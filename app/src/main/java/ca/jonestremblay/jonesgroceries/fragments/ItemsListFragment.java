@@ -83,7 +83,7 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 /** Get us back to groceries lists home page */
                 getActivity().getSupportFragmentManager().beginTransaction().replace(
                         R.id.fl_nav_wrapper, new GroceriesFragment()).commit();
-                ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Groceries");
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.menuBar_groceries));
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
@@ -136,16 +136,17 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                     /** Checks if item is already in the list, adjust qty if needed */
                     for (ListItem item : productsListAdapter.getProductsList()){
                         if (productToAdd.name.equals(item.product.name)){
-                            Toast.makeText(getContext(), "This item is already in your list." +
-                                    "You can adjust the quantity if you long press it.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getString(R.string.itemAlreadyInList)
+                                + getResources().getString(R.string.canAdjustIfLongPress),
+                                                                Toast.LENGTH_LONG).show();
                         }
                     }
                 }
                 Product newUserProduct = getNewUserProduct(productToAdd);
                 boolean isAdded = addUserProductToDatabase(newUserProduct);
                 if (isAdded){
-                    Toast.makeText(getContext(), newUserProduct.name + " has been added in" +
-                                    " the database.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), newUserProduct.name +
+                            getResources().getString(R.string.hasBeenAdded), Toast.LENGTH_SHORT).show();
                 }
                 searchBar.setText(""); /** Resets user input */
                 addProductToList(productToAdd);
@@ -168,8 +169,7 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 MainActivity.productsCatalog.add(newUserProduct);
                 return true;
             } catch(SQLiteConstraintException ex){
-                Toast.makeText(getContext(), "An error occured while trying to add your " +
-                    "product in the database.",Toast.LENGTH_SHORT).show();}
+                Toast.makeText(getContext(), getString(R.string.errorAddindInDB),Toast.LENGTH_SHORT).show();}
         }
         return false;
     }
@@ -185,7 +185,6 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         /* Set the right name (remove sentence, keep only product name) */
         if (product.category.icon_id == OTHER_ICON_ID && product.name.contains("\"")){
             String newItemName = product.name.replaceAll("\"", "");
-                  //  product.name.indexOf("|") + 1, product.name.lastIndexOf("|")).trim();
             product.name = newItemName;
             return product;
         }
@@ -203,7 +202,6 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
 
     private void initViewModel(){
         viewModel = new ViewModelProvider(this).get(ItemsListFragmentViewModel.class);
-        //viewModel.setID(productsListAdapter);
         viewModel.getListOfRowItemsObserver().observe(getViewLifecycleOwner(), new Observer<List<ListItem>>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -244,7 +242,6 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
     private void updateNewItem(String newName) {
         this.productToUpdate.product.name = newName;
         viewModel.updateItem(productToUpdate);
-//        addNewProductInput.setText("");
         productToUpdate = null;
     }
 
@@ -283,18 +280,4 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         }
         return super.onOptionsItemSelected(product);
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        int count = getChildFragmentManager().getBackStackEntryCount();
-//
-//        if (count == 0) {
-//            getActivity().onBackPressed();
-//            //additional code
-//        } else {
-//            getChildFragmentManager().popBackStack();
-//        }
-//
-//    }
-
 }

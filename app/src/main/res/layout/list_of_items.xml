@@ -10,14 +10,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <AutoCompleteTextView
             android:id="@+id/searchBar"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
-            android:hint="Which item do you need ?"
+            android:hint="@string/which_item_do_you_need"
             android:padding="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +61,7 @@
         android:id="@+id/noProductsTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You don't have any items."
+        android:text="@string/no_items_in_list"
         android:textSize="22sp"
         android:textStyle="bold"
         android:visibility="visible"

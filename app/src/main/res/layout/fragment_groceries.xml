@@ -7,27 +7,21 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".fragments.GroceriesFragment">
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/textView2"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_centerInParent="true"-->
-        <!--            android:text="@string/menuBar.groceries"-->
-        <!--            android:textColor="@color/white"-->
-        <!--            android:textSize="64dp"/>-->
-
-
+        
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="100sp"
-            android:text="My groceries"
-            android:layout_marginEnd="22sp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center|right"
+            android:text="@string/my_groceries"
             android:textSize="32sp"
             android:textStyle="bold"
-            android:gravity="center|right"
-            android:layout_marginRight="22sp" />
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -53,7 +47,7 @@
             android:id="@+id/noGroceryTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You don't have any category list."
+            android:text="@string/no_groceries_list"
             android:textSize="22sp"
             android:textStyle="bold"
             android:visibility="gone"

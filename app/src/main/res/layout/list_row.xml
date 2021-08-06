@@ -5,27 +5,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="55dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
 
-            <ImageView
-                android:id="@+id/item_icon"
-                android:layout_width="34dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toEndOf="@+id/item_quantity"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_26" />
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/item_quantity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_26" />
 
     <TextView
         android:id="@+id/item_name"
@@ -39,7 +30,7 @@
         android:layout_marginRight="219dp"
         android:layout_toRightOf="@+id/item_icon"
         android:labelFor="@+id/item_img_view"
-        android:text="Avocado"
+        android:text="@string/avocados"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -59,7 +50,7 @@
         android:layout_marginEnd="187dp"
         android:layout_marginRight="187dp"
         android:layout_toRightOf="@+id/item_icon"
-        android:text="1 caisse svp"
+        android:text="this is a note example"
         android:textColor="#808080"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,18 +61,15 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-                android:id="@+id/item_quantity"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="19dp"
-                android:text="3 kg"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        android:id="@+id/item_quantity"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="19dp"
+        android:text="3 kg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    </androidx.cardview.widget.CardView>-->
-
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

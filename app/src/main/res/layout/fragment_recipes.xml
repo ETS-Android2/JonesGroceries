@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="You don't have any product."
+            android:text="@string/no_products_in_list"
             android:textSize="@dimen/text_margin"
             android:textStyle="bold"
             android:visibility="gone"/>

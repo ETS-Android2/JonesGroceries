@@ -41,7 +41,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
 
     private UserListFragmentViewModel viewModel;
     private TextView noResultLabel;
-    private RecyclerView recyclerView; /** list of groceries */
+    private RecyclerView recyclerView;
     private GroceriesListAdapter groceryAdapter;
     private UserList userListToEdit;
 
@@ -82,8 +82,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         btnAddNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /** Apparition du AlertDialog pour ajouter une new grocery list */
-                showGroceryListDialog(false);
+                showCreateOrEditGroceryDialog(false);
             }
         });
         viewModel.refreshGroceriesList();
@@ -124,7 +123,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
      * @param isForEdit <br/>If TRUE, the dialog will be about editing the clicked grocery list.<br/>>
      *                  If FALSE, the dialog will be about creating a new grocery list.
      */
-    private void showGroceryListDialog(boolean isForEdit) {
+    private void showCreateOrEditGroceryDialog(boolean isForEdit) {
         int MAX_CHAR_GROCERY_NAME = 15;
         AlertDialog dialogBuilder = new AlertDialog.Builder(this.getContext()).create();
         dialogBuilder.setCancelable(false);
@@ -153,7 +152,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
             public void onClick(View v) {
                 String name = listNameInput.getText().toString();
                 if (TextUtils.isEmpty(name)){
-                    Toast.makeText(getActivity(), "Enter category name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getString(R.string.newNameForList), Toast.LENGTH_SHORT).show();
                     return ;
                 }
 
@@ -164,7 +163,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                     }
                 } else {
                      if (name.length() > MAX_CHAR_GROCERY_NAME){
-                         System.out.println("Name is too long, please enter a shorter one.");
+                         System.out.println(getString(R.string.nameTooLong));
                          listNameInput.setText("");
                      } else {
                          UserList userList = new UserList();
@@ -219,8 +218,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         bundle.putString("grocery_name", userList.getGroceryName());
         showProducts.setArguments(bundle);
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        // FrameLayout fl = (FrameLayout)R.layout.activity_main;
-        transaction.replace(R.id.groceriesFragment, showProducts ); // give your fragment container id in first parameter
+        transaction.replace(R.id.groceriesFragment, showProducts );
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
@@ -233,7 +231,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
     @Override
     public void editItem(UserList userList) {
         this.userListToEdit = userList;
-        showGroceryListDialog(true);
+        showCreateOrEditGroceryDialog(true);
     }
 
 }

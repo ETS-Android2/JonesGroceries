@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
+import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.dao.UserListDAO;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.UserList;
@@ -52,15 +53,13 @@ public class UserListFragmentViewModel extends AndroidViewModel  implements User
 
     @Override
     public long insertUserList(UserList userList){
-        // grocery.listId = 1;
         int isInserted = 0;
-        /** TODO : set list id of the new grocery */
         try {
             appDatabase.GroceriesListDAO().insertUserList(userList);
             isInserted = 1;
         } catch (SQLiteConstraintException ex) {
             Toast errMsg = Toast.makeText(getApplication().getApplicationContext(),
-                    "You already have a list with this name", Toast.LENGTH_LONG);
+                    R.string.listNameTaken, Toast.LENGTH_LONG);
             errMsg.show();
         }
         refreshGroceriesList();
@@ -75,7 +74,7 @@ public class UserListFragmentViewModel extends AndroidViewModel  implements User
             isUpdated = 1;
         } catch (SQLiteConstraintException ex) {
             Toast errMsg = Toast.makeText(getApplication().getApplicationContext(),
-                    "You already have a list with this name", Toast.LENGTH_LONG);
+                    R.string.listNameTaken, Toast.LENGTH_LONG);
             errMsg.show();
             isUpdated = 0;
         }

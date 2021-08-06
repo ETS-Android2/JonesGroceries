@@ -6,16 +6,16 @@
     <item
         android:id="@+id/action_delete_bought_products"
         android:icon="@drawable/ic_trash"
-        android:title="Supprimer les produits cochés"
+        android:title="@string/delete_completed_items"
         app:showAsAction="ifRoom"/>
 
 
 <!--    <item-->
 <!--        android:id="@+id/action_delete_bought_products"-->
-<!--        android:title="Supprimer les produits cochés" />-->
+<!--        android:title="@string/delete_completed_items" />-->
 
     <item
         android:id="@+id/addRecipe"
-        android:title="Ajouter une recette" />
+        android:title="@string/add_recipe" />
 
 </menu>
