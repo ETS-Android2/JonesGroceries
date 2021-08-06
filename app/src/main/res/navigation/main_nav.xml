@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="ca.jonestremblay.jonesgroceries.MainActivity"
+        android:name="ca.jonestremblay.jonesgroceries.activities.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment

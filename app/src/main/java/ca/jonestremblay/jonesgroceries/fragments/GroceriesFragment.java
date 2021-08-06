@@ -28,9 +28,8 @@ import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.adapters.GroceriesListAdapter;
-import ca.jonestremblay.jonesgroceries.dao.GroceriesListDAO;
-import ca.jonestremblay.jonesgroceries.entities.Grocery;
-import ca.jonestremblay.jonesgroceries.viewmodel.GroceriesFragmentViewModel;
+import ca.jonestremblay.jonesgroceries.entities.UserList;
+import ca.jonestremblay.jonesgroceries.viewmodel.UserListFragmentViewModel;
 
 
 /**
@@ -40,11 +39,11 @@ import ca.jonestremblay.jonesgroceries.viewmodel.GroceriesFragmentViewModel;
  */
 public class GroceriesFragment extends Fragment implements GroceriesListAdapter.HandleGroceryClick {
 
-    private GroceriesFragmentViewModel viewModel;
+    private UserListFragmentViewModel viewModel;
     private TextView noResultLabel;
     private RecyclerView recyclerView; /** list of groceries */
     private GroceriesListAdapter groceryAdapter;
-    private Grocery groceryToEdit;
+    private UserList userListToEdit;
 
 
     public static Fragment newInstance() {
@@ -100,10 +99,10 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
     }
 
     private void initViewModel(){
-        viewModel = new ViewModelProvider(this).get(GroceriesFragmentViewModel.class);
-        viewModel.getListOfGroceryObserver().observe(this.getActivity(), new Observer<List<Grocery>>() {
+        viewModel = new ViewModelProvider(this).get(UserListFragmentViewModel.class);
+        viewModel.getListOfGroceryObserver().observe(this.getActivity(), new Observer<List<UserList>>() {
             @Override
-            public void onChanged(List<Grocery> groceries) {
+            public void onChanged(List<UserList> groceries) {
                 /** Show or hide noResultLabel if necessary */
                 if (groceries == null){
                     noResultLabel.setVisibility(View.VISIBLE);
@@ -138,7 +137,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         listNameInput.setFilters(new InputFilter[] { new InputFilter.LengthFilter(MAX_CHAR_GROCERY_NAME) });
         if (isForEdit){
             createButton.setText("Update");
-            listNameInput.setText(groceryToEdit.groceryName);
+            listNameInput.setText(userListToEdit.getGroceryName());
         }
 
         /** Listeners setters */
@@ -159,8 +158,8 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                 }
 
                 if (isForEdit){
-                    groceryToEdit.groceryName = name;
-                    if (viewModel.updateGrocery(groceryToEdit) == 0){
+                    userListToEdit.setGroceryName(name);
+                    if (viewModel.updateUserList(userListToEdit) == 0){
                         listNameInput.setText("");
                     }
                 } else {
@@ -168,10 +167,10 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                          System.out.println("Name is too long, please enter a shorter one.");
                          listNameInput.setText("");
                      } else {
-                         Grocery grocery = new Grocery();
-                         grocery.setIconId(0);
-                         grocery.setGroceryName(name);
-                         viewModel.insertGrocery(grocery);
+                         UserList userList = new UserList();
+                         userList.setIconId(0);
+                         userList.setGroceryName(name);
+                         viewModel.insertUserList(userList);
                          dialogBuilder.dismiss();
                      }
                 }
@@ -183,7 +182,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         dialogBuilder.show();
     }
 
-    private void showDeleteGroceryDialog(Grocery grocery) {
+    private void showDeleteGroceryDialog(UserList userList) {
         AlertDialog dialogBuilder = new AlertDialog.Builder(this.getContext()).create();
         dialogBuilder.setCancelable(false);
         View dialogView = getLayoutInflater().inflate(R.layout.delete_grocery_list_dialog, null);
@@ -191,7 +190,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         TextView listName = dialogView.findViewById(R.id.listName);
         Button deleteButton = dialogView.findViewById(R.id.deleteButton);
         Button cancelButton = dialogView.findViewById(R.id.cancelButton);
-        listName.setText(grocery.groceryName);
+        listName.setText(userList.getGroceryName());
         /** Listeners setters */
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,7 +202,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.deleteGrocery(grocery);
+                viewModel.deleteUserList(userList);
                 dialogBuilder.dismiss();
             }
         });
@@ -213,11 +212,11 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
     }
 
     @Override
-    public void itemClick(Grocery grocery) {
+    public void itemClick(UserList userList) {
         Fragment showProducts = new ItemsListFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt("list_id", grocery.listId);
-        bundle.putString("grocery_name", grocery.groceryName);
+        bundle.putInt("list_id", userList.getListId());
+        bundle.putString("grocery_name", userList.getGroceryName());
         showProducts.setArguments(bundle);
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         // FrameLayout fl = (FrameLayout)R.layout.activity_main;
@@ -227,13 +226,13 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
     }
 
     @Override
-    public void removeItem(Grocery grocery) {
-        showDeleteGroceryDialog(grocery);
+    public void removeItem(UserList userList) {
+        showDeleteGroceryDialog(userList);
     }
 
     @Override
-    public void editItem(Grocery grocery) {
-        this.groceryToEdit = grocery;
+    public void editItem(UserList userList) {
+        this.userListToEdit = userList;
         showGroceryListDialog(true);
     }
 

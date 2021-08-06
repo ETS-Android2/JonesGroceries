@@ -11,19 +11,19 @@ import java.util.List;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.Product;
 
-@Dao
-public interface CategoriesDAO {
-
-    @Query("SELECT * FROM categories")
-    List<Category> getAllCategories();
-
-    @Insert
-    void insertCategory(Category...category);
-
-    @Update
-    void updateCategory(Category category);
-
-    @Delete
-    void deleteCategory(Category category);
-
-}
+//@Dao
+//public interface CategoriesDAO {
+//
+//    @Query("SELECT * FROM categories")
+//    List<Category> getAllCategories();
+//
+//    @Insert
+//    void insertCategory(Category...category);
+//
+//    @Update
+//    void updateCategory(Category category);
+//
+//    @Delete
+//    void deleteCategory(Category category);
+//
+//}

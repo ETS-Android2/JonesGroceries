@@ -1,6 +1,5 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -14,15 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
-import ca.jonestremblay.jonesgroceries.entities.Grocery;
-import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.entities.Recipe;
-import ca.jonestremblay.jonesgroceries.viewmodel.GroceriesFragmentViewModel;
+import ca.jonestremblay.jonesgroceries.entities.UserList;
+import ca.jonestremblay.jonesgroceries.viewmodel.UserListFragmentViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +28,7 @@ import ca.jonestremblay.jonesgroceries.viewmodel.GroceriesFragmentViewModel;
 public class RecipesFragment extends Fragment {
 
     private TextView noProductsLabel;
-    private GroceriesFragmentViewModel viewModel;
+    private UserListFragmentViewModel viewModel;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -94,10 +90,10 @@ public class RecipesFragment extends Fragment {
     }
 
     private void initViewModel() {
-        viewModel = new ViewModelProvider(this).get(GroceriesFragmentViewModel.class);
-        viewModel.getListOfGroceryObserver().observe(getViewLifecycleOwner(), new Observer<List<Grocery>>() {
+        viewModel = new ViewModelProvider(this).get(UserListFragmentViewModel.class);
+        viewModel.getListOfGroceryObserver().observe(getViewLifecycleOwner(), new Observer<List<UserList>>() {
             @Override
-            public void onChanged(List<Grocery> products) {
+            public void onChanged(List<UserList> products) {
                 if (products == null){
                     noProductsLabel.setVisibility(View.VISIBLE);
                 } else {

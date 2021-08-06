@@ -8,8 +8,13 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "products", indices = {@Index(value = "item_name", unique = true)})
+import java.util.Comparator;
+
+@Entity(tableName = "products",
+        indices = {@Index(value = "item_name", unique = true),})
 public class Product {
+
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     public int product_id;
 
@@ -24,18 +29,22 @@ public class Product {
     public Product() {
     }
 
-
+    @Ignore
     public Product(String name, Category category) {
         this.name = name;
         this.category = category;
     }
 
+    public Product(String name, int product_id, Category category) {
+        this.name = name;
+        this.product_id = product_id;
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
-                "_id=" + product_id +
-                ", name='" + name + '\'' +
-                ", category=" + category +
-                '}';
+        return this.name;
     }
+
+
 }

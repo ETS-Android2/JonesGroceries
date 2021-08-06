@@ -1,5 +1,6 @@
 package ca.jonestremblay.jonesgroceries.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
 import androidx.room.Entity;
@@ -8,29 +9,39 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.util.Comparator;
+import java.util.List;
+
 import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "items_list",
-        foreignKeys=@ForeignKey(
-                entity=Product.class,
-                parentColumns="product_id",
-                childColumns="product_id",
-                onDelete=CASCADE),
-        indices= {@Index(value="list_id"), @Index(value = "product_id")})
+        primaryKeys = {"list_id", "product_id"},
+        foreignKeys= {@ForeignKey(
+                            entity=Product.class,
+                            parentColumns="product_id",
+                            childColumns="product_id",
+                            onUpdate=CASCADE,
+                            onDelete=CASCADE),
+                    @ForeignKey(
+                            entity=UserList.class,
+                            parentColumns="list_id",
+                            childColumns="list_id",
+                            onUpdate=CASCADE,
+                            onDelete=CASCADE)},
+        indices= {@Index(value = {"product_id", "list_id"}, unique = true),})
 public class ListItem {
-    @PrimaryKey(autoGenerate = true)
+
     @ColumnInfo(name= "list_id")
     public int listID;
 
-//    @ColumnInfo(name= "product_id")
-//    public int product_id;
-
+    @NonNull
     @Embedded
-    public Product product;
+    public Product product = new Product();
 
     public int quantity;
-    @ColumnInfo(name= "measure_unit")
+    @ColumnInfo(name= "measure_unit", defaultValue = "x")
     public String measureUnit;
+    @ColumnInfo(defaultValue = "")
     public String notes;
     public boolean completed;
 
@@ -47,6 +58,8 @@ public class ListItem {
         this.notes = notes;
         isNotCompleted();
     }
+
+
 
     public void isCompleted(){
         this.completed = true;
@@ -95,4 +108,5 @@ public class ListItem {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
 }

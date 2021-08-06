@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import ca.jonestremblay.jonesgroceries.R;
-import ca.jonestremblay.jonesgroceries.database.DatabaseHelper;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.Product;
 

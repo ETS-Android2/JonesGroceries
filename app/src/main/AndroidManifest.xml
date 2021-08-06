@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:versionCode="1"
     android:versionName="1.0"
-    package="ca.jonestremblay.jonesgroceries">
+    package="ca.jonestremblay.jonesgroceries"
+                                                >
 
     <!-- Beware that these values are overridden by the build.gradle file -->
 
@@ -17,12 +18,15 @@
 
         <!-- This name is resolved to com.example.myapp.MainActivity
              based upon the package attribute -->
-        <activity android:name=".MainActivity"
+        <activity android:name=".activities.SplashActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.MainActivity"
+            android:launchMode="singleTop" >
         </activity>
 
     </application>

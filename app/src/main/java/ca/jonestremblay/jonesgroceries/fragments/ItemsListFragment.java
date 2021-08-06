@@ -1,18 +1,23 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
+import android.database.sqlite.SQLiteConstraintException;
+import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.ArrayRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -20,32 +25,46 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.jonestremblay.jonesgroceries.IOnBackPressed;
+import ca.jonestremblay.jonesgroceries.activities.MainActivity;
 import ca.jonestremblay.jonesgroceries.R;
+import ca.jonestremblay.jonesgroceries.adapters.SearchProductAdapter;
 import ca.jonestremblay.jonesgroceries.adapters.ProductsListAdapter;
+import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
+import ca.jonestremblay.jonesgroceries.entities.MeasureUnits;
 import ca.jonestremblay.jonesgroceries.entities.Product;
 import ca.jonestremblay.jonesgroceries.viewmodel.ItemsListFragmentViewModel;
 
-public class ItemsListFragment extends Fragment implements ProductsListAdapter.HandleProductsClick, IOnBackPressed {
+/***
+ * This fragment is used to display a recycler view, containing list_item's table content of
+ * a list, plus the search bar at the top for searching and adding products in the recycler view.
+ */
+public class ItemsListFragment extends Fragment implements ProductsListAdapter.HandleProductsClick {
 
     private String navbarTitle;
     private RecyclerView recyclerView;
     private int listID;
+    private SearchProductAdapter searchProductAdapter;
     private ProductsListAdapter productsListAdapter;
     private ItemsListFragmentViewModel viewModel;
     private ListItem productToUpdate;
     private AutoCompleteTextView searchBar;
+    private ImageButton btnClearText;
+    private ActionBar actionBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         handleOnBackPressed();
+        setHasOptionsMenu(true);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,70 +95,117 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         if (bundle != null) {
             id = bundle.getInt("list_id");
             navbarTitle = bundle.getString("grocery_name");
-           // navbarTitle = getResources().getString(R.string.bab)
+
+            listID = id;
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(navbarTitle);
         }
-        listID = id;
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(navbarTitle);
-
-
-
-        List<Product> productsList = new ArrayList<Product>();
-        String[] categories = getResources().getStringArray(R.array.categories);
-        Product product;
-        int iconID = 0;
-        for (String categorie : categories){
-            Category category = new Category(categorie, iconID);
-            int arrayID = getResources().getIdentifier(categorie, "array", getActivity().getPackageName());
-            String[] itemsOfCategorie = getResources().getStringArray(arrayID);
-            for (String item : itemsOfCategorie){
-                product = new Product();
-                product.name = item;
-                product.category = category;
-                productsList.add(product);
-            }
-            iconID++;
-        }
-
-
+        searchProductAdapter = new SearchProductAdapter(this.getContext(),
+                                    MainActivity.productsCatalog);
         searchBar = rootView.findViewById(R.id.searchBar);
-        // searchBar.setAdapter();
+        searchBar.setAdapter(searchProductAdapter);
+        actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        btnClearText = rootView.findViewById(R.id.btn_clear_text);
     }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull @NotNull Menu menu, @NonNull @NotNull MenuInflater inflater) {
+        inflater.inflate(R.menu.list_options, menu);
+    }
+
+
 
     void setListeners(View rootView){
-//        saveButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String productName = addNewProductInput.getText().toString();
-//                if(TextUtils.isEmpty(productName)){
-//                    Toast.makeText(getActivity(), "Enter product name", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                if(productToUpdate == null){
-//                    saveNewItem(productName);
-//                } else {
-//                    updateNewItem(productToUpdate.product.name);
-//                }
-//            }
-//        });
         initRecyclerView(rootView);
         initViewModel();
-        viewModel.getAllProductsList(listID);
+        viewModel.setID(listID);
+        viewModel.getAllProductsList();
+
+        btnClearText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchBar.setText("");
+            }
+        });
+
+        searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Product productToAdd = ((Product)parent.getItemAtPosition(position));
+                // int size = searchProductAdapter.getSuggestions().size();
+                if (productsListAdapter.getProductsList() != null ){
+                    /** Checks if item is already in the list, adjust qty if needed */
+                    for (ListItem item : productsListAdapter.getProductsList()){
+                        if (productToAdd.name.equals(item.product.name)){
+                            Toast.makeText(getContext(), "This item is already in your list." +
+                                    "You can adjust the quantity if you long press it.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+                Product newUserProduct = getNewUserProduct(productToAdd);
+                boolean isAdded = addUserProductToDatabase(newUserProduct);
+                if (isAdded){
+                    Toast.makeText(getContext(), newUserProduct.name + " has been added in" +
+                                    " the database.", Toast.LENGTH_SHORT).show();
+                }
+                searchBar.setText(""); /** Resets user input */
+                addProductToList(productToAdd);
+            }
+        });
     }
 
+    public boolean addUserProductToDatabase(Product newUserProduct){
+        if (newUserProduct != null){
+            /* Then user choice wasn't already in database : we need to add it.*/
+            try {
+                long id = AppDatabase.getInstance(getActivity().getApplication().
+                        getApplicationContext()).ProductDAO().insertProduct(newUserProduct);
+                ListItem item = new ListItem();
+                item.product = newUserProduct;
+                item.product.product_id = (int)id;
+                item.quantity = 1;
+                /** Adding the new product in the productCatalog arrayList, since that ArrayList
+                 * is initialized on startup of the app only. s*/
+                MainActivity.productsCatalog.add(newUserProduct);
+                return true;
+            } catch(SQLiteConstraintException ex){
+                Toast.makeText(getContext(), "An error occured while trying to add your " +
+                    "product in the database.",Toast.LENGTH_SHORT).show();}
+        }
+        return false;
+    }
+
+    /***
+     * Return user new product if that's a new product, otherwise returns null.
+     * If null, we know we can use original obtained product to add to the list.
+     * @param product obtained for user click in search bar's dropdown
+     * @return
+     */
+    private Product getNewUserProduct(Product product){
+        int OTHER_ICON_ID = 21;
+        /* Set the right name (remove sentence, keep only product name) */
+        if (product.category.icon_id == OTHER_ICON_ID && product.name.contains("\"")){
+            String newItemName = product.name.replaceAll("\"", "");
+                  //  product.name.indexOf("|") + 1, product.name.lastIndexOf("|")).trim();
+            product.name = newItemName;
+            return product;
+        }
+        return null;
+    }
 
 
     private void initRecyclerView(View rootView){
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
         productsListAdapter = new ProductsListAdapter(this.getContext(), this);
         recyclerView.setAdapter(productsListAdapter);
+        productsListAdapter.notifyDataSetChanged();
     }
 
     private void initViewModel(){
         viewModel = new ViewModelProvider(this).get(ItemsListFragmentViewModel.class);
-        // viewModel.setID(productsListAdapter);
+        //viewModel.setID(productsListAdapter);
         viewModel.getListOfRowItemsObserver().observe(getViewLifecycleOwner(), new Observer<List<ListItem>>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onChanged(List<ListItem> items) {
                 if (items == null){
@@ -152,6 +218,7 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 }
             }
         });
+
     }
 
     @Override
@@ -172,7 +239,6 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
     @Override
     public void editProduct(ListItem item) {
         this.productToUpdate = item;
-//        addNewProductInput.setText(item.product.name);
     }
 
     private void updateNewItem(String newName) {
@@ -182,15 +248,17 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         productToUpdate = null;
     }
 
-    private void saveNewItem(String productName) {
+    private void addProductToList(Product product) {
+        int DEFAULT_QUANTITY = 1;
         ListItem item = new ListItem();
-        item.product.name = productName;
-        item.listID = 2;
-        item.product.product_id = -1;
-//        item.product.product_id = 2;
-        //product.category.category_name = category_name;
+        item.listID = listID;
+        Category category = new Category(product.category.category_name, product.category.icon_id);
+        item.product = new Product(product.name, product.product_id, category);
+        item.quantity = DEFAULT_QUANTITY;
+        item.measureUnit = MeasureUnits.x.toString();
+        /* Ajout du produit dans la liste */
         viewModel.insertItem(item);
-//        addNewProductInput.setText("");
+        productsListAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -198,20 +266,35 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         switch (product.getItemId()){
             case android.R.id.home:
                 getActivity().finish();
+            case R.id.action_delete_bought_products:
+                List<ListItem> itemsToDelete = new ArrayList<>();
+                for (ListItem it : productsListAdapter.getProductsList()){
+                    if (it.completed){
+                        itemsToDelete.add(it);
+                    }
+                }
+                for(ListItem item : itemsToDelete){
+                    AppDatabase.getInstance(getContext().getApplicationContext())
+                            .ItemListDAO().deleteItem(item);
+                }
+                productsListAdapter.getProductsList().removeAll(itemsToDelete);
+                productsListAdapter.notifyDataSetChanged();
+                break;
         }
         return super.onOptionsItemSelected(product);
     }
 
-    @Override
-    public void onBackPressed() {
-        int count = getChildFragmentManager().getBackStackEntryCount();
+//    @Override
+//    public void onBackPressed() {
+//        int count = getChildFragmentManager().getBackStackEntryCount();
+//
+//        if (count == 0) {
+//            getActivity().onBackPressed();
+//            //additional code
+//        } else {
+//            getChildFragmentManager().popBackStack();
+//        }
+//
+//    }
 
-        if (count == 0) {
-            getActivity().onBackPressed();
-            //additional code
-        } else {
-            getChildFragmentManager().popBackStack();
-        }
-
-    }
 }

@@ -21,38 +21,46 @@
     <string name="searchBar.NO_RESULT">No results were found for your search.</string>
     <string name="searchBar.NO_RESULT_SUB">Create [itemSearched]</string>
 
+    <string name="contextMenu.AdjustQty">Edit quantity</string>
+    <string name="contextMenu.AddNotes">Add / Edit notes</string>
+    <string name="contextMenu.EditItem">Edit item</string>
+
+
+
+
+
     <!-- Items strings -->
-    <string name="categories">categories</string>
-    <string name="baby_products">baby products</string>
-    <string name="bakery">bakery</string>
-    <string name="alcoholic_drinks">alcoholic drinks</string>
-    <string name="beverages">beverages</string>
-    <string name="canned_foods">canned foods</string>
-    <string name="car_care_products">car care products</string>
-    <string name="clothes">clothes</string>
-    <string name="hot_beverages">hot beverages</string>
-    <string name="cosmetics">cosmetics</string>
-    <string name="dairy_products">dairy products</string>
-    <string name="diet_foods">diet foods</string>
-    <string name="fish_seafood">fish seafood</string>
-    <string name="frozen">frozen</string>
-    <string name="grains_pasta">grains pasta</string>
-    <string name="home_kitchen">home kitchen</string>
-    <string name="home_baking">home baking</string>
-    <string name="house_cleaning_products">house cleaning products</string>
-    <string name="meat_poultry_sausages">meat poultry sausages</string>
-    <string name="newspapers">newspapers</string>
-    <string name="office_supplies">office supplies</string>
-    <string name="oils">oils</string>
-    <string name="other">other</string>
-    <string name="personal_hygiene">personal hygiene</string>
-    <string name="pet_supplies">pet supplies</string>
-    <string name="pharmacy">pharmacy</string>
-    <string name="preserves">preserves</string>
-    <string name="produce">produce</string>
-    <string name="ready_meals">ready meals</string>
-    <string name="spices_sauces_condiment">spices sauces condiment</string>
-    <string name="snacks">snacks</string>
+    <string name="Categories">Categories</string>
+    <string name="Baby_Products">Baby Products</string>
+    <string name="Bakery">Bakery</string>
+    <string name="Alcoholic_Drinks">Alcoholic Drinks</string>
+    <string name="Beverages">Beverages</string>
+    <string name="Canned_Foods">Canned Foods</string>
+    <string name="Car_Care_Products">Car Care Products</string>
+    <string name="Clothes">Clothes</string>
+    <string name="Hot_beverages">Hot Beverages</string>
+    <string name="Cosmetics">Cosmetics</string>
+    <string name="Dairy_products">Dairy Products</string>
+    <string name="Diet_foods">Diet Foods</string>
+    <string name="Fish_seafood">Fish Seafood</string>
+    <string name="Frozen">Frozen</string>
+    <string name="Grains_pasta">Grains Pasta</string>
+    <string name="Home_kitchen">Home Kitchen</string>
+    <string name="Home_baking">Home Baking</string>
+    <string name="House_cleaning_products">House Cleaning Products</string>
+    <string name="Meat_poultry_sausages">Meat Poultry Sausages</string>
+    <string name="Newspapers">Newspapers</string>
+    <string name="Office_supplies">Office Supplies</string>
+    <string name="Oils">Oils</string>
+    <string name="Other">Other</string>
+    <string name="Personal_hygiene">Personal Hygiene</string>
+    <string name="Pet_supplies">Pet Supplies</string>
+    <string name="Pharmacy">Pharmacy</string>
+    <string name="Preserves">Preserves</string>
+    <string name="Produce">Produce</string>
+    <string name="Ready_meals">Ready Meals</string>
+    <string name="Spices_sauces_condiment">Spices Sauces Condiment</string>
+    <string name="Snacks">Snacks</string>
     <string name="beer"> beer</string>
     <string name="red_wine"> red wine</string>
     <string name="white_wine"> white wine</string>
@@ -1228,6 +1236,17 @@
     <string name="vegetable_stock">vegetable stock</string>
     <string name="white_pepper">white pepper</string>
 
-        <!-- End of categories -->
-    <!-- End of items strings -->
+    <string name="unit_x">unit(s)</string>
+    <string name="unit_gr">gram(s)</string>
+    <string name="unit_kg">kilogram(s)</string>
+    <string name="unit_ml">millilitre(s)</string>
+    <string name="unit_l">litre(s)</string>
+    <string name="unit_oz">ounce(s)</string>
+    <string name="createWithArrow"><![CDATA[Create —>]]></string>
+    <string name="zero_results">0 matching results</string>
+
+    <string name="s">d</string>
+    <string name="sd">d</string>
+
+
 </resources> 

@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="categories">
-        <item>@string/alcoholic_drinks</item>
-        <item>@string/baby_products</item>
-        <item>@string/bakery</item>
-        <item>@string/beverages</item>
-        <item>@string/canned_foods</item>
-        <item>@string/car_care_products</item>
-        <item>@string/clothes</item>
-        <item>@string/hot_beverages</item>
-        <item>@string/cosmetics</item>
-        <item>@string/dairy_products</item>
-        <item>@string/diet_foods</item>
-        <item>@string/fish_seafood</item>
-        <item>@string/frozen</item>
-        <item>@string/grains_pasta</item>
-        <item>@string/home_kitchen</item>
-        <item>@string/home_baking</item>
-        <item>@string/house_cleaning_products</item>
-        <item>@string/meat_poultry_sausages</item>
-        <item>@string/newspapers</item>
-        <item>@string/office_supplies</item>
-        <item>@string/oils</item>
-        <item>@string/other</item>
-        <item>@string/personal_hygiene</item>
-        <item>@string/pet_supplies</item>
-        <item>@string/pharmacy</item>
-        <item>@string/preserves</item>
-        <item>@string/produce</item>
-        <item>@string/ready_meals</item>
-        <item>@string/snacks</item>
-        <item>@string/spices_sauces_condiment</item>
+        <item>@string/Alcoholic_Drinks</item>
+        <item>@string/Baby_Products</item>
+        <item>@string/Bakery</item>
+        <item>@string/Beverages</item>
+        <item>@string/Canned_Foods</item>
+        <item>@string/Car_Care_Products</item>
+        <item>@string/Clothes</item>
+        <item>@string/Hot_beverages</item>
+        <item>@string/Cosmetics</item>
+        <item>@string/Dairy_products</item>
+        <item>@string/Diet_foods</item>
+        <item>@string/Fish_seafood</item>
+        <item>@string/Frozen</item>
+        <item>@string/Grains_pasta</item>
+        <item>@string/Home_kitchen</item>
+        <item>@string/Home_baking</item>
+        <item>@string/House_cleaning_products</item>
+        <item>@string/Meat_poultry_sausages</item>
+        <item>@string/Newspapers</item>
+        <item>@string/Office_supplies</item>
+        <item>@string/Oils</item>
+        <item>@string/Other</item>
+        <item>@string/Personal_hygiene</item>
+        <item>@string/Pet_supplies</item>
+        <item>@string/Pharmacy</item>
+        <item>@string/Preserves</item>
+        <item>@string/Produce</item>
+        <item>@string/Ready_meals</item>
+        <item>@string/Snacks</item>
+        <item>@string/Spices_sauces_condiment</item>
     </string-array>
 
     <string-array name="alcoholic_drinks">
@@ -40,7 +40,7 @@
         <item>@string/champagne</item>
         <item>@string/cider</item>
         <item>@string/cognac</item>
-        <item>string/dry_wine</item>
+        <item>@string/dry_wine</item>
         <item>@string/filters</item>
         <item>@string/flavored_beer</item>
         <item>@string/flavored_vodka</item>
@@ -760,7 +760,7 @@
     </string-array>
     <string-array name="newspapers">
         <item>@string/tv_guide</item>
-        <item>@string/newspapers</item>
+        <item>@string/Newspapers</item>
     </string-array>
     <string-array name="office_supplies">
         <item>@string/crayons</item>

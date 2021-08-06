@@ -6,26 +6,23 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import ca.jonestremblay.jonesgroceries.dao.CategoriesDAO;
-import ca.jonestremblay.jonesgroceries.dao.GroceriesListDAO;
+//import ca.jonestremblay.jonesgroceries.dao.CategoriesDAO;
+import ca.jonestremblay.jonesgroceries.dao.UserListDAO;
 import ca.jonestremblay.jonesgroceries.dao.ItemListDAO;
 import ca.jonestremblay.jonesgroceries.dao.ProductDAO;
-import ca.jonestremblay.jonesgroceries.dao.RecipesListDAO;
 import ca.jonestremblay.jonesgroceries.entities.Category;
-import ca.jonestremblay.jonesgroceries.entities.Grocery;
+import ca.jonestremblay.jonesgroceries.entities.UserList;
 import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.entities.Recipe;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
 
 
-@Database( entities = {Product.class, Category.class, ListItem.class, Grocery.class, Recipe.class}, version = 4, exportSchema = false)
+@Database( entities = {Product.class,  ListItem.class, UserList.class}, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
 
-    public abstract CategoriesDAO CategoriesListDao();
-    public abstract GroceriesListDAO GroceriesListDAO();
-    public abstract RecipesListDAO RecipesListDAOp();
-    public abstract ProductDAO ProductListDAO();
+    //public abstract CategoriesDAO CategoriesListDao();
+    public abstract UserListDAO GroceriesListDAO();
+    public abstract ProductDAO ProductDAO();
     public abstract ItemListDAO ItemListDAO();
 
     private static volatile AppDatabase UNIQUE_INSTANCE;

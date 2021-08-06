@@ -4,10 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "categories")
+//@Entity(tableName = "categories")
 public class Category {
-    @PrimaryKey
-    @NonNull
+//    @PrimaryKey
+//    @NonNull
     public String category_name;
     public int icon_id;
 

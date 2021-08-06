@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="measure_units">
+        <item>@string/unit_x</item>
+        <item>@string/unit_gr</item>
+        <item>@string/unit_kg</item>
+        <item>@string/unit_ml</item>
+        <item>@string/unit_l</item>
+        <item>@string/unit_oz</item>
+    </string-array>
+</resources>

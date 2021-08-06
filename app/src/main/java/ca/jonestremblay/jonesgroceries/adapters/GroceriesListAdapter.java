@@ -18,9 +18,7 @@ import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
-import ca.jonestremblay.jonesgroceries.entities.Category;
-import ca.jonestremblay.jonesgroceries.entities.Grocery;
-import ca.jonestremblay.jonesgroceries.entities.Product;
+import ca.jonestremblay.jonesgroceries.entities.UserList;
 
 
 /**
@@ -29,11 +27,11 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
  * The process of associating views to their data is called binding.
  */
 public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdapter.ViewHolder> {
-    private static final String TAG = "ProductsViewModel";
-    private MutableLiveData<List<Grocery>> listOfGroceries;
+    private static final String TAG = "GroceriesViewModel";
+    private MutableLiveData<List<UserList>> listOfGroceries;
     AppDatabase appDatabase;
     private Context context;
-    private List<Grocery> groceriesList;
+    private List<UserList> groceriesList;
     private HandleGroceryClick clickListener;
 
     public GroceriesListAdapter(Context context, HandleGroceryClick clickListener){
@@ -41,7 +39,7 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
         this.clickListener = clickListener;
     }
 
-    public void setGroceriesList(List<Grocery> groceriesList){
+    public void setGroceriesList(List<UserList> groceriesList){
         this.groceriesList = groceriesList;
             notifyDataSetChanged();
     }
@@ -59,7 +57,6 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
     @NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        Log.v(TAG, "onCreateViewHolder: JE SUIS EN TRAIN DE CRÉER LE VIEW HOLDER, SANS DATA");
         View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_row, parent, false);
         return new ViewHolder(view);
     }
@@ -77,10 +74,9 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         /** Ici on bind les rows du reycler view avec du data */
-        Log.d(TAG, "onBindViewHolder: JE SUIS EN TRAIN DE BIND LES DATA AVEC LE VIEWHOLDER");
-        holder.grocery_name.setText(this.groceriesList.get(position).groceryName);
+        holder.grocery_name.setText(this.groceriesList.get(position).getGroceryName());
 
-        holder.grocery_name.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickListener.itemClick(groceriesList.get(position));
@@ -134,13 +130,12 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
             editBtn = view.findViewById(R.id.editItem);
             grocery_name = view.findViewById(R.id.item_name);
             deleteBtn = view.findViewById(R.id.removeItem);
-            Log.d(TAG, "ViewHolder: fin de la construction de l'objet viewholder");
         }
     }
 
     public interface HandleGroceryClick {
-        void itemClick(Grocery grocery);
-        void removeItem(Grocery grocery);
-        void editItem(Grocery grocery);
+        void itemClick(UserList userList);
+        void removeItem(UserList userList);
+        void editItem(UserList userList);
     }
 }

@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.entities.Product;
@@ -16,7 +17,7 @@ public interface ProductDAO {
     List<Product> getAllProducts();
 
     @Insert
-    void insertProduct (Product...item);
+    long insertProduct (Product item);
 
     @Update
     void updateProduct(Product item);
