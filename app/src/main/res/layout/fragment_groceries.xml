@@ -7,19 +7,17 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".fragments.GroceriesFragment">
-        
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="100sp"
             android:layout_marginEnd="22dp"
             android:layout_marginRight="22dp"
-            android:layout_marginBottom="12dp"
             android:gravity="center|right"
             android:text="@string/my_groceries"
             android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

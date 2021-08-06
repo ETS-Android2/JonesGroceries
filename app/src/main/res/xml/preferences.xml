@@ -6,11 +6,11 @@
     <!--below line is to create preference category-->
     <PreferenceCategory
         android:key="categoryGeneral"
-        android:title="General">
+        android:title="@string/general">
         <Preference
             android:key="seeCatalog"
-            android:summary="Voir les items du catalogue, triés par catégorie"
-            android:title="Voir le catalogue">
+            android:summary="@string/see_catalog_items"
+            android:title="@string/see_catalog">
             <intent
                 android:action="ca.jonestremblay.ui.bottomNav.fragments.seeCatalog"
                 android:targetClass="ca.jonestremblay.ui.bottomNav.fragments.CatalogFragment"
@@ -19,17 +19,18 @@
 
         <Preference
             android:key="changeNavBarColor"
-            android:title="Changer la couleur de la barre de navigation" />
+            android:title="@string/changeColorNavBar" />
 
         <SwitchPreferenceCompat
             android:key="nightMode"
             android:summary="Still not implemented."
-            android:title="Activer le mode sombre" />
+            android:title="@string/activate_dark_theme"
+            android:defaultValue="true"/>
 
         <Preference
             android:key="jonesWebsite"
-            android:summary="https://jonestremblay.ca/"
-            android:title="Pour voir mes autres projets ↙">
+            android:summary="https://github.com/jonestremblay/"
+            android:title="@string/seeOtherProjets">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://jonestremblay.ca/" />

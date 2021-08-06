@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,12 +8,97 @@
     android:background="@color/design_default_color_secondary">
 
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textColor="@color/black"
-            android:textSize="64dp"
-            android:text="@string/menuBar.flyers" />
+    <ImageButton
+        android:id="@+id/btn_iga"
+        android:layout_width="165dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="82dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/iga"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <ImageButton
+        android:id="@+id/btn_superc"
+        android:layout_width="165dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="47dp"
+        android:src="@drawable/superc"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_iga" />
+
+    <ImageButton
+        android:id="@+id/btn_adonis"
+        android:layout_width="165dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/adonis"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_superc" />
+
+    <ImageButton
+        android:id="@+id/btn_metro"
+        android:layout_width="164dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="21dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/metro"
+        app:layout_constraintStart_toEndOf="@+id/btn_adonis"
+        app:layout_constraintTop_toBottomOf="@+id/btn_maxi" />
+
+    <ImageButton
+        android:id="@+id/btn_maxi"
+        android:layout_width="165dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="46dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/maxi"
+        app:layout_constraintStart_toEndOf="@+id/btn_superc"
+        app:layout_constraintTop_toBottomOf="@+id/btn_flipp" />
+
+    <ImageButton
+        android:id="@+id/btn_flipp"
+        android:layout_width="163dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/flipp"
+        app:layout_constraintStart_toEndOf="@+id/btn_iga"
+        app:layout_constraintTop_toBottomOf="@+id/otherStores" />
+
+    <TextView
+        android:id="@+id/otherStores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginLeft="210dp"
+
+        android:layout_marginTop="36dp"
+        android:text="@string/other_stores"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

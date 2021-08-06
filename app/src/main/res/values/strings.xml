@@ -1260,14 +1260,22 @@
     <string name="yes_delete_it">Yes, delete it</string>
     <string name="enterNote_forItem">Enter a note for this item</string>
     <string name="notesInput">Notes</string>
-    <string name="products_catalog">Products Catalog</string>
+    <string name="products_catalog" >Products Catalog</string>
     <string name="enter_the_desired_quantity">Enter the desired quantity</string>
     <string name="quantityInput">Quantity</string>
-    <string name="no_groceries_list" tools:ignore="StringEscaping">You don't have any groceries list.</string>
+    <string name="no_groceries_list" >You don\'t have any groceries list.</string>
     <string name="my_groceries">My groceries</string>
-    <string name="no_products_in_list" tools:ignore="StringEscaping">You don't have any product in your list.</string>
-    <string name="no_items_in_list" tools:ignore="StringEscaping">You don't have any items in your list.</string>
+    <string name="no_products_in_list" >You don\'t have any product in your list.</string>
+    <string name="no_items_in_list" >You don\'t have any items in your list.</string>
     <string name="which_item_do_you_need">Which item do you need ?</string>
+    <string name="update">Update</string>
+    <string name="other_stores">Other stores</string>
+    <string name="see_catalog_items">Voir les items du catalogue, triés par catégorie</string>
+    <string name="see_catalog">Voir le catalogue</string>
+    <string name="changeColorNavBar">Changer la couleur de la barre de navigation</string>
+    <string name="activate_dark_theme">Activer le mode sombre</string>
+    <string name="seeOtherProjets">Pour voir mes autres projets ↙</string>
+    <string name="general">General</string>
 
 
 </resources> 

@@ -135,7 +135,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
 
         listNameInput.setFilters(new InputFilter[] { new InputFilter.LengthFilter(MAX_CHAR_GROCERY_NAME) });
         if (isForEdit){
-            createButton.setText("Update");
+            createButton.setText(R.string.update);
             listNameInput.setText(userListToEdit.getGroceryName());
         }
 
@@ -160,6 +160,8 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                     userListToEdit.setGroceryName(name);
                     if (viewModel.updateUserList(userListToEdit) == 0){
                         listNameInput.setText("");
+                    } else {
+                        dialogBuilder.dismiss();
                     }
                 } else {
                      if (name.length() > MAX_CHAR_GROCERY_NAME){
@@ -174,7 +176,6 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                      }
                 }
                 /** here we need to call view model */
-
             }
         });
         dialogBuilder.setView(dialogView);
