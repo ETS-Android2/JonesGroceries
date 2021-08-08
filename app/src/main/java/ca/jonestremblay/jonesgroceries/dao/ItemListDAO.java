@@ -13,6 +13,9 @@ import ca.jonestremblay.jonesgroceries.entities.ListItem;
 @Dao
 public interface ItemListDAO {
 
+    @Query("SELECT * FROM items_list")
+    List<ListItem> getCompleteCatalog();
+
     @Query("SELECT * FROM items_list WHERE list_id = :list_id")
     List<ListItem> getAllItems(int list_id);
 

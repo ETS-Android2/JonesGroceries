@@ -1266,7 +1266,7 @@
     <string name="no_groceries_list">No tienes ninguna lista de compras.</string>
     <string name="my_groceries">Mis comestibles</string>
     <string name="no_products_in_list">No tienes ningún producto en tu lista.</string>
-    <string name="no_items_in_list">No tienes ningún artículo en tu lista.</string>
+    <string name="no_items_in_list">Tu lista esta vacia.</string>
     <string name="which_item_do_you_need">¿Qué artículo necesitas?</string>
     <string name="update">Actualizar</string>
     <string name="other_stores">Otras tiendas</string>
@@ -1276,4 +1276,7 @@
     <string name="activate_dark_theme">Activer le mode sombrío</string>
     <string name="seeOtherProjets">Pour voir mes autres projets ↙</string>
     <string name="general">General</string>
+    <string name="confirm">Confirmar</string>
+    <string name="catalog">Catalogar</string>
+
 </resources>

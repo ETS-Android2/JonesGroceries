@@ -135,7 +135,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
 
         listNameInput.setFilters(new InputFilter[] { new InputFilter.LengthFilter(MAX_CHAR_GROCERY_NAME) });
         if (isForEdit){
-            createButton.setText(R.string.update);
+            createButton.setText(R.string.confirm);
             listNameInput.setText(userListToEdit.getGroceryName());
         }
 

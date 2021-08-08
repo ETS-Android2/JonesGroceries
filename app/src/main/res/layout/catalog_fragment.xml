@@ -1,0 +1,59 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/catalogFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fl_nav_wrapper"
+            android:layout_marginBottom="56dp">
+
+            <TextView
+                android:id="@+id/catalogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:background="#008080"
+                android:text="@string/products_catalog"
+                android:textSize="34dp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal" />
+        </FrameLayout>
+    <!--        android:layout_marginTop="?android:attr/actionBarSize"/>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/catalogRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="676dp"
+            android:background="@color/bottomNav"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@color/bottom_nav_colors"
+            app:itemRippleColor="@color/orange"
+            app:itemTextColor="@color/bottom_nav_colors"
+            app:labelVisibilityMode="selected"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/nav_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

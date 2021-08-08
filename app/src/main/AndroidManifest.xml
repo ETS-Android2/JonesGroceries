@@ -26,8 +26,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.MainActivity"
-            android:launchMode="singleTop" >
+            android:launchMode="standard" >
         </activity>
-
+        <activity android:name=".activities.CatalogActivity"
+            android:launchMode="standard" >
+        </activity>
     </application>
 </manifest>

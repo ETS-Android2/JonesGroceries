@@ -8,6 +8,7 @@
 
     tools:context=".fragments.ItemsListFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,15 +25,14 @@
             android:hint="@string/which_item_do_you_need"
             android:padding="28dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
             <requestFocus />
         </AutoCompleteTextView>
 
         <ImageButton
             android:id="@+id/btn_clear_text"
-            android:layout_width="35dp"
+            android:layout_width="33dp"
             android:layout_height="35dp"
             android:layout_marginStart="350dp"
             android:layout_marginLeft="350dp"
@@ -48,7 +48,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -57,18 +56,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/noProductsTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="197dp"
         android:text="@string/no_items_in_list"
         android:textSize="22sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

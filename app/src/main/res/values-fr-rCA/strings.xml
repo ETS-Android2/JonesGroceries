@@ -1264,9 +1264,9 @@
     <string name="enter_the_desired_quantity">Entrez la quantité désirée</string>
     <string name="quantityInput">Quantité</string>
     <string name="no_groceries_list">Vous n\'avez pas de liste de courses.</string>
-    <string name="my_groceries">mes courses</string>
+    <string name="my_groceries">Mes épiceries</string>
     <string name="no_products_in_list">Vous n\'avez aucun produit dans votre liste.</string>
-    <string name="no_items_in_list">Vous n\'avez aucun élément dans votre liste.</string>
+    <string name="no_items_in_list">Votre liste est vide.</string>
     <string name="which_item_do_you_need">De quel article avez-vous besoin ?</string>
     <string name="update">Mettre à jour</string>
     <string name="other_stores">Autres magasins</string>
@@ -1276,5 +1276,7 @@
     <string name="activate_dark_theme">Activer le mode sombre</string>
     <string name="seeOtherProjets">Pour voir mes autres projets ↙</string>
     <string name="general">Général</string>
+    <string name="confirm">Confirmer</string>
+    <string name="catalog">Catalogue</string>
 
 </resources>

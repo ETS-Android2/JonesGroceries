@@ -1,15 +1,19 @@
 package ca.jonestremblay.jonesgroceries.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
-import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
+
+import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,57 +23,79 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
+import ca.jonestremblay.jonesgroceries.adapters.CatalogAdapter;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
-import ca.jonestremblay.jonesgroceries.entities.Category;
+import ca.jonestremblay.jonesgroceries.entities.ListItem;
 import ca.jonestremblay.jonesgroceries.entities.Product;
-import ca.jonestremblay.jonesgroceries.fragments.CatalogFragment;
 import ca.jonestremblay.jonesgroceries.fragments.FlyersFragment;
 import ca.jonestremblay.jonesgroceries.fragments.GroceriesFragment;
 import ca.jonestremblay.jonesgroceries.fragments.RecipesFragment;
 import ca.jonestremblay.jonesgroceries.fragments.SettingsFragment;
+import ca.jonestremblay.jonesgroceries.viewmodel.CatalogViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class CatalogActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    public static ArrayList<Product> productsCatalog;
+    private RecyclerView recyclerView;
+    public static ArrayList<ListItem> itemsCatalog;
     AppDatabase appDatabase;
+    private CatalogAdapter catalogAdapter;
+    private CatalogViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.catalog_fragment);
+        handleOnBackPressed();
         appDatabase = AppDatabase.getInstance(getApplication().getApplicationContext());
-        List<Product> productsInDatabase = appDatabase.ProductDAO().getAllProducts();
-        int numberOfProductsInDatabase = productsInDatabase.size();
-        if (numberOfProductsInDatabase == 0){
-            productsCatalog = initializeProductsFromResources();
-            addProductsToDatabase();
-            productsCatalog = (ArrayList<Product>)appDatabase.ProductDAO().getAllProducts();
-        } else {
-            productsCatalog = new ArrayList<>(productsInDatabase);
-        }
+        itemsCatalog = (ArrayList<ListItem>)appDatabase.ItemListDAO().getCompleteCatalog();
         setWidgets();
         setListeners();
     }
 
-    private void addProductsToDatabase(){
-        for (Product pro : productsCatalog){
-            appDatabase.ProductDAO().insertProduct(pro);
-        }
-    }
-
     private void setWidgets() {
         bottomNavigationView = findViewById(R.id.bottom_nav);
+        recyclerView = findViewById(R.id.catalogRecyclerView);
     }
 
     private void setListeners() {
-        /* BottomNavBarView */
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavListener);
-        getSupportFragmentManager().beginTransaction().replace(
-                R.id.fl_nav_wrapper, GroceriesFragment.newInstance()).commit();
-        /* Others */
+        initRecyclerView();
+        initViewModel();
     }
 
+    private void initRecyclerView(){
+        //recyclerView = rootView.findViewById(R.id.fullCatalogInSettings);
+        /* bad context ???! */
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        catalogAdapter = new CatalogAdapter(getApplicationContext());
+        recyclerView.setAdapter(catalogAdapter);
+        catalogAdapter.notifyDataSetChanged();
+    }
+
+    private void initViewModel(){
+        viewModel = new ViewModelProvider(this).get(CatalogViewModel.class);
+        viewModel.getListOfRowItemsObserver().observe(this, new Observer<List<Product>>(){
+            @Override
+            public void onChanged(List<Product> products) {
+                catalogAdapter.setProductsList(products);
+            }
+        });
+
+    }
+
+    public void handleOnBackPressed(){
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                /** Get us back to groceries lists home page */
+               getSupportFragmentManager().beginTransaction().replace(
+                        R.id.fl_nav_wrapper, new SettingsFragment()).commit();
+                getSupportActionBar().setTitle(getString(R.string.menuBar_settings));
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem menuItem) {
                     Fragment fragment = null;
-                    /* Resets the isForCatalog variable */
                     switch (menuItem.getItemId()) {
                         case R.id.menu_groceries:
                             fragment = GroceriesFragment.newInstance();
@@ -100,50 +125,5 @@ public class MainActivity extends AppCompatActivity {
                             R.id.fl_nav_wrapper, fragment).commit();
                     return true;
                 }
-    };
-
-    @Override
-    public void onBackPressed() {
-        int count = getSupportFragmentManager().getBackStackEntryCount();
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-        } else {
-            getSupportFragmentManager().popBackStack();
-        }
-
-    }
-
-    public ArrayList<Product> initializeProductsFromResources(){
-
-        ArrayList<Product> productsList = new ArrayList<Product>();
-        String[] categories = getResources().getStringArray(R.array.categories);
-        Product product;
-        int iconID = 0;
-        /* Fix category names (replace spaces with underscores)*/
-        int index = 0;
-        for (String categorie : categories){
-            categories[index] = categorie.replace(" ", "_").toLowerCase();
-            index += 1;
-        }
-        /* end of fixing */
-
-        String[] categoriesName = getResources().getStringArray(R.array.categories);
-        int index2 = 0;
-        for (String categorie : categories){
-            Category category = new Category(categoriesName[index2], iconID);
-            int arrayID = getResources().getIdentifier(categorie, "array", this.getPackageName());
-            String[] itemsOfCategorie = getResources().getStringArray(arrayID);
-            for (String item : itemsOfCategorie){
-                product = new Product();
-                product.name = item;
-                product.category = category;
-                productsList.add(product);
-            }
-            index2++;
-            iconID++;
-        }
-        return productsList;
-    }
-
+            };
 }

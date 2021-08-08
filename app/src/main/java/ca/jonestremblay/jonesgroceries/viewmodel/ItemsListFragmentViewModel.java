@@ -16,17 +16,17 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
 
 
 public class ItemsListFragmentViewModel extends AndroidViewModel {
-    private static final String TAG = "ShowProductsViewModel";
-    private MutableLiveData<List<ListItem>> listOfItems;
-    AppDatabase appDatabase;
-    private int ID;
+     private static final String TAG = "ShowProductsViewModel";
+     private MutableLiveData<List<ListItem>> listOfItems;
+     AppDatabase appDatabase;
+     private int ID;
 
 
-    public void setID(int ID){
-        this.ID = ID;
-    }
+     public void setID(int ID){
+     this.ID = ID;
+     }
 
-    /** To function correctly, here we need the list_id . */
+     /** To function correctly, here we need the list_id . */
     public ItemsListFragmentViewModel(Application application) {
         super(application);
         /** Instancier un objet nous donnant accès au singleton de base de données  */

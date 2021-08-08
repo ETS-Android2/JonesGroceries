@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -57,6 +58,8 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
     private AutoCompleteTextView searchBar;
     private ImageButton btnClearText;
     private ActionBar actionBar;
+    private TextView noItemsInList;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,13 +108,14 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         searchBar.setAdapter(searchProductAdapter);
         actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         btnClearText = rootView.findViewById(R.id.btn_clear_text);
+        noItemsInList = rootView.findViewById(R.id.noProductsTxtView);
+        noItemsInList.bringToFront();
     }
 
     @Override
     public void onCreateOptionsMenu(@NonNull @NotNull Menu menu, @NonNull @NotNull MenuInflater inflater) {
         inflater.inflate(R.menu.list_options, menu);
     }
-
 
 
     void setListeners(View rootView){
