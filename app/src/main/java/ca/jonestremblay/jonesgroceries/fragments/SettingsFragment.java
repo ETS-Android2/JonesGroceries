@@ -25,7 +25,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
 
     Preference seeCatalog;
     Preference changeNavBarColor;
-    SwitchPreferenceCompat nightMode;
+   // SwitchPreferenceCompat nightMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
     private void setWidgets(){
         seeCatalog = findPreference("seeCatalog");
         changeNavBarColor = findPreference("changeNavBarColor");
-        nightMode = findPreference("nightMode");
+       // nightMode = findPreference("nightMode");
     }
 
     private void setListeners(){
         seeCatalog.setOnPreferenceClickListener(this);
         changeNavBarColor.setOnPreferenceClickListener(this);
-        nightMode.setOnPreferenceClickListener(this);
+      //  nightMode.setOnPreferenceClickListener(this);
     }
 
     public void handleOnBackPressed(){
@@ -74,16 +74,17 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
             getActivity().getSupportFragmentManager().beginTransaction().replace(
                     R.id.fl_nav_wrapper, CatalogFragment.newInstance()).commit();
             return true;
-        } else if (pref == changeNavBarColor){
-            return true;
-        } else if (pref == nightMode){
-            if (!nightMode.isEnabled()){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
+        } else if (pref == changeNavBarColor) {
             return true;
         }
+//        } else if (pref == nightMode){
+//            if (!nightMode.isEnabled()){
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//            } else {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//            }
+//            return true;
+//        }
         return true;
     }
 }

@@ -13,6 +13,9 @@ import ca.jonestremblay.jonesgroceries.entities.ListItem;
 @Dao
 public interface ItemListDAO {
 
+    /** This DAO is for the specific list (groceries or recipes, no important) */
+
+    
     @Query("SELECT * FROM items_list")
     List<ListItem> getCompleteCatalog();
 

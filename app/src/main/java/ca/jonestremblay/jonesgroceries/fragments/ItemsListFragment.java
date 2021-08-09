@@ -1,6 +1,7 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
 import android.database.sqlite.SQLiteConstraintException;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +40,8 @@ import ca.jonestremblay.jonesgroceries.adapters.ProductsListAdapter;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
-import ca.jonestremblay.jonesgroceries.entities.MeasureUnits;
+import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
+import ca.jonestremblay.jonesgroceries.entities.enums.MeasureUnits;
 import ca.jonestremblay.jonesgroceries.entities.Product;
 import ca.jonestremblay.jonesgroceries.viewmodel.ItemsListFragmentViewModel;
 
@@ -59,12 +62,13 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
     private ImageButton btnClearText;
     private ActionBar actionBar;
     private TextView noItemsInList;
+    private String type;
+    private ImageView iconSearch;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        handleOnBackPressed();
         setHasOptionsMenu(true);
     }
 
@@ -76,6 +80,7 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         super.onCreate(savedInstanceState);
         setWidgets(rootView);
         setListeners(rootView);
+        handleOnBackPressed();
         return rootView;
     }
 
@@ -84,12 +89,18 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
             @Override
             public void handleOnBackPressed() {
                 /** Get us back to groceries lists home page */
-                getActivity().getSupportFragmentManager().beginTransaction().replace(
-                        R.id.fl_nav_wrapper, new GroceriesFragment()).commit();
-                ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.menuBar_groceries));
+                if (type.equals(ListType.grocery.toString())){
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(
+                            R.id.fl_nav_wrapper, new GroceriesFragment()).commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.menuBar_groceries));
+                } else if (type.equals(ListType.recipe.toString())){
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(
+                            R.id.fl_nav_wrapper, new RecipesFragment()).commit();
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.menuBar_recipes));
+                }
             }
         };
-        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
     }
 
     void setWidgets(View rootView){
@@ -97,8 +108,8 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         int id = -1;
         if (bundle != null) {
             id = bundle.getInt("list_id");
-            navbarTitle = bundle.getString("grocery_name");
-
+            navbarTitle = bundle.getString("list_name");
+            type = bundle.getString("list_type");
             listID = id;
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(navbarTitle);
         }
@@ -110,11 +121,18 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         btnClearText = rootView.findViewById(R.id.btn_clear_text);
         noItemsInList = rootView.findViewById(R.id.noProductsTxtView);
         noItemsInList.bringToFront();
+        iconSearch = rootView.findViewById(R.id.itemIconSearch);
+        Drawable searchIcon = getContext().getResources().getDrawable(R.drawable.ic_search);
+        iconSearch.setImageDrawable(searchIcon);
     }
 
     @Override
     public void onCreateOptionsMenu(@NonNull @NotNull Menu menu, @NonNull @NotNull MenuInflater inflater) {
-        inflater.inflate(R.menu.list_options, menu);
+        if (type.equals(ListType.grocery.toString())){
+            inflater.inflate(R.menu.grocery_list_options, menu);
+        } else if (type.equals(ListType.recipe.toString())){
+            inflater.inflate(R.menu.recipe_list_options, menu);
+        }
     }
 
 
@@ -221,6 +239,14 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
             }
         });
 
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

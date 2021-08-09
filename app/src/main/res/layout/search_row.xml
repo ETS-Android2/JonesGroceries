@@ -7,15 +7,17 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/itemIcon"-->
-    <!--        android:layout_width="98dp"-->
-    <!--        android:layout_height="36dp"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/item_name"-->
-    <!--        app:layout_constraintHorizontal_bias="0.0"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:srcCompat="@drawable/ic_0" />-->
+    <ImageView
+        android:id="@+id/itemIconSearch"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/item_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_search" />
 
     <TextView
         android:id="@+id/item_name"

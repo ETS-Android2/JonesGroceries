@@ -1,9 +1,11 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,27 +14,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
+import ca.jonestremblay.jonesgroceries.adapters.UserListsAdapter;
+import ca.jonestremblay.jonesgroceries.dialogs.CreateOrEditUserListDialog;
+import ca.jonestremblay.jonesgroceries.dialogs.DeleteUserListDialog;
 import ca.jonestremblay.jonesgroceries.entities.UserList;
-import ca.jonestremblay.jonesgroceries.viewmodel.UserListFragmentViewModel;
+import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
+import ca.jonestremblay.jonesgroceries.viewmodel.UserListViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link RecipesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecipesFragment extends Fragment {
+public class RecipesFragment extends Fragment implements UserListsAdapter.HandleUserListClick{
 
-    private TextView noProductsLabel;
-    private UserListFragmentViewModel viewModel;
-
+    private View fragmentView;
+    private UserListViewModel viewModel;
+    private TextView noResultLabel;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private UserListsAdapter userListAdapter;
+    private UserList recipeToEdit;
+    private ImageView btnAddNew;
 
     public static Fragment newInstance() {
         RecipesFragment fragment = new RecipesFragment();
@@ -43,64 +51,107 @@ public class RecipesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         handleOnBackPressed();
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        View fragmentView = inflater.inflate(R.layout.fragment_recipes, container, false);
-
-        findViews(fragmentView);
-
+        fragmentView = inflater.inflate(R.layout.fragment_recipes, container, false);
+        setWidgets();
+        setListeners();
         initViewModel();
         initRecyclerView();
-
-//        DatabaseHelper dbHelper = new DatabaseHelper(this.getContext());
-//        Category cat = new Category("Fruits et légumes", 1244);
-//        // TODO : Rendre les query de Room aSync, afin que ça s'execute dans le main thread.
-//
-//        // TODO : Apprendre le threading pour gérer les query de Room.
-//        Product product = new Product("oranges", cat);
-//        boolean success =  dbHelper.addProduct(product);
-//
-        return inflater.inflate(R.layout.fragment_recipes, container, false);
+        viewModel.refreshUserList();
+        return fragmentView;
     }
 
     public void handleOnBackPressed(){
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(startMain);
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
     }
 
-    public void findViews(View v) {
-        noProductsLabel  = v.findViewById(R.id.noProductLabel);
-        recyclerView = v.findViewById(R.id.catalogRecyclerView);
+    public void setWidgets() {
+        btnAddNew = fragmentView.findViewById(R.id.add_new_recipe);
+        noResultLabel  = fragmentView.findViewById(R.id.noUserListTxtView);
+        recyclerView = fragmentView.findViewById(R.id.recyclerView);
+    }
+
+    public void setListeners(){
+        btnAddNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCreateOrEditUserListDialog(null, ListType.recipe, false);
+            }
+        });
     }
 
     private void initRecyclerView(){
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        //recyclerView.setAdapter();
+        userListAdapter = new UserListsAdapter(this.getContext(), this, ListType.recipe);
+        recyclerView.setAdapter(userListAdapter);
+        userListAdapter.notifyDataSetChanged();
     }
 
-    private void initViewModel() {
-        viewModel = new ViewModelProvider(this).get(UserListFragmentViewModel.class);
-        viewModel.getListOfGroceryObserver().observe(getViewLifecycleOwner(), new Observer<List<UserList>>() {
+    private void initViewModel(){
+        viewModel = new ViewModelProvider(this).get(UserListViewModel.class);
+        viewModel.setListType(ListType.recipe.toString());
+        viewModel.getListOfUserListObserver().observe(this.getActivity(), new Observer<List<UserList>>() {
             @Override
-            public void onChanged(List<UserList> products) {
-                if (products == null){
-                    noProductsLabel.setVisibility(View.VISIBLE);
+            public void onChanged(List<UserList> userLists) {
+                /** Show or hide noResultLabel if necessary */
+                if (userLists == null){
+                    noResultLabel.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.GONE);
                 } else {
-                    /** Show in RecyclerView */
-                    noProductsLabel.setVisibility(View.GONE);
+                    /** show the recyclerview */
+                    userListAdapter.setUserLists(userLists);
+                    noResultLabel.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.VISIBLE);
                 }
             }
         });
     }
+
+    @Override
+    public void itemClick(UserList userList) {
+        Fragment showProducts = new ItemsListFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("list_id", userList.getListId());
+        bundle.putString("list_name", userList.getListName());
+        bundle.putString("list_type", ListType.recipe.toString());
+        showProducts.setArguments(bundle);
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(getView().getId(), showProducts );
+        transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+        transaction.commit();
+    }
+
+    @Override
+    public void removeItem(UserList userList) {
+        showDeleteUserListDialog(userList);
+    }
+
+    @Override
+    public void editItem(UserList userList) {
+        this.recipeToEdit = userList;
+        showCreateOrEditUserListDialog(userList,ListType.recipe, true);
+    }
+
+    private void showCreateOrEditUserListDialog(UserList userList, ListType type, boolean isForEdit) {
+        CreateOrEditUserListDialog dialog =
+                new CreateOrEditUserListDialog(getContext(), isForEdit, viewModel, userList, type);
+    }
+
+    private void showDeleteUserListDialog(UserList userList){
+        DeleteUserListDialog dialog = new DeleteUserListDialog(getContext(), viewModel, userList);
+    }
+
 }

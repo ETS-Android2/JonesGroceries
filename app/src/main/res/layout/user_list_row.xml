@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -60,13 +60,13 @@
 
             <ImageView
                 android:id="@+id/itemIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginRight="18dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
                 app:layout_constraintEnd_toStartOf="@+id/item_name"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

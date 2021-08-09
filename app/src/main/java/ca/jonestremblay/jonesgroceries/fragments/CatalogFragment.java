@@ -1,6 +1,5 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,10 +11,8 @@ import android.view.ViewGroup;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -30,7 +27,6 @@ import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.adapters.CatalogAdapter;
-import ca.jonestremblay.jonesgroceries.entities.ListItem;
 import ca.jonestremblay.jonesgroceries.entities.Product;
 import ca.jonestremblay.jonesgroceries.viewmodel.CatalogViewModel;
 
@@ -95,7 +91,7 @@ public class CatalogFragment extends Fragment{
 
     @Override
     public void onCreateOptionsMenu(@NonNull @NotNull Menu menu, @NonNull @NotNull MenuInflater inflater) {
-        inflater.inflate(R.menu.list_options, menu);
+        inflater.inflate(R.menu.grocery_list_options, menu);
     }
 
 

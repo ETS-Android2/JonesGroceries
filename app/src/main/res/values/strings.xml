@@ -1278,6 +1278,8 @@
     <string name="general">General</string>
     <string name="confirm">Confirm</string>
     <string name="catalog">Catalog</string>
+    <string name="my_recipes">My recipes</string>
+    <string name="no_recipe_list">You don\'t have any recipes.</string>
 
 
 </resources> 

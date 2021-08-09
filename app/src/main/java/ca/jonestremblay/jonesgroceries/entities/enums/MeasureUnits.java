@@ -1,4 +1,4 @@
-package ca.jonestremblay.jonesgroceries.entities;
+package ca.jonestremblay.jonesgroceries.entities.enums;
 
 public enum MeasureUnits {
     x,

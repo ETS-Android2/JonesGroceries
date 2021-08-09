@@ -27,9 +27,12 @@ import android.widget.Toast;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
-import ca.jonestremblay.jonesgroceries.adapters.GroceriesListAdapter;
+import ca.jonestremblay.jonesgroceries.adapters.UserListsAdapter;
+import ca.jonestremblay.jonesgroceries.dialogs.CreateOrEditUserListDialog;
+import ca.jonestremblay.jonesgroceries.dialogs.DeleteUserListDialog;
 import ca.jonestremblay.jonesgroceries.entities.UserList;
-import ca.jonestremblay.jonesgroceries.viewmodel.UserListFragmentViewModel;
+import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
+import ca.jonestremblay.jonesgroceries.viewmodel.UserListViewModel;
 
 
 /**
@@ -37,13 +40,13 @@ import ca.jonestremblay.jonesgroceries.viewmodel.UserListFragmentViewModel;
  * Use the {@link GroceriesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GroceriesFragment extends Fragment implements GroceriesListAdapter.HandleGroceryClick {
+public class GroceriesFragment extends Fragment implements UserListsAdapter.HandleUserListClick {
 
-    private UserListFragmentViewModel viewModel;
+    private UserListViewModel viewModel;
     private TextView noResultLabel;
     private RecyclerView recyclerView;
-    private GroceriesListAdapter groceryAdapter;
-    private UserList userListToEdit;
+    private UserListsAdapter groceryAdapter;
+    private UserList groceryListToEdit;
 
 
     public static Fragment newInstance() {
@@ -74,32 +77,33 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_groceries, container, false);
-        noResultLabel = rootView.findViewById(R.id.noGroceryTxtView);
+        noResultLabel = rootView.findViewById(R.id.noUserListTxtView);
 
-        ImageView btnAddNew = rootView.findViewById(R.id.add_new_category_imageView);
+        ImageView btnAddNew = rootView.findViewById(R.id.add_new_grocery);
         initViewModel();
         initRecyclerView(rootView);
         btnAddNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCreateOrEditGroceryDialog(false);
+                showCreateOrEditUserListDialog(null, ListType.grocery, false);
             }
         });
-        viewModel.refreshGroceriesList();
+        viewModel.refreshUserList();
         return rootView;
     }
 
     private void initRecyclerView(View rootView){
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        groceryAdapter = new GroceriesListAdapter(this.getContext(), this);
+        groceryAdapter = new UserListsAdapter(this.getContext(), this, ListType.grocery);
         recyclerView.setAdapter(groceryAdapter);
         groceryAdapter.notifyDataSetChanged();
     }
 
     private void initViewModel(){
-        viewModel = new ViewModelProvider(this).get(UserListFragmentViewModel.class);
-        viewModel.getListOfGroceryObserver().observe(this.getActivity(), new Observer<List<UserList>>() {
+        viewModel = new ViewModelProvider(this).get(UserListViewModel.class);
+        viewModel.setListType(ListType.grocery.toString());
+        viewModel.getListOfUserListObserver().observe(this.getActivity(), new Observer<List<UserList>>() {
             @Override
             public void onChanged(List<UserList> groceries) {
                 /** Show or hide noResultLabel if necessary */
@@ -108,7 +112,7 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
                     recyclerView.setVisibility(View.GONE);
                 } else {
                     // show the recyclerview
-                    groceryAdapter.setGroceriesList(groceries);
+                    groceryAdapter.setUserLists(groceries);
                     noResultLabel.setVisibility(View.GONE);
                     recyclerView.setVisibility(View.VISIBLE);
                 }
@@ -123,92 +127,13 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
      * @param isForEdit <br/>If TRUE, the dialog will be about editing the clicked grocery list.<br/>>
      *                  If FALSE, the dialog will be about creating a new grocery list.
      */
-    private void showCreateOrEditGroceryDialog(boolean isForEdit) {
-        int MAX_CHAR_GROCERY_NAME = 15;
-        AlertDialog dialogBuilder = new AlertDialog.Builder(this.getContext()).create();
-        dialogBuilder.setCancelable(false);
-        View dialogView = getLayoutInflater().inflate(R.layout.add_category_dialog_layout, null);
-        /** Instanciation des objets UI */
-        EditText listNameInput = dialogView.findViewById(R.id.enterCategoryInput);
-        TextView createButton = dialogView.findViewById(R.id.createButton);
-        TextView cancelButton = dialogView.findViewById(R.id.cancelButton);
-
-        listNameInput.setFilters(new InputFilter[] { new InputFilter.LengthFilter(MAX_CHAR_GROCERY_NAME) });
-        if (isForEdit){
-            createButton.setText(R.string.confirm);
-            listNameInput.setText(userListToEdit.getGroceryName());
-        }
-
-        /** Listeners setters */
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogBuilder.dismiss();
-            }
-        });
-
-        createButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = listNameInput.getText().toString();
-                if (TextUtils.isEmpty(name)){
-                    Toast.makeText(getActivity(), getString(R.string.newNameForList), Toast.LENGTH_SHORT).show();
-                    return ;
-                }
-
-                if (isForEdit){
-                    userListToEdit.setGroceryName(name);
-                    if (viewModel.updateUserList(userListToEdit) == 0){
-                        listNameInput.setText("");
-                    } else {
-                        dialogBuilder.dismiss();
-                    }
-                } else {
-                     if (name.length() > MAX_CHAR_GROCERY_NAME){
-                         System.out.println(getString(R.string.nameTooLong));
-                         listNameInput.setText("");
-                     } else {
-                         UserList userList = new UserList();
-                         userList.setIconId(0);
-                         userList.setGroceryName(name);
-                         viewModel.insertUserList(userList);
-                         dialogBuilder.dismiss();
-                     }
-                }
-                /** here we need to call view model */
-            }
-        });
-        dialogBuilder.setView(dialogView);
-        dialogBuilder.show();
+    private void showCreateOrEditUserListDialog(UserList userList, ListType type, boolean isForEdit) {
+        CreateOrEditUserListDialog dialog =
+                new CreateOrEditUserListDialog(getContext(), isForEdit, viewModel, userList, type);
     }
 
-    private void showDeleteGroceryDialog(UserList userList) {
-        AlertDialog dialogBuilder = new AlertDialog.Builder(this.getContext()).create();
-        dialogBuilder.setCancelable(false);
-        View dialogView = getLayoutInflater().inflate(R.layout.delete_grocery_list_dialog, null);
-        /** Instanciation des objets UI */
-        TextView listName = dialogView.findViewById(R.id.listName);
-        Button deleteButton = dialogView.findViewById(R.id.deleteButton);
-        Button cancelButton = dialogView.findViewById(R.id.cancelButton);
-        listName.setText(userList.getGroceryName());
-        /** Listeners setters */
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogBuilder.dismiss();
-            }
-        });
-
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.deleteUserList(userList);
-                dialogBuilder.dismiss();
-            }
-        });
-        dialogBuilder.setView(dialogView);
-        dialogBuilder.show();
-        dialogBuilder.getWindow().setLayout(1000, 585);
+    private void showDeleteUserListDialog(UserList userList){
+        DeleteUserListDialog dialog = new DeleteUserListDialog(getContext(), viewModel, userList);
     }
 
     @Override
@@ -216,7 +141,8 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
         Fragment showProducts = new ItemsListFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("list_id", userList.getListId());
-        bundle.putString("grocery_name", userList.getGroceryName());
+        bundle.putString("list_name", userList.getListName());
+        bundle.putString("list_type", ListType.grocery.toString());
         showProducts.setArguments(bundle);
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.groceriesFragment, showProducts );
@@ -226,13 +152,13 @@ public class GroceriesFragment extends Fragment implements GroceriesListAdapter.
 
     @Override
     public void removeItem(UserList userList) {
-        showDeleteGroceryDialog(userList);
+        showDeleteUserListDialog(userList);
     }
 
     @Override
     public void editItem(UserList userList) {
-        this.userListToEdit = userList;
-        showCreateOrEditGroceryDialog(true);
+        this.groceryListToEdit = userList;
+        showCreateOrEditUserListDialog(userList, ListType.grocery, true);
     }
 
 }

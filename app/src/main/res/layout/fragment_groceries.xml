@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/add_new_category_imageView"
+            android:id="@+id/add_new_grocery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -40,7 +40,7 @@
             app:srcCompat="@drawable/ic_add_circle" />
 
         <TextView
-            android:id="@+id/noGroceryTxtView"
+            android:id="@+id/noUserListTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_groceries_list"

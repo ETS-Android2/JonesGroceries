@@ -1278,5 +1278,7 @@
     <string name="general">Général</string>
     <string name="confirm">Confirmer</string>
     <string name="catalog">Catalogue</string>
+    <string name="my_recipes">Mes recettes</string>
+    <string name="no_recipe_list">Vous avez aucune recette.</string>
 
 </resources>

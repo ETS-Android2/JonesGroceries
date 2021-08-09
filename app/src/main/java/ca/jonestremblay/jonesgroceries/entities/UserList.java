@@ -9,6 +9,8 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
+import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
+
 @Entity(tableName = "user_lists", indices = {@Index(value = "list_name", unique = true)})
 public class UserList {
     @PrimaryKey(autoGenerate = true)
@@ -17,7 +19,7 @@ public class UserList {
 
     @NonNull
     @ColumnInfo(name = "list_name")
-    private String groceryName;
+    private String listName;
 
     @ColumnInfo(name = "icon_id")
     private int iconId;
@@ -27,15 +29,26 @@ public class UserList {
     @ColumnInfo(defaultValue = "0")
     private boolean completed = false;
 
+    private String type;
+
     @Ignore
     public UserList(){
         this.completed = false;
     }
 
-    public UserList(int listId, String groceryName, int iconId) {
+    public UserList(int listId, String listName, int iconId, String type) {
         this.listId = listId;
-        this.groceryName = groceryName;
+        this.listName = listName;
         this.iconId = iconId;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public boolean isCompleted() {
@@ -50,12 +63,12 @@ public class UserList {
         this.listId = listId;
     }
 
-    public String getGroceryName() {
-        return groceryName;
+    public String getListName() {
+        return listName;
     }
 
-    public void setGroceryName(String groceryName) {
-        this.groceryName = groceryName;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     public int getIconId() {

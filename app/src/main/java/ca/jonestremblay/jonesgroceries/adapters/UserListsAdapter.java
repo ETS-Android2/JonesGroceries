@@ -1,7 +1,7 @@
 package ca.jonestremblay.jonesgroceries.adapters;
 
 import android.content.Context;
-import android.util.Log;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,8 +18,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import ca.jonestremblay.jonesgroceries.R;
-import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.UserList;
+import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
 
 
 /**
@@ -26,22 +27,35 @@ import ca.jonestremblay.jonesgroceries.entities.UserList;
  * and also sets th e data for those views.
  * The process of associating views to their data is called binding.
  */
-public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdapter.ViewHolder> {
-    private static final String TAG = "GroceriesViewModel";
-    private MutableLiveData<List<UserList>> listOfGroceries;
-    AppDatabase appDatabase;
+public class UserListsAdapter extends RecyclerView.Adapter<UserListsAdapter.ViewHolder> {
+    private static final String TAG = "UserListsListAdapter";
+    private MutableLiveData<List<UserList>> listOfUserLists;
     private Context context;
-    private List<UserList> groceriesList;
-    private HandleGroceryClick clickListener;
+    private List<UserList> userLists;
+    private HandleUserListClick clickListener;
+    private ListType typeList;
 
-    public GroceriesListAdapter(Context context, HandleGroceryClick clickListener){
+    public UserListsAdapter(Context context, HandleUserListClick clickListener, ListType typeList){
         this.context = context;
         this.clickListener = clickListener;
+        this.typeList = typeList;
     }
 
-    public void setGroceriesList(List<UserList> groceriesList){
-        this.groceriesList = groceriesList;
+    public UserListsAdapter(Context context, HandleUserListClick clickListener,
+                            List<UserList> userLists, ListType typeList){
+        this.context = context;
+        this.clickListener = clickListener;
+        this.userLists = userLists;
+        this.typeList = typeList;
+    }
+
+    public void setUserLists(List<UserList> userLists){
+        this.userLists = userLists;
             notifyDataSetChanged();
+    }
+
+    public void setTypeList(ListType typeList) {
+        this.typeList = typeList;
     }
 
     /**
@@ -57,7 +71,7 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
     @NotNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_row, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.user_list_row, parent, false);
         return new ViewHolder(view);
     }
 
@@ -74,12 +88,12 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         /** Ici on bind les rows du reycler view avec du data */
-        holder.grocery_name.setText(this.groceriesList.get(position).getGroceryName());
+        holder.grocery_name.setText(this.userLists.get(position).getListName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickListener.itemClick(groceriesList.get(position));
+                clickListener.itemClick(userLists.get(position));
             }
         });
 
@@ -87,16 +101,17 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
         holder.editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickListener.editItem(groceriesList.get(position));
+                clickListener.editItem(userLists.get(position));
             }
         });
 
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickListener.removeItem(groceriesList.get(position));
+                clickListener.removeItem(userLists.get(position));
             }
         });
+
     }
 
     /**
@@ -107,10 +122,10 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
      */
     @Override
     public int getItemCount() {
-        if (groceriesList == null ||groceriesList.size() == 0){
+        if (userLists == null || userLists.size() == 0){
             return 0;
         } else {
-            return groceriesList.size();
+            return userLists.size();
         }
     }
 
@@ -133,7 +148,7 @@ public class GroceriesListAdapter extends RecyclerView.Adapter<GroceriesListAdap
         }
     }
 
-    public interface HandleGroceryClick {
+    public interface HandleUserListClick {
         void itemClick(UserList userList);
         void removeItem(UserList userList);
         void editItem(UserList userList);

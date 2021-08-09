@@ -13,8 +13,16 @@ import ca.jonestremblay.jonesgroceries.entities.UserList;
 @Dao
 public interface UserListDAO {
 
-    @Query("SELECT * FROM user_lists")
-    List<UserList> getAllUsersList();
+    /** This DAO is for the the groceries and recipes lists. */
+
+//    @Query("SELECT * FROM user_lists")
+//    List<UserList> getAllUsersList();
+
+    @Query("SELECT * FROM user_lists WHERE type='recipe'")
+    List<UserList> getAllRecipes();
+
+    @Query("SELECT * FROM user_lists WHERE type='grocery' ")
+    List<UserList> getAllGroceries();
 
     @Insert
     long insertUserList(UserList userList);

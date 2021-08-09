@@ -9,9 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import androidx.lifecycle.ViewModel;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +17,7 @@ import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.adapters.ProductsListAdapter;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
-import ca.jonestremblay.jonesgroceries.entities.MeasureUnits;
+import ca.jonestremblay.jonesgroceries.entities.enums.MeasureUnits;
 
 public class QuantityDialog extends AlertDialog {
 
