@@ -43,7 +43,7 @@ public class QuantityDialog extends AlertDialog {
         this.productsList = productsList;
         this.itemClicked = itemClicked;
         LayoutInflater inflater = LayoutInflater.from(context);
-        view = inflater.inflate(R.layout.edit_quantity, null);
+        view = inflater.inflate(R.layout.dialog_edit_quantity, null);
         setWidgets();
         setListeners();
         setView(view);

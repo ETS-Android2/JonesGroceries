@@ -1,5 +1,6 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -21,6 +22,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -38,6 +40,7 @@ import ca.jonestremblay.jonesgroceries.R;
 import ca.jonestremblay.jonesgroceries.adapters.SearchProductAdapter;
 import ca.jonestremblay.jonesgroceries.adapters.ProductsListAdapter;
 import ca.jonestremblay.jonesgroceries.database.AppDatabase;
+import ca.jonestremblay.jonesgroceries.dialogs.AddRecipeToGroceryDialog;
 import ca.jonestremblay.jonesgroceries.entities.Category;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
 import ca.jonestremblay.jonesgroceries.entities.enums.ListType;
@@ -307,7 +310,43 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 productsListAdapter.getProductsList().removeAll(itemsToDelete);
                 productsListAdapter.notifyDataSetChanged();
                 break;
+            case R.id.addRecipeToGrocery:
+                /** Open dialog */
+                showAddRecipeDialog();
+
         }
         return super.onOptionsItemSelected(product);
+    }
+    public void showAddRecipeDialog() {
+        AddRecipeToGroceryDialog dialog = new AddRecipeToGroceryDialog(getContext(), viewModel, navbarTitle);
+
+
+//        // setup the alert builder
+//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//        builder.setTitle("Choose some animals");
+//
+//        // add a checkbox list
+//        String[] animals = {"horse", "cow", "camel", "sheep", "goat"};
+//        boolean[] checkedItems = {true, false, false, true, false};
+//        builder.setMultiChoiceItems(animals, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+//                // user checked or unchecked a box
+//            }
+//        });
+//
+//        // add OK and Cancel buttons
+//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                // user clicked OK
+//            }
+//        });
+//        builder.setNegativeButton("Cancel", null);
+//
+//        // create and show the alert dialog
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
     }
 }

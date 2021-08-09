@@ -5,7 +5,6 @@ import android.content.Context;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -37,7 +36,7 @@ public class EditNotesDialog extends AlertDialog {
         this.productsList = productsList;
         this.itemClicked = itemClicked;
         LayoutInflater inflater = LayoutInflater.from(context);
-        view = inflater.inflate(R.layout.edit_notes, null);
+        view = inflater.inflate(R.layout.dialog_edit_notes, null);
         setWidgets();
         setListeners();
         setView(view);

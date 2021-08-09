@@ -39,7 +39,7 @@ public class CreateOrEditUserListDialog extends AlertDialog {
 
         this.resources = getContext().getResources();
         LayoutInflater inflater = LayoutInflater.from(context);
-        dialogView = inflater.inflate(R.layout.add_user_list_dialog, null);
+        dialogView = inflater.inflate(R.layout.dialog_add_user_list, null);
         setCancelable(false);
         setWidgets();
         setListeners();

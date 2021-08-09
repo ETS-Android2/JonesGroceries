@@ -170,6 +170,8 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         EditNotesDialog editNotesDialog = new EditNotesDialog(context, this , productsList, itemClicked);
     }
 
+
+
     public String getString(int stringID){
         return resources.getString(stringID);
     }

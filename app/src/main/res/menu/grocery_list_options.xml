@@ -15,7 +15,7 @@
 <!--        android:title="@string/delete_completed_items" />-->
 
     <item
-        android:id="@+id/addRecipe"
+        android:id="@+id/addRecipeToGrocery"
         android:title="@string/add_recipe" />
 
 </menu>
