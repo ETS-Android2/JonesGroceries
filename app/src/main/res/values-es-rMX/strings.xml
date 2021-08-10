@@ -1280,5 +1280,6 @@
     <string name="catalog">Catalogar</string>
     <string name="my_recipes">Mis recetas</string>
     <string name="no_recipe_list">No tienes ninguna receta</string>
+    <string name="contains_no_ingredients"> no tiene ingredientes.</string>
 
 </resources>

@@ -23,7 +23,7 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
  * create an instance of this fragment.
  */
 public class FlyersFragment extends Fragment {
-    private static final String IGA_URL = "https://circulars.ca/cwf/?ref=circulars.ca&sname=iga&page=/iga/current-flyer";
+    private static final String IGA_URL = "https://circulars.ca/cwf/flyers.do?ref=circulars.ca&sname=iga&page=iga&region=&fenetre=";
     private static final String MAXI_URL = "https://www.circulars.ca/Maxi/circulaire/";
     private static final String METRO_URL = "https://circulars.ca/cwf/?ref=circulars.ca&sname=metro&page=/metro/current-flyer";
     private static final String ADONIS_URL = "https://flipp.com/en-ca/montreal-qc/flyer/4275283-marche-adonis-weekly";

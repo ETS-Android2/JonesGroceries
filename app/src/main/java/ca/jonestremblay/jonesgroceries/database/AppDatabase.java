@@ -16,7 +16,7 @@ import ca.jonestremblay.jonesgroceries.entities.Product;
 import ca.jonestremblay.jonesgroceries.entities.ListItem;
 
 
-@Database( entities = {Product.class,  ListItem.class, UserList.class}, version = 4, exportSchema = false)
+@Database( entities = {Product.class,  ListItem.class, UserList.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
 
@@ -32,7 +32,7 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class){
                 if (UNIQUE_INSTANCE == null){
                     UNIQUE_INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, "groceries_catalog").allowMainThreadQueries()
+                            AppDatabase.class, "jones_groceries").allowMainThreadQueries()
                             .fallbackToDestructiveMigration().build();
                     /** .fallbackToDestructiveMigration() does a DB migration without
                      *  saving DB's data. So in every migration, data will be lost. */

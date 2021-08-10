@@ -1263,7 +1263,7 @@
     <string name="products_catalog">Catalogue de produits</string>
     <string name="enter_the_desired_quantity">Entrez la quantité désirée</string>
     <string name="quantityInput">Quantité</string>
-    <string name="no_groceries_list">Vous n\'avez pas de liste de courses.</string>
+    <string name="no_groceries_list">Vous n\'avez pas d\'épiceries.</string>
     <string name="my_groceries">Mes épiceries</string>
     <string name="no_products_in_list">Vous n\'avez aucun produit dans votre liste.</string>
     <string name="no_items_in_list">Votre liste est vide.</string>
@@ -1280,5 +1280,6 @@
     <string name="catalog">Catalogue</string>
     <string name="my_recipes">Mes recettes</string>
     <string name="no_recipe_list">Vous avez aucune recette.</string>
+    <string name="contains_no_ingredients"> ne contient aucun ingrédients.</string>
 
 </resources>

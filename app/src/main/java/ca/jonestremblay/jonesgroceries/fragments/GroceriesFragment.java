@@ -1,11 +1,16 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -90,7 +95,19 @@ public class GroceriesFragment extends Fragment implements UserListsAdapter.Hand
             }
         });
         viewModel.refreshUserList();
+        /** Set the action's bar color with the user saved color */
+        setActionBarColor();
         return rootView;
+    }
+
+    private void setActionBarColor() {
+        /***
+         *  Set the action's bar color with the user saved color
+         */
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        String hexColorCode = sharedPref.getString("actionBarColor", "#6200EE");
+        ((AppCompatActivity)getActivity()).getSupportActionBar()
+                .setBackgroundDrawable(new ColorDrawable(Color.parseColor(hexColorCode)));
     }
 
     private void initRecyclerView(View rootView){

@@ -102,7 +102,11 @@ public class AddRecipeToGroceryDialog extends AlertDialog {
         int recipeId = appDatabase.UserListDAO().getRecipe(recipeName).getListId();
         /* on veut get des items, qui n'ont jamais ete set ... on dois les set . mais les trouver avant .*/
         List<ListItem> recipeItems = appDatabase.ItemListDAO().getAllItems(recipeId);
-        if (recipeItems != null){
+        if (recipeItems.size() == 0){
+            dismiss();
+            Toast.makeText(getContext(), recipeName + " " + getContext().getResources().
+                    getString(R.string.contains_no_ingredients), Toast.LENGTH_LONG).show();
+        } else if (recipeItems != null){
             for (ListItem item : recipeItems){
                 /** Need to change item list id for the one id list we're adding products too (groceries)*/
                 int lastGeneratedId = appDatabase.ItemListDAO().getLastUniqueId();
@@ -112,8 +116,6 @@ public class AddRecipeToGroceryDialog extends AlertDialog {
                 productsListAdapter.notifyDataSetChanged();
             }
             dismiss();
-        } else {
-            Toast.makeText(getContext(), "Error, recipesItems that we got is null 😎", Toast.LENGTH_SHORT).show();
         }
 
     }
