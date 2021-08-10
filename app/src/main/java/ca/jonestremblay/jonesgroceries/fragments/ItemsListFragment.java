@@ -155,12 +155,14 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         searchBar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                boolean itemIsAlreadyThere = false;
                 Product productToAdd = ((Product)parent.getItemAtPosition(position));
                 // int size = searchProductAdapter.getSuggestions().size();
                 if (productsListAdapter.getProductsList() != null ){
                     /** Checks if item is already in the list, adjust qty if needed */
                     for (ListItem item : productsListAdapter.getProductsList()){
                         if (productToAdd.name.equals(item.product.name)){
+                            itemIsAlreadyThere = true;
                             Toast.makeText(getContext(), getString(R.string.itemAlreadyInList)
                                 + getResources().getString(R.string.canAdjustIfLongPress),
                                                                 Toast.LENGTH_LONG).show();
@@ -174,7 +176,9 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                             getResources().getString(R.string.hasBeenAdded), Toast.LENGTH_SHORT).show();
                 }
                 searchBar.setText(""); /** Resets user input */
-                addProductToList(productToAdd);
+                if (!itemIsAlreadyThere){
+                    addProductToList(productToAdd);
+                }
             }
         });
     }
@@ -260,6 +264,7 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
             item.completed = true;
         }
         viewModel.updateItem(item);
+        productsListAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -298,9 +303,10 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
                 getActivity().finish();
             case R.id.action_delete_bought_products:
                 List<ListItem> itemsToDelete = new ArrayList<>();
-                for (ListItem it : productsListAdapter.getProductsList()){
-                    if (it.completed){
-                        itemsToDelete.add(it);
+
+                for (ListItem item : productsListAdapter.getProductsList()){
+                    if (item.completed){
+                        itemsToDelete.add(item);
                     }
                 }
                 for(ListItem item : itemsToDelete){
@@ -317,36 +323,9 @@ public class ItemsListFragment extends Fragment implements ProductsListAdapter.H
         }
         return super.onOptionsItemSelected(product);
     }
+
     public void showAddRecipeDialog() {
-        AddRecipeToGroceryDialog dialog = new AddRecipeToGroceryDialog(getContext(), viewModel, navbarTitle);
-
-
-//        // setup the alert builder
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        builder.setTitle("Choose some animals");
-//
-//        // add a checkbox list
-//        String[] animals = {"horse", "cow", "camel", "sheep", "goat"};
-//        boolean[] checkedItems = {true, false, false, true, false};
-//        builder.setMultiChoiceItems(animals, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-//                // user checked or unchecked a box
-//            }
-//        });
-//
-//        // add OK and Cancel buttons
-//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // user clicked OK
-//            }
-//        });
-//        builder.setNegativeButton("Cancel", null);
-//
-//        // create and show the alert dialog
-//        AlertDialog dialog = builder.create();
-//        dialog.show();
-//    }
+        AddRecipeToGroceryDialog dialog =
+            new AddRecipeToGroceryDialog(navbarTitle, listID, getContext(), viewModel, productsListAdapter);
     }
 }

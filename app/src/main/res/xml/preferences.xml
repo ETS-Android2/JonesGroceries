@@ -29,7 +29,7 @@
             android:title="@string/seeOtherProjets">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://jonestremblay.ca/" />
+                android:data="https://github.com/jonestremblay/" />
         </Preference>
     </PreferenceCategory>
 

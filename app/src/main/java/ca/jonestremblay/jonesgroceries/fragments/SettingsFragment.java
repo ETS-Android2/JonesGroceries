@@ -1,9 +1,12 @@
 package ca.jonestremblay.jonesgroceries.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -75,6 +78,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
                     R.id.fl_nav_wrapper, CatalogFragment.newInstance()).commit();
             return true;
         } else if (pref == changeNavBarColor) {
+            getActivity().getActionBar().setBackgroundDrawable(
+                    new ColorDrawable(Color.parseColor("#5e9c00")));
             return true;
         }
 //        } else if (pref == nightMode){

@@ -15,6 +15,8 @@ public interface ItemListDAO {
 
     /** This DAO is for the specific list (groceries or recipes, no important) */
 
+    @Query("SELECT seq as lastGeneratedId FROM sqlite_sequence WHERE name = 'items_list'")
+    int getLastUniqueId();
     
     @Query("SELECT * FROM items_list")
     List<ListItem> getCompleteCatalog();

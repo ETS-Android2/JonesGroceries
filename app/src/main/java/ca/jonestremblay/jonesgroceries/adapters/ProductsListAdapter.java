@@ -113,27 +113,20 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
         } else {
             holder.itemIcon.setVisibility(View.GONE);
         }
+
+        checkIfitemIsChecked(holder, position);
+
         holder.itemName.setText(productsList.get(position).product.name);
         holder.itemNotes.setText(item.notes);
         int quantity = productsList.get(position).quantity;
         holder.itemQuantity.setText(quantity + " " + item.measureUnit);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /* Toggle / invert completed state */
                 productsList.get(position).completed = !productsList.get(position).completed;
-                if (productsList.get(position).completed){
-                    ListItem item = productsList.get(position);
-                    holder.itemName.setBackgroundResource(R.drawable.strike_line);
-                    holder.itemNotes.setVisibility(View.GONE);
-                    holder.itemIcon.setVisibility(View.GONE);
-                } else {
-                    holder.itemName.setBackground(null);
-                    holder.itemNotes.setVisibility(View.VISIBLE);
-                    if (showIcons){
-                        holder.itemIcon.setVisibility(View.VISIBLE);
-                    }
-                }
+                checkIfitemIsChecked(holder, position);
             }
         });
 
@@ -163,6 +156,20 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
                 return true;
             }
         });
+    }
+
+    private void checkIfitemIsChecked(ViewHolder holder, int position){
+        if (productsList.get(position).completed){
+            holder.itemName.setBackgroundResource(R.drawable.strike_line);
+            holder.itemNotes.setVisibility(View.GONE);
+            holder.itemIcon.setVisibility(View.GONE);
+        } else {
+            holder.itemName.setBackground(null);
+            holder.itemNotes.setVisibility(View.VISIBLE);
+            if (showIcons){
+                holder.itemIcon.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     private void showEditNotesDialog(int position) {

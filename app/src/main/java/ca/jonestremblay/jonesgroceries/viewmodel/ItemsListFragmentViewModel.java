@@ -58,6 +58,7 @@ public class ItemsListFragmentViewModel extends AndroidViewModel {
             Product pro = catalog.get(catalog.size() -1);
             appDatabase.ItemListDAO().insertItem(item);
         } catch(SQLiteConstraintException ex){
+            System.out.println(ex.getMessage());
             if (ex.getMessage().contains("FOREIGN KEY")){
                 /** Need to add the product in the product table before, then we can in items_list*/
                 Log.v(TAG, ex.getMessage() + "\n" + ex.getStackTrace());

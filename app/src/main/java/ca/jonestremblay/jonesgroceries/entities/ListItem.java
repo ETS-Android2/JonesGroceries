@@ -15,7 +15,7 @@ import java.util.List;
 import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "items_list",
-        primaryKeys = {"list_id" , "product_id"},
+//        primaryKeys = {"list_id" , "product_id"},
         foreignKeys= {@ForeignKey(
                             entity=Product.class,
                             parentColumns="product_id",
@@ -27,11 +27,15 @@ import static androidx.room.ForeignKey.CASCADE;
                             parentColumns="list_id",
                             childColumns="list_id",
                             onUpdate=CASCADE,
-                            onDelete=CASCADE)},
-        indices= {@Index(value = {"product_id", "list_id"}, unique = true),})
+                            onDelete=CASCADE)})
+  //      indices= {@Index(value = {"product_id", "list_id"}, unique = true),})
 public class ListItem {
 
-
+    /** We don't really need a primary key here ... so we're adding a random one.
+        That we will not use.*/
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "unique_number")
+    public int unique_number;
 
     @ColumnInfo(name= "list_id")
     public int listID;
@@ -43,7 +47,7 @@ public class ListItem {
     public int quantity;
     @ColumnInfo(name= "measure_unit", defaultValue = "x")
     public String measureUnit;
-    
+
     @ColumnInfo(defaultValue = "")
     public String notes;
     public boolean completed;

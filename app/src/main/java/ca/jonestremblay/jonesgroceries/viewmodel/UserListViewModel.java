@@ -68,6 +68,11 @@ public class UserListViewModel extends AndroidViewModel  implements UserListDAO 
     }
 
     @Override
+    public UserList getRecipe(String recipeName) {
+        return appDatabase.UserListDAO().getRecipe(recipeName);
+    }
+
+    @Override
     public List<UserList> getAllGroceries() {
         return appDatabase.UserListDAO().getAllGroceries();
     }

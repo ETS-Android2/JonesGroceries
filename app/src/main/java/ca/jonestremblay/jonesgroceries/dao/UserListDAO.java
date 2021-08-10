@@ -15,11 +15,11 @@ public interface UserListDAO {
 
     /** This DAO is for the the groceries and recipes lists. */
 
-//    @Query("SELECT * FROM user_lists")
-//    List<UserList> getAllUsersList();
-
     @Query("SELECT * FROM user_lists WHERE type='recipe'")
     List<UserList> getAllRecipes();
+
+    @Query("SELECT * FROM user_lists WHERE type='recipe' AND list_name=:recipeName")
+    UserList getRecipe(String recipeName);
 
     @Query("SELECT * FROM user_lists WHERE type='grocery' ")
     List<UserList> getAllGroceries();
