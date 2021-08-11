@@ -65,8 +65,6 @@ public class CatalogActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView(){
-        //recyclerView = rootView.findViewById(R.id.fullCatalogInSettings);
-        /* bad context ???! */
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         catalogAdapter = new CatalogAdapter(getApplicationContext());
         recyclerView.setAdapter(catalogAdapter);

@@ -20,6 +20,7 @@ public class CreateOrEditUserListDialog extends AlertDialog {
 
     final int MAX_CHAR_USER_LIST_NAME = 15;
     View dialogView;
+    TextView titleTextView;
     EditText listNameInput;
     TextView createButton;
     TextView cancelButton;
@@ -50,6 +51,12 @@ public class CreateOrEditUserListDialog extends AlertDialog {
 
 
     private void setWidgets() {
+        titleTextView = dialogView.findViewById(R.id.titleTextView);
+        if (typeList.equals(ListType.grocery.toString())){
+            titleTextView.setText(getContext().getString(R.string.newNameForList));
+        } else {
+            titleTextView.setText(getContext().getString(R.string.newNameForRecipe));
+        }
         listNameInput = dialogView.findViewById(R.id.enterCategoryInput);
         createButton = dialogView.findViewById(R.id.createButton);
         cancelButton = dialogView.findViewById(R.id.cancelButton);

@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavListener);
         getSupportFragmentManager().beginTransaction().replace(
                 R.id.fl_nav_wrapper, GroceriesFragment.newInstance()).commit();
-        /* Others */
     }
 
 
@@ -111,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         int count = getSupportFragmentManager().getBackStackEntryCount();
         if (count == 0) {
             super.onBackPressed();
-            //additional code
         } else {
             getSupportFragmentManager().popBackStack();
         }

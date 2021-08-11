@@ -62,7 +62,7 @@ public class AddRecipeToGroceryDialog extends AlertDialog {
         chipGroup.removeAllViews();
         recipes = appDatabase.UserListDAO().getAllRecipes();
         if (recipes.size() == 0){
-            chipGroup.addView(createLabelChip("you don't have any recipe."));
+            chipGroup.addView(createLabelChip("You don't have any recipe."));
         } else {
             for (UserList recipe : recipes) {
                 chipGroup.addView(createRecipeChip(recipe.getListName()));

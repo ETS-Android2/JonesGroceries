@@ -138,7 +138,7 @@ public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapte
                         getString(R.string.contextMenu_AddNotes)};
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-                builder.setTitle(getString(R.string.contextMenu_EditItem));
+                builder.setTitle(getString(R.string.contextMenu_EditItem) + " " + item.product.name);
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {

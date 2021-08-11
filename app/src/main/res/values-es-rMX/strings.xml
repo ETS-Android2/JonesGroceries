@@ -1233,7 +1233,7 @@
 
     <string name="contextMenu.AdjustQty">Editar cantidad</string>
     <string name="contextMenu.AddNotes">Agregar /editar notas</string>
-    <string name="contextMenu.EditItem">Editar artículo</string>
+    <string name="contextMenu.EditItem">Editar</string>
     <string name="btn.Create">Crear</string>
     <string name="btn.Edit">Editar</string>
 
@@ -1270,16 +1270,17 @@
     <string name="which_item_do_you_need">¿Qué artículo necesitas?</string>
     <string name="update">Actualizar</string>
     <string name="other_stores">Otras tiendas</string>
-    <string name="see_catalog_items">Voir les items du catalog, triés par catégorie</string>
-    <string name="see_catalog">Voir le catálogo</string>
-    <string name="changeColorNavBar">Cambiador la couleur de la barra de navegación</string>
-    <string name="activate_dark_theme">Activer le mode sombrío</string>
-    <string name="seeOtherProjets">Pour voir mes autres projets ↙</string>
+    <string name="see_catalog_items">Ver los artículos del catálogo, ordenados por categoría</string>
+    <string name="see_catalog">Ver el catálogo</string>
+    <string name="changeColorNavBar">Cambiar el color de la barra de navegación</string>
+    <string name="activate_dark_theme">Activar le mode sombrío</string>
+    <string name="seeOtherProjets">Ver mis otros projectos ↙</string>
     <string name="general">General</string>
     <string name="confirm">Confirmar</string>
     <string name="catalog">Catalogar</string>
     <string name="my_recipes">Mis recetas</string>
     <string name="no_recipe_list">No tienes ninguna receta</string>
     <string name="contains_no_ingredients"> no tiene ingredientes.</string>
+    <string name="newNameForRecipe">Ingrese un nombre para su receta</string>
 
 </resources>

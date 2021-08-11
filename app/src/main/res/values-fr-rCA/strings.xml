@@ -1233,7 +1233,7 @@
 
     <string name="contextMenu.AdjustQty">Modifier la quantité</string>
     <string name="contextMenu.AddNotes">Ajouter/Modifier des notes</string>
-    <string name="contextMenu.EditItem">Modifier l\'article</string>
+    <string name="contextMenu.EditItem">Modifier</string>
     <string name="btn.Create">Créer</string>
     <string name="btn.Edit">Éditer</string>
 
@@ -1281,5 +1281,6 @@
     <string name="my_recipes">Mes recettes</string>
     <string name="no_recipe_list">Vous avez aucune recette.</string>
     <string name="contains_no_ingredients"> ne contient aucun ingrédients.</string>
+    <string name="newNameForRecipe">Entrez un nom pour votre recette</string>
 
 </resources>

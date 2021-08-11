@@ -1233,7 +1233,7 @@
 
     <string name="contextMenu.AdjustQty">Edit quantity</string>
     <string name="contextMenu.AddNotes">Add / Edit notes</string>
-    <string name="contextMenu.EditItem">Edit item</string>
+    <string name="contextMenu.EditItem">Edit</string>
     <string name="btn.Create">Create</string>
     <string name="btn.Edit">Edit</string>
 
@@ -1270,17 +1270,18 @@
     <string name="which_item_do_you_need">Which item do you need ?</string>
     <string name="update">Update</string>
     <string name="other_stores">Other stores</string>
-    <string name="see_catalog_items">Voir les items du catalogue, triés par catégorie</string>
-    <string name="see_catalog">Voir le catalogue</string>
-    <string name="changeColorNavBar">Changer la couleur de la barre de navigation</string>
-    <string name="activate_dark_theme">Activer le mode sombre</string>
-    <string name="seeOtherProjets">Pour voir mes autres projets ↙</string>
+    <string name="see_catalog_items">See the catalog items, sorted by category</string>
+    <string name="see_catalog">See the catalog</string>
+    <string name="changeColorNavBar">Change the color of the navigation bar</string>
+    <string name="activate_dark_theme">Toggle dark mode</string>
+    <string name="seeOtherProjets">To see my other projects ↙</string>
     <string name="general">General</string>
     <string name="confirm">Confirm</string>
     <string name="catalog">Catalog</string>
     <string name="my_recipes">My recipes</string>
     <string name="no_recipe_list">You don\'t have any recipes.</string>
     <string name="contains_no_ingredients"> have no ingredients</string>
+    <string name="newNameForRecipe">Enter a name for your recipe</string>
 
 
 </resources> 
